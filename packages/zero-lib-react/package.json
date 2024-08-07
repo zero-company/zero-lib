@@ -1,0 +1,50 @@
+{
+  "name": "@zero-company/zero-lib-react",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "concurrently \"pnpm storybook:dev\" \"pnpm next:dev\" \"pnpm lib:dev\"",
+    "build": "concurrently \"pnpm storybook:build\" \"pnpm next:build\" \"pnpm lib:build\"",
+    "lib:dev": "tsup --watch",
+    "lib:build": "tsup",
+    "next:dev": "next dev -p 8001",
+    "next:build": "next build",
+    "next:start": "next start",
+    "storybook:dev": "storybook dev -p 8002 --no-open",
+    "storybook:build": "storybook build --output-dir dist-storybook",
+    "tailwind:dev": "tailwindcss -i src/globals.css -o dist/lib/zero-lib-react.css --watch",
+    "tailwind:build": "tailwindcss -i src/globals.css -o dist/lib/zero-lib-react.css --minify"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "concurrently": "^8.2.2",
+    "@storybook/manager-api": "^8.2.2",
+    "@storybook/theming": "^8.2.2",
+    "@storybook/addon-essentials": "^8.2.2",
+    "@storybook/addon-interactions": "^8.2.2",
+    "@storybook/addon-links": "^8.2.2",
+    "@storybook/addon-onboarding": "^8.2.2",
+    "@storybook/blocks": "^8.2.2",
+    "@storybook/nextjs": "^8.2.2",
+    "@storybook/react": "^8.2.2",
+    "@storybook/test": "^8.2.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "eslint-plugin-storybook": "^0.8.0",
+    "postcss": "^8",
+    "storybook": "^8.2.2",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5"
+  }
+}
