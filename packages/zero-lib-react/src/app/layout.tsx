@@ -2,6 +2,13 @@ import type { Metadata } from 'next'
 import React from 'react'
 import { Inter } from 'next/font/google'
 import './../globals.css'
+import { Inter as FontSans } from 'next/font/google'
+import { cn } from '@/lib/utils'
+
+const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+})
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,8 +23,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>{children}</body>
+    <html lang='en' suppressHydrationWarning>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          fontSans.variable,
+        )}
+      >
+        {children}
+      </body>
     </html>
   )
 }
