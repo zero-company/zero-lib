@@ -15,6 +15,8 @@ import {
   SquareUser,
   Triangle,
   Turtle,
+  Home,
+  List,
 } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -57,12 +59,31 @@ export const AppLayout = () => {
           BORDER_COLOR,
         )}
       >
-        <div className={HEADER_SIDEBAR_SIZE.SIZE}>
-          <h1>LG</h1>
+        <div
+          className={cn(
+            'flex justify-center items-center',
+            HEADER_SIDEBAR_SIZE.SIZE,
+          )}
+        >
+          <Triangle className='size-5' />
         </div>
-        <div>
-          <h1>App</h1>
+        <div
+          className={cn(
+            'flex justify-center items-center',
+            HEADER_SIDEBAR_SIZE.SIZE,
+          )}
+        >
+          <Home className='size-5' />
         </div>
+        <div
+          className={cn(
+            'flex justify-center items-center',
+            HEADER_SIDEBAR_SIZE.SIZE,
+          )}
+        >
+          <List className='size-5' />
+        </div>
+        <div />
       </div>
 
       <div className={cn('flex-1 flex flex-col divide-y', BORDER_COLOR)}>
