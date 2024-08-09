@@ -42,8 +42,33 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { cn } from '@/lib/utils'
 
-export function AppLayout() {
+const HEADER_SIDEBAR_SIZE = { SIZE: 'size-10', W: 'w-10', H: 'h-10' }
+
+export const AppLayout = () => {
+  return (
+    <div className='flex divide-x w-screen h-screen'>
+      <div className={cn('flex flex-col divide-y', HEADER_SIDEBAR_SIZE.W)}>
+        <div className={HEADER_SIDEBAR_SIZE.SIZE}>
+          <h1>LG</h1>
+        </div>
+        <div>
+          <h1>App</h1>
+        </div>
+      </div>
+
+      <div className='flex-1 flex flex-col divide-y'>
+        <div className={HEADER_SIDEBAR_SIZE.H}>
+          <h1>AppLayout</h1>
+        </div>
+        <h1>AppContent</h1>
+      </div>
+    </div>
+  )
+}
+
+export function AppLayout2() {
   return (
     <div className='grid h-screen w-full pl-[56px]'>
       <aside className='inset-y fixed  left-0 z-20 flex h-full flex-col border-r'>
