@@ -45,11 +45,18 @@ import {
 import { cn } from '@/lib/utils'
 
 const HEADER_SIDEBAR_SIZE = { SIZE: 'size-10', W: 'w-10', H: 'h-10' }
+const BORDER_COLOR = 'border-zinc-200/[.08]'
 
 export const AppLayout = () => {
   return (
     <div className='flex divide-x w-screen h-screen'>
-      <div className={cn('flex flex-col divide-y', HEADER_SIDEBAR_SIZE.W)}>
+      <div
+        className={cn(
+          'flex flex-col divide-y',
+          HEADER_SIDEBAR_SIZE.W,
+          BORDER_COLOR,
+        )}
+      >
         <div className={HEADER_SIDEBAR_SIZE.SIZE}>
           <h1>LG</h1>
         </div>
@@ -58,7 +65,7 @@ export const AppLayout = () => {
         </div>
       </div>
 
-      <div className='flex-1 flex flex-col divide-y'>
+      <div className={cn('flex-1 flex flex-col divide-y', BORDER_COLOR)}>
         <div className={HEADER_SIDEBAR_SIZE.H}>
           <h1>AppLayout</h1>
         </div>
