@@ -1,4 +1,4 @@
-import { AppLayout } from '@/components/app-layout'
+import { AppLayout } from '@/lib'
 
 export default function Page() {
   return <AppLayout />

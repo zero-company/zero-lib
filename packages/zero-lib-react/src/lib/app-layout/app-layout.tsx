@@ -18,13 +18,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Textarea } from '@/components/ui/textarea'
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { cn } from '@/lib/utils'
+import { cn, Icon } from '@/lib'
 
 const HEADER_SIDEBAR_SIZE = { SIZE: 'size-10', W: 'w-10', H: 'h-10' }
 const BORDER_COLOR = 'border-zinc-200/[.08]'
@@ -38,7 +37,10 @@ type Props = {
 
 export const AppLayout = ({ header }: Props) => {
   return (
-    <div id='AppLayout' className='flex divide-x w-screen h-screen bg-zinc-900'>
+    <div
+      id='AppLayout'
+      className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400'
+    >
       <div className={cn('flex flex-col', HEADER_SIDEBAR_SIZE.W, BORDER_COLOR)}>
         <div
           className={cn(
