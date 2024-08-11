@@ -1,23 +1,17 @@
 import { cn } from '@/lib/utils'
-import { cva, type VariantProps } from 'class-variance-authority'
+import { CircleHelp } from 'lucide-react'
 
-const parseVariants = cva('flex justify-center items-center', {
-  variants: {
-    status: {
-      default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-      disabled:
-        'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-    },
-    size: {
-      default: 'h-10 px-4 py-2',
-      sm: 'h-9 rounded-md px-3',
-    },
-  },
-  defaultVariants: {
-    status: 'default',
-    size: 'default',
-  },
-})
+const sizeVariants = {
+  default: 'size-10',
+  sm: 'size-5',
+  md: 'size-10',
+} as const
+
+const iconSizeVariants: { [key in keyof typeof sizeVariants]: string } = {
+  default: 'size-5',
+  sm: 'size-3',
+  md: 'size-5',
+} as const
 
 type Props = {
   divClass?: string
@@ -28,12 +22,24 @@ type Props = {
   text?: string
   tooltipString?: string
   direction?: 'top' | 'bottom' | 'left' | 'right'
+  size?: keyof typeof sizeVariants
 }
 
-export const Icon = ({}: Props) => {
+export const Icon = ({ size = 'default' }: Props) => {
   return (
-    <div>
-      <h1>Icon</h1>
-    </div>
+    <button
+      id='Icon'
+      className={cn(
+        'flex shrink-0 justify-center items-center group/icon',
+        sizeVariants[size],
+      )}
+    >
+      <CircleHelp
+        className={cn(
+          'group-hover/icon:*:brightness-150',
+          iconSizeVariants[size],
+        )}
+      />
+    </button>
   )
 }

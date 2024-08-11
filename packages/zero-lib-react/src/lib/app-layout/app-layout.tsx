@@ -67,6 +67,8 @@ export const AppLayout = ({ header }: Props) => {
           <List className='size-5' />
         </div>
         <div className='flex-1' />
+        <Icon size='sm' />
+        <Icon />
         <div
           className={cn(
             'flex justify-center items-center',
