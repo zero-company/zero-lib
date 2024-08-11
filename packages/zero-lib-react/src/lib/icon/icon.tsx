@@ -1,5 +1,8 @@
+'use client'
+
 import { cn } from '@/lib/utils'
-import { CircleHelp } from 'lucide-react'
+import { FaQuestion } from '@react-icons/all-files/fa/FaQuestion'
+import { IconContext } from '@react-icons/all-files'
 
 const sizeVariants = {
   default: 'size-10',
@@ -14,32 +17,32 @@ const iconSizeVariants: { [key in keyof typeof sizeVariants]: string } = {
 } as const
 
 type Props = {
-  divClass?: string
-  spanClass?: string
-  children?: React.ReactNode
-  lucideIcon?: React.ReactElement
-  //symbol?: MaterialSymbol | 'zero'
+  reactIcon?: React.ReactNode
   text?: string
   tooltipString?: string
   direction?: 'top' | 'bottom' | 'left' | 'right'
   size?: keyof typeof sizeVariants
 }
 
-export const Icon = ({ size = 'default' }: Props) => {
+export const Icon = ({ size = 'default', reactIcon }: Props) => {
   return (
-    <button
-      id='Icon'
-      className={cn(
-        'flex shrink-0 justify-center items-center group/icon',
-        sizeVariants[size],
-      )}
-    >
-      <CircleHelp
-        className={cn(
-          'group-hover/icon:*:brightness-150',
+    <IconContext.Provider
+      value={{
+        className: cn(
+          'group-hover/icon:brightness-150',
           iconSizeVariants[size],
+        ),
+      }}
+    >
+      <button
+        id='Icon'
+        className={cn(
+          'flex shrink-0 justify-center items-center group/icon',
+          sizeVariants[size],
         )}
-      />
-    </button>
+      >
+        {reactIcon || <FaQuestion />}
+      </button>
+    </IconContext.Provider>
   )
 }

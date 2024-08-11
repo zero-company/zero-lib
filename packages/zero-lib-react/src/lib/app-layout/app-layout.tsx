@@ -1,3 +1,5 @@
+'use client'
+
 import { Settings, Triangle, Home, List } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -24,6 +26,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { cn, Icon } from '@/lib'
+import { FaCog } from '@react-icons/all-files/fa/FaCog'
 
 const HEADER_SIDEBAR_SIZE = { SIZE: 'size-10', W: 'w-10', H: 'h-10' }
 const BORDER_COLOR = 'border-zinc-200/[.08]'
@@ -67,7 +70,7 @@ export const AppLayout = ({ header }: Props) => {
           <List className='size-5' />
         </div>
         <div className='flex-1' />
-        <Icon size='sm' />
+        <Icon size='sm' reactIcon={<FaCog />} />
         <Icon />
         <div
           className={cn(
