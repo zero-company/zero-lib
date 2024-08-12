@@ -1,8 +1,8 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { FaQuestion } from '@react-icons/all-files/fa/FaQuestion'
-import { IconContext } from '@react-icons/all-files'
+import { FaQuestion } from "react-icons/fa"
+import { IconContext } from 'react-icons'
 import {
   Tooltip,
   TooltipContent,
