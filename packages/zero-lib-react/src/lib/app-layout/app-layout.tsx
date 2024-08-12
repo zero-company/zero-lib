@@ -1,6 +1,6 @@
 'use client'
 
-import { Settings, Triangle, Home, List } from 'lucide-react'
+import { Triangle, Home } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -26,7 +26,13 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { cn, Icon } from '@/lib'
-import { LuSettings } from 'react-icons/lu'
+import {
+  LuSettings,
+  LuUserCircle2,
+  LuSearch,
+  LuList,
+  LuHome,
+} from 'react-icons/lu'
 
 const HEADER_SIDEBAR_SIZE = { SIZE: 'size-10', W: 'w-10', H: 'h-10' }
 const BORDER_COLOR = 'border-zinc-200/[.08]'
@@ -53,28 +59,12 @@ export const AppLayout = ({ header }: Props) => {
         >
           <Triangle className='size-5' />
         </div>
-        <div
-          className={cn(
-            'flex justify-center items-center',
-            HEADER_SIDEBAR_SIZE.SIZE,
-          )}
-        >
-          <Home className='size-5' />
-        </div>
-        <div
-          className={cn(
-            'flex justify-center items-center',
-            HEADER_SIDEBAR_SIZE.SIZE,
-          )}
-        >
-          <List className='size-5' />
-        </div>
+        <Icon reactIcon={<LuHome />} />
+        <Icon reactIcon={<LuList />} />
         <div className='flex-1' />
-        <Icon
-          reactIcon={<LuSettings />}
-          tooltipContent={'Settings'}
-          direction='right'
-        />
+        <Icon reactIcon={<LuSearch />} />
+        <Icon reactIcon={<LuUserCircle2 />} />
+        <Icon reactIcon={<LuSettings />} />
       </div>
 
       <div className={cn('flex-1 flex flex-col divide-y', BORDER_COLOR)}>
