@@ -25,7 +25,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { cn, Icon } from '@/lib'
+import { cn, Icon, ZeroLogo } from '@/lib'
 import {
   LuSettings,
   LuUserCircle2,
@@ -51,14 +51,7 @@ export const AppLayout = ({ header }: Props) => {
       className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400'
     >
       <div className={cn('flex flex-col', HEADER_SIDEBAR_SIZE.W, BORDER_COLOR)}>
-        <div
-          className={cn(
-            'flex justify-center items-center',
-            HEADER_SIDEBAR_SIZE.SIZE,
-          )}
-        >
-          <Triangle className='size-5' />
-        </div>
+        <Icon reactIcon={<ZeroLogo />} />
         <Icon reactIcon={<LuHome />} />
         <Icon reactIcon={<LuList />} />
         <div className='flex-1' />
