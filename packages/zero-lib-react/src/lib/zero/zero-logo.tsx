@@ -1,8 +1,12 @@
+'use client'
+
+import { cn } from '@/lib/utils'
+
 export const ZeroLogo = () => {
   return (
     <svg
       id='zero-logo-v1'
-      className='group-hover/icon:brightness-150'
+      className={cn('group-hover/icon:brightness-150 text-base')}
       width='1.25em'
       height='1.25em'
       viewBox='0 0 320 320'

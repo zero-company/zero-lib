@@ -48,7 +48,7 @@ export const AppLayout = ({ header }: Props) => {
   return (
     <div
       id='AppLayout'
-      className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400'
+      className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400 text-xs leading-none'
     >
       <div className={cn('flex flex-col', HEADER_SIDEBAR_SIZE.W, BORDER_COLOR)}>
         <Icon reactIcon={<ZeroLogo />} />
@@ -58,6 +58,11 @@ export const AppLayout = ({ header }: Props) => {
         <Icon reactIcon={<LuSearch />} />
         <Icon reactIcon={<LuUserCircle2 />} />
         <Icon reactIcon={<LuSettings />} />
+      </div>
+
+      <div className={cn('w-48 flex flex-col divide-y')}>
+        <p className='p-2'>zero-lib</p>
+        <div />
       </div>
 
       <div className={cn('flex-1 flex flex-col divide-y', BORDER_COLOR)}>
