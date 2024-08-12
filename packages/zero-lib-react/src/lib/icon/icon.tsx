@@ -24,13 +24,17 @@ const iconSizeVariants: { [key in keyof typeof sizeVariants]: string } = {
 
 type Props = {
   reactIcon?: React.ReactNode
-  text?: string
-  tooltipString?: string
+  tooltipContent?: React.ReactNode
   direction?: 'top' | 'bottom' | 'left' | 'right'
   size?: keyof typeof sizeVariants
 }
 
-export const Icon = ({ size = 'default', reactIcon }: Props) => {
+export const Icon = ({
+  size = 'default',
+  reactIcon,
+  direction,
+  tooltipContent,
+}: Props) => {
   return (
     <IconContext.Provider
       value={{
@@ -53,9 +57,9 @@ export const Icon = ({ size = 'default', reactIcon }: Props) => {
               {reactIcon || <FaQuestion />}
             </button>
           </TooltipTrigger>
-          <TooltipContent>
-            <p>Add to library</p>
-          </TooltipContent>
+          {tooltipContent && (
+            <TooltipContent side={direction}>{tooltipContent}</TooltipContent>
+          )}
         </Tooltip>
       </TooltipProvider>
     </IconContext.Provider>

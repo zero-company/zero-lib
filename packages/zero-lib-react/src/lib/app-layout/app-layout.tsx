@@ -70,7 +70,11 @@ export const AppLayout = ({ header }: Props) => {
           <List className='size-5' />
         </div>
         <div className='flex-1' />
-        <Icon reactIcon={<FaCog />} />
+        <Icon
+          reactIcon={<FaCog />}
+          tooltipContent={'Settings'}
+          direction='right'
+        />
       </div>
 
       <div className={cn('flex-1 flex flex-col divide-y', BORDER_COLOR)}>
