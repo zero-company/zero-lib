@@ -3,6 +3,12 @@
 import { cn } from '@/lib/utils'
 import { FaQuestion } from '@react-icons/all-files/fa/FaQuestion'
 import { IconContext } from '@react-icons/all-files'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 
 const sizeVariants = {
   default: 'size-10',
@@ -34,15 +40,24 @@ export const Icon = ({ size = 'default', reactIcon }: Props) => {
         ),
       }}
     >
-      <button
-        id='Icon'
-        className={cn(
-          'flex shrink-0 justify-center items-center group/icon',
-          sizeVariants[size],
-        )}
-      >
-        {reactIcon || <FaQuestion />}
-      </button>
+      <TooltipProvider delayDuration={0}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <button
+              id='Icon'
+              className={cn(
+                'flex shrink-0 justify-center items-center group/icon',
+                sizeVariants[size],
+              )}
+            >
+              {reactIcon || <FaQuestion />}
+            </button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Add to library</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </IconContext.Provider>
   )
 }

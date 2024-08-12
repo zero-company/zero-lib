@@ -70,17 +70,7 @@ export const AppLayout = ({ header }: Props) => {
           <List className='size-5' />
         </div>
         <div className='flex-1' />
-        <Icon size='sm' reactIcon={<FaCog />} />
-        <Icon />
-        <div
-          className={cn(
-            'flex justify-center items-center',
-            HEADER_SIDEBAR_SIZE.SIZE,
-          )}
-        >
-          <Settings className='size-5' />
-        </div>
-        <div />
+        <Icon reactIcon={<FaCog />} />
       </div>
 
       <div className={cn('flex-1 flex flex-col divide-y', BORDER_COLOR)}>
