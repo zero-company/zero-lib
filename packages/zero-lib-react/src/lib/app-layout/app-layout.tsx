@@ -67,9 +67,9 @@ export const AppLayout = ({ header }: Props) => {
 
       <div className={cn('flex-1 flex flex-col divide-y', BORDER_COLOR)}>
         <div className={HEADER_SIDEBAR_SIZE.H}>
-          <h1>AppLayout</h1>
+          <p className='p-2'>AppLayout</p>
         </div>
-        <h1>AppContent</h1>
+        <p className='p-2'>AppContent</p>
       </div>
     </div>
   )
