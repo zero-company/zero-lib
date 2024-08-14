@@ -1,13 +1,14 @@
 'use client'
-import { cn, Icon, ZeroLogo } from '@/lib'
+import { cn, Icon, ZeroLogo, HEADER_SIDEBAR_SIZE, BORDER_COLOR } from '@/lib'
 import {
   LuSettings,
   LuUserCircle2,
   LuSearch,
   LuList,
   LuHome,
+  LuChevronRight,
 } from 'react-icons/lu'
-import { HEADER_SIDEBAR_SIZE, BORDER_COLOR } from '@/lib'
+import { Button } from '@/components/ui/button'
 
 type Props = {
   className?: string
@@ -33,7 +34,15 @@ export const Sidebar = ({ className }: Props) => {
       </div>
 
       <div className={cn('flex-1 flex flex-col divide-y')}>
-        <p className='p-2'>zero-lib</p>
+        <div className={cn('flex divide-x *:h-full', HEADER_SIDEBAR_SIZE.H)}>
+          <div className='flex-1 p-2'>
+            <p>zero-lib</p>
+          </div>
+          <Button size='sm' variant='ghost' className='text-lg'>
+            <LuChevronRight />
+          </Button>
+        </div>
+
         <div />
       </div>
     </div>
