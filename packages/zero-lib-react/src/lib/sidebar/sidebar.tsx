@@ -9,9 +9,13 @@ import {
 } from 'react-icons/lu'
 import { HEADER_SIDEBAR_SIZE, BORDER_COLOR } from '@/lib'
 
-export const Sidebar = () => {
+type Props = {
+  className?: string
+}
+
+export const Sidebar = ({ className }: Props) => {
   return (
-    <div className='w-64 flex divide-x'>
+    <div className={cn('w-64 flex divide-x', className)}>
       <div
         className={cn(
           'flex flex-col w-10',

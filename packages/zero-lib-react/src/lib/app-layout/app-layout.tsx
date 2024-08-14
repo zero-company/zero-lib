@@ -55,9 +55,9 @@ export const AppLayout = ({ header }: Props) => {
       id='AppLayout'
       className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400 text-xs leading-none'
     >
-      <Sidebar />
+      <Sidebar className='hidden sm:flex' />
       <div className={cn('flex-1 flex flex-col divide-y', BORDER_COLOR)}>
-        <Header />
+        <Header className='flex sm:hidden' />
         <p className='p-2'>AppContent</p>
       </div>
     </div>
