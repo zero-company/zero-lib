@@ -38,7 +38,7 @@ export const Sidebar = ({ className }: Props) => {
           <div className='flex-1 p-2'>
             <p>zero-lib</p>
           </div>
-          <Button size='sm' variant='ghost' className='text-lg'>
+          <Button size='sm' variant='ghost' className='sm:hidden'>
             <LuChevronRight />
           </Button>
         </div>
