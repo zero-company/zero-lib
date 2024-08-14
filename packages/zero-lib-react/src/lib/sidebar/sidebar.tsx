@@ -11,7 +11,7 @@ import { HEADER_SIDEBAR_SIZE, BORDER_COLOR } from '@/lib'
 
 export const Sidebar = () => {
   return (
-    <div className='w-64 flex'>
+    <div className='w-64 flex divide-x'>
       <div
         className={cn(
           'flex flex-col w-10',
@@ -28,7 +28,7 @@ export const Sidebar = () => {
         <Icon reactIcon={<LuSettings />} />
       </div>
 
-      <div className={cn('w-48 flex flex-col divide-y')}>
+      <div className={cn('flex-1 flex flex-col divide-y')}>
         <p className='p-2'>zero-lib</p>
         <div />
       </div>
