@@ -1,55 +1,15 @@
 'use client'
 
-import { Triangle, Home } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from '@/components/ui/drawer'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
-import {
-  cn,
-  Icon,
-  ZeroLogo,
-  Sidebar,
-  Header,
-  HEADER_SIDEBAR_SIZE,
-  BORDER_COLOR,
-} from '@/lib'
-import {
-  LuSettings,
-  LuUserCircle2,
-  LuSearch,
-  LuList,
-  LuHome,
-} from 'react-icons/lu'
+import { cn, Sidebar, Header, BORDER_COLOR } from '@/lib'
 
 type Props = {
-  sidebarPrimary?: React.ReactNode
-  sidebarSecondary?: React.ReactNode
+  sidebar?: React.ReactNode
   header?: React.ReactNode
   page?: React.ReactNode
+  body?: React.ReactNode
 }
 
-export const AppLayout = ({ header }: Props) => {
+export const AppLayout = ({ header, sidebar, body }: Props) => {
   return (
     <div
       id='AppLayout'
@@ -61,6 +21,7 @@ export const AppLayout = ({ header }: Props) => {
       >
         <Header className='flex sm:hidden' />
         <p className='p-2'>AppContent</p>
+        {body}
         <div />
       </div>
     </div>

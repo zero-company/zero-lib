@@ -6,6 +6,7 @@ import { Inter as FontSans } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import { AppLayout } from '@/lib'
 
 const inter = Inter({ subsets: ['latin'] })
 const fontSans = FontSans({
@@ -32,7 +33,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TooltipProvider>{children}</TooltipProvider>
+          <TooltipProvider>
+            <AppLayout body={children} />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

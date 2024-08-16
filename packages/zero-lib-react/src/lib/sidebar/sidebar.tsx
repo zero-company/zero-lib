@@ -42,6 +42,8 @@ export const Sidebar = ({ className }: Props) => {
             <LuChevronRight />
           </Button>
         </div>
+        <div id='SidebarPortal' className='' />
+        <p>Test</p>
 
         <div />
       </div>

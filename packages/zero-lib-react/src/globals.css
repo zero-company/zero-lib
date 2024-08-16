@@ -64,6 +64,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-zinc-900 text-zinc-400 font-sans antialiased;
   }
 }
