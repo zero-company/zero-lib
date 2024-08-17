@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { FaQuestion } from "react-icons/fa"
+import { FaQuestion } from 'react-icons/fa'
 import { IconContext } from 'react-icons'
 import {
   Tooltip,
@@ -29,6 +29,9 @@ type Props = {
   size?: keyof typeof sizeVariants
 }
 
+/**
+ * https://react-icons.github.io/react-icons/
+ */
 export const Icon = ({
   size = 'default',
   reactIcon,
