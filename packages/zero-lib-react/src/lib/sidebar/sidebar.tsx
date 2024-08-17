@@ -43,8 +43,6 @@ export const Sidebar = ({ className }: Props) => {
           </Button>
         </div>
         <div id='SidebarPortal' className='' />
-        <p>Test</p>
-
         <div />
       </div>
     </div>
