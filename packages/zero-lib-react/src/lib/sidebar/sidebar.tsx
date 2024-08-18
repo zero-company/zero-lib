@@ -4,11 +4,11 @@ import {
   LuSettings,
   LuUserCircle2,
   LuSearch,
-  LuList,
-  LuHome,
   LuChevronRight,
 } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
+
+import { Tabs, TabsTrigger, TabsContent, TabsList } from '@/components/ui/tabs'
 
 type Props = {
   className?: string
@@ -44,7 +44,41 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
             <LuChevronRight />
           </Button>
         </div>
-
+        <Tabs
+          defaultValue='1'
+          orientation='vertical'
+          className='flex flex-row divide-x'
+        >
+          <TabsList className='p-0 bg-inherit flex flex-col h-auto'>
+            <TabsTrigger
+              value='1'
+              className='p-0 data-[state=active]:bg-inherit'
+            >
+              <Icon reactIcon={<LuSearch />} />
+            </TabsTrigger>
+            <TabsTrigger
+              value='2'
+              className='p-0 data-[state=active]:bg-inherit'
+            >
+              <Icon reactIcon={<LuUserCircle2 />} />
+            </TabsTrigger>
+            <TabsTrigger
+              value='3'
+              className='p-0 data-[state=active]:bg-inherit'
+            >
+              <Icon reactIcon={<LuSettings />} />
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value='1' className='m-0'>
+            1
+          </TabsContent>
+          <TabsContent value='2' className='m-0'>
+            2
+          </TabsContent>
+          <TabsContent value='3' className='m-0'>
+            3
+          </TabsContent>
+        </Tabs>
         <div />
       </div>
     </div>

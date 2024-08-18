@@ -50,7 +50,7 @@ export const Icon = ({
       <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger asChild>
-            <button
+            <div
               id='Icon'
               className={cn(
                 'flex shrink-0 justify-center items-center group/icon',
@@ -58,7 +58,7 @@ export const Icon = ({
               )}
             >
               {reactIcon || <FaQuestion />}
-            </button>
+            </div>
           </TooltipTrigger>
           {tooltipContent && (
             <TooltipContent side={direction}>{tooltipContent}</TooltipContent>
