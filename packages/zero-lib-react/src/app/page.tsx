@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { SplashPage } from '@/lib'
 
 export default function Home() {
   return (
@@ -6,10 +6,8 @@ export default function Home() {
       <head>
         <meta http-equiv='refresh' content='0; url=/zero/' />
       </head>
-      <main className=''>
-        <p className='p-2'>HomePage</p>
-        <Link href='/'>Home</Link>
-        <Link href='/docs'>Docs</Link>
+      <main>
+        <SplashPage />
       </main>
     </>
   )
