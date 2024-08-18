@@ -12,9 +12,11 @@ import { Button } from '@/components/ui/button'
 
 type Props = {
   className?: string
+  header?: React.ReactNode
+  tabs?: { icon: React.ReactNode; content: React.ReactNode }[]
 }
 
-export const Sidebar = ({ className }: Props) => {
+export const Sidebar = ({ className, header, tabs }: Props) => {
   return (
     <div className={cn('w-64 flex divide-x', className)}>
       <div
@@ -35,9 +37,11 @@ export const Sidebar = ({ className }: Props) => {
 
       <div className={cn('flex-1 flex flex-col divide-y')}>
         <div className={cn('flex divide-x *:h-full', HEADER_SIDEBAR_SIZE.H)}>
-          <div className='flex-1 p-2'>
-            <p>zero-lib</p>
-          </div>
+          {header || (
+            <div className='flex-1 p-2'>
+              <p>zero-lib</p>
+            </div>
+          )}
           <Button size='sm' variant='ghost' className='sm:hidden'>
             <LuChevronRight />
           </Button>
