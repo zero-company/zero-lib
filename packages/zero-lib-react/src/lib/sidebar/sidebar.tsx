@@ -38,16 +38,6 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
       </div>
 
       <div className={cn('flex-1 flex flex-col divide-y')}>
-        <div className={cn('flex divide-x *:h-full', HEADER_SIDEBAR_SIZE.H)}>
-          {header || (
-            <div className='flex-1 p-2'>
-              <p>zero-lib</p>
-            </div>
-          )}
-          <Button size='sm' variant='ghost' className='sm:hidden'>
-            <LuChevronRight />
-          </Button>
-        </div>
         <Tabs
           defaultValue='1'
           orientation='vertical'
@@ -73,15 +63,31 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
               <Icon reactIcon={<LuSettings />} />
             </TabsTrigger>
           </TabsList>
-          <TabsContent value='1' className='m-0'>
-            1
-          </TabsContent>
-          <TabsContent value='2' className='m-0'>
-            2
-          </TabsContent>
-          <TabsContent value='3' className='m-0'>
-            3
-          </TabsContent>
+          <div className='flex-1 flex flex-col divide-y'>
+            <div
+              className={cn('flex divide-x *:h-full', HEADER_SIDEBAR_SIZE.H)}
+            >
+              <div className='flex-1'>
+                {header || (
+                  <div className='p-2'>
+                    <p>zero-lib</p>
+                  </div>
+                )}
+              </div>
+              <Button size='sm' variant='ghost' className='sm:hidden'>
+                <LuChevronRight />
+              </Button>
+            </div>
+            <TabsContent value='1' className='m-0'>
+              1
+            </TabsContent>
+            <TabsContent value='2' className='m-0'>
+              2
+            </TabsContent>
+            <TabsContent value='3' className='m-0'>
+              3
+            </TabsContent>
+          </div>
         </Tabs>
         <div />
       </div>

@@ -19,7 +19,7 @@ export default function Layout({ children }: Props) {
       <AppLayout
         body={children}
         header={
-          <div className='flex-1 p-2'>
+          <div className='p-2'>
             <p>zero-docs</p>
           </div>
         }
