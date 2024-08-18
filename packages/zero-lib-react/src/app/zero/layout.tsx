@@ -1,5 +1,5 @@
 'use client'
-import { AppLayout } from '@/lib'
+import { AppLayout, Icon, ZeroLogo } from '@/lib'
 
 type Props = {
   children: React.ReactNode
@@ -8,7 +8,24 @@ type Props = {
 export default function Layout({ children }: Props) {
   return (
     <>
-      <AppLayout body={children} />
+      <AppLayout
+        body={children}
+        header={
+          <div className='flex-1 p-2'>
+            <p>zero</p>
+          </div>
+        }
+        sidebarTabs={[
+          {
+            icon: <Icon reactIcon={<ZeroLogo />} />,
+            content: <div>zero</div>,
+          },
+          {
+            icon: <Icon reactIcon={<ZeroLogo />} />,
+            content: <div>zero2</div>,
+          },
+        ]}
+      />
     </>
   )
 }

@@ -21,14 +21,12 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
     <div className={cn('w-64 flex divide-x', className)}>
       <div
         className={cn(
-          'flex flex-col w-10',
+          'flex flex-col w-10 overflow-y-auto',
           HEADER_SIDEBAR_SIZE.W,
           BORDER_COLOR,
         )}
       >
-        <Icon reactIcon={<ZeroLogo />} />
-        <Icon reactIcon={<LuHome />} />
-        <Icon reactIcon={<LuList />} />
+        {tabs?.map((tab, key) => <span key={key}>{tab.icon}</span>)}
         <div className='flex-1' />
         <Icon reactIcon={<LuSearch />} />
         <Icon reactIcon={<LuUserCircle2 />} />

@@ -7,28 +7,20 @@ type Props = {
   header?: React.ReactNode
   page?: React.ReactNode
   body?: React.ReactNode
+  sidebarTabs?: { icon: React.ReactNode; content: React.ReactNode }[]
 }
 
-export const AppLayout = ({ header, sidebar, body }: Props) => {
+export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
   return (
     <div
       id='AppLayout'
       className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400 text-xs leading-none'
     >
-      <Sidebar
-        className='hidden sm:flex'
-        tabs={[
-          {
-            icon: <Icon reactIcon={<ZeroLogo />} />,
-            content: <div>zero</div>,
-          },
-        ]}
-      />
+      <Sidebar className='hidden sm:flex' tabs={sidebarTabs} header={header} />
       <div
         className={cn('flex-1 flex flex-col divide-y sm:-mt-px', BORDER_COLOR)}
       >
-        <Header className='flex sm:hidden' />
-        <p className='p-2'>AppContent</p>
+        <Header className='flex sm:hidden' header={header} />
         {body}
         <div />
       </div>

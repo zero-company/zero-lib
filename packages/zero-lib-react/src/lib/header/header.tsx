@@ -5,9 +5,10 @@ import { Button } from '@/components/ui/button'
 
 type Props = {
   className?: string
+  header?: React.ReactNode
 }
 
-export const Header = ({ className }: Props) => {
+export const Header = ({ className, header }: Props) => {
   return (
     <div
       className={cn('flex divide-x *:h-full', HEADER_SIDEBAR_SIZE.H, className)}
@@ -15,9 +16,11 @@ export const Header = ({ className }: Props) => {
       <Button size='sm' variant='ghost' className='text-lg'>
         <LuChevronLeft />
       </Button>
-      <div className='flex-1 p-2'>
-        <p>zero-lib</p>
-      </div>
+      {header || (
+        <div className='flex-1 p-2'>
+          <p>zero-lib</p>
+        </div>
+      )}
     </div>
   )
 }
