@@ -15,16 +15,18 @@ export default function Layout({ children }: Props) {
             <p>zero</p>
           </div>
         }
-        sidebarTabs={[
-          {
-            icon: <Icon reactIcon={<ZeroLogo />} />,
-            content: <div>zero</div>,
-          },
-          {
-            icon: <Icon reactIcon={<ZeroLogo />} />,
-            content: <div>zero2</div>,
-          },
-        ]}
+        sidebarTabs={{
+          top: [
+            {
+              icon: <Icon reactIcon={<ZeroLogo />} />,
+              content: <div>zero</div>,
+            },
+            {
+              icon: <Icon reactIcon={<ZeroLogo />} />,
+              content: <div>zero2</div>,
+            },
+          ],
+        }}
       />
     </>
   )

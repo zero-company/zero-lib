@@ -1,13 +1,21 @@
 'use client'
 
-import { cn, Sidebar, Header, BORDER_COLOR, Icon, ZeroLogo } from '@/lib'
+import {
+  cn,
+  Sidebar,
+  Header,
+  BORDER_COLOR,
+  Icon,
+  ZeroLogo,
+  SidebarTabsProps,
+} from '@/lib'
 
 type Props = {
   sidebar?: React.ReactNode
   header?: React.ReactNode
   page?: React.ReactNode
   body?: React.ReactNode
-  sidebarTabs?: { icon: React.ReactNode; content: React.ReactNode }[]
+  sidebarTabs?: SidebarTabsProps
 }
 
 export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {

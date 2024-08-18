@@ -23,20 +23,22 @@ export default function Layout({ children }: Props) {
             <p>zero-docs</p>
           </div>
         }
-        sidebarTabs={[
-          {
-            icon: <Icon reactIcon={<ZeroLogo />} />,
-            content: <div>zero</div>,
-          },
-          {
-            icon: <Icon reactIcon={<LuHome />} />,
-            content: <div>home</div>,
-          },
-          {
-            icon: <Icon reactIcon={<LuList />} />,
-            content: <div>list</div>,
-          },
-        ]}
+        sidebarTabs={{
+          top: [
+            {
+              icon: <Icon reactIcon={<ZeroLogo />} />,
+              content: <div>zero</div>,
+            },
+            {
+              icon: <Icon reactIcon={<LuHome />} />,
+              content: <div>home</div>,
+            },
+            {
+              icon: <Icon reactIcon={<LuList />} />,
+              content: <div>list</div>,
+            },
+          ],
+        }}
       />
     </>
   )

@@ -7,13 +7,17 @@ import {
   LuChevronRight,
 } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
-
 import { Tabs, TabsTrigger, TabsContent, TabsList } from '@/components/ui/tabs'
+
+export type SidebarTabsProps = {
+  top?: { icon: React.ReactNode; content: React.ReactNode }[]
+  bottom?: { icon: React.ReactNode; content: React.ReactNode }[]
+}
 
 type Props = {
   className?: string
   header?: React.ReactNode
-  tabs?: { icon: React.ReactNode; content: React.ReactNode }[]
+  tabs?: SidebarTabsProps
 }
 
 export const Sidebar = ({ className, header, tabs }: Props) => {
@@ -26,7 +30,7 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
           BORDER_COLOR,
         )}
       >
-        {tabs?.map((tab, key) => <span key={key}>{tab.icon}</span>)}
+        {tabs?.top?.map((tab, key) => <span key={key}>{tab.icon}</span>)}
         <div className='flex-1' />
         <Icon reactIcon={<LuSearch />} />
         <Icon reactIcon={<LuUserCircle2 />} />
