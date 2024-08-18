@@ -2,11 +2,15 @@
 
 import { cn } from '@/lib/utils'
 
-export const ZeroLogo = () => {
+type Props = {
+  className?: string
+}
+
+export const ZeroLogo = ({ className }: Props) => {
   return (
     <svg
       id='zero-logo-v1'
-      className={cn('group-hover/icon:brightness-150 text-base')}
+      className={cn('group-hover/icon:brightness-150 text-base', className)}
       width='1.25em'
       height='1.25em'
       viewBox='0 0 320 320'
