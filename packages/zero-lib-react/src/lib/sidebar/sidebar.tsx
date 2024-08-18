@@ -42,7 +42,7 @@ export const Sidebar = ({ className }: Props) => {
             <LuChevronRight />
           </Button>
         </div>
-        <div id='SidebarPortal' className='' />
+
         <div />
       </div>
     </div>

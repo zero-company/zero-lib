@@ -4,10 +4,14 @@ import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 type Props = {
+  sidebarTabs?: {
+    icon: React.ReactNode
+    content: React.ReactNode
+  }[]
   sidebarIcons?: React.ReactNode
   sidebarMenu?: React.ReactNode
   header?: React.ReactNode
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 export const MenuPortal = ({ children }: Props) => {

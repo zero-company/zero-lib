@@ -7,6 +7,13 @@ type Props = {
   children: React.ReactNode
 }
 
+/*
+<div id='SidebarPortal' />
+<SidebarPortal>
+  <p>inside sidebar portal</p>
+</SidebarPortal>
+*/
+
 export const SidebarPortal = ({ children }: Props) => {
   const [mounted, setMounted] = useState(false)
 
