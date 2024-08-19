@@ -62,7 +62,7 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
           <div className='flex-1'>
             {header || (
               <div className='p-2'>
-                <p>zero-lib</p>
+                <p>zero</p>
               </div>
             )}
           </div>

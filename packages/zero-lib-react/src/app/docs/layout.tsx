@@ -6,7 +6,6 @@ import {
   LuSearch,
   LuList,
   LuHome,
-  LuChevronRight,
 } from 'react-icons/lu'
 
 type Props = {
@@ -24,7 +23,7 @@ export default function Layout({ children }: Props) {
           </div>
         }
         sidebarTabs={{
-          defaultTab: 'zero',
+          defaultTab: 'home',
           top: [
             {
               id: 'zero',
