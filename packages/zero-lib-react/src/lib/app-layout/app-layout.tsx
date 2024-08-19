@@ -22,7 +22,7 @@ export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
   return (
     <div
       id='AppLayout'
-      className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400 text-xs leading-none'
+      className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400 text-xs leading-none overflow-clip'
     >
       <Sidebar className='hidden sm:flex' tabs={sidebarTabs} header={header} />
       <div
