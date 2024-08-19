@@ -10,8 +10,9 @@ import { Button } from '@/components/ui/button'
 import { Tabs, TabsTrigger, TabsContent, TabsList } from '@/components/ui/tabs'
 
 export type SidebarTabsProps = {
-  top?: { icon: React.ReactNode; content: React.ReactNode }[]
-  bottom?: { icon: React.ReactNode; content: React.ReactNode }[]
+  defaultTab?: string
+  top?: { id: string; icon: React.ReactNode; content: React.ReactNode }[]
+  bottom?: { id: string; icon: React.ReactNode; content: React.ReactNode }[]
 }
 
 type Props = {
@@ -21,9 +22,12 @@ type Props = {
 }
 
 export const Sidebar = ({ className, header, tabs }: Props) => {
+  const topTabs = tabs?.top || []
+  const bottomTabs = tabs?.bottom || []
+
   return (
     <Tabs
-      defaultValue='1'
+      defaultValue={tabs?.defaultTab}
       orientation='vertical'
       className={cn('w-64 flex flex-row divide-x', className)}
     >
@@ -33,25 +37,25 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
           HEADER_SIDEBAR_SIZE.W,
         )}
       >
-        {tabs?.top?.map((tab, key) => (
+        {topTabs.map((tab, key) => (
           <TabsTrigger
             key={key}
-            value={key.toString()}
+            value={tab.id}
             className='p-0 data-[state=active]:bg-inherit'
           >
             {tab.icon}
           </TabsTrigger>
         ))}
         <div className='flex-1' />
-        <TabsTrigger value='1' className='p-0 data-[state=active]:bg-inherit'>
-          <Icon reactIcon={<LuSearch />} />
-        </TabsTrigger>
-        <TabsTrigger value='2' className='p-0 data-[state=active]:bg-inherit'>
-          <Icon reactIcon={<LuUserCircle2 />} />
-        </TabsTrigger>
-        <TabsTrigger value='3' className='p-0 data-[state=active]:bg-inherit'>
-          <Icon reactIcon={<LuSettings />} />
-        </TabsTrigger>
+        {bottomTabs.map((tab, key) => (
+          <TabsTrigger
+            key={key}
+            value={tab.id}
+            className='p-0 data-[state=active]:bg-inherit'
+          >
+            {tab.icon}
+          </TabsTrigger>
+        ))}
       </TabsList>
       <div className='flex-1 flex flex-col divide-y'>
         <div className={cn('flex divide-x *:h-full', HEADER_SIDEBAR_SIZE.H)}>
@@ -66,15 +70,11 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
             <LuChevronRight />
           </Button>
         </div>
-        <TabsContent value='1' className='m-0'>
-          1
-        </TabsContent>
-        <TabsContent value='2' className='m-0'>
-          2
-        </TabsContent>
-        <TabsContent value='3' className='m-0'>
-          3
-        </TabsContent>
+        {[...topTabs, ...bottomTabs].map((tab, key) => (
+          <TabsContent key={key} value={tab.id} className='m-0'>
+            {tab.content}
+          </TabsContent>
+        ))}
       </div>
     </Tabs>
   )

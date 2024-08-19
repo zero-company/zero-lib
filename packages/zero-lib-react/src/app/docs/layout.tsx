@@ -24,18 +24,39 @@ export default function Layout({ children }: Props) {
           </div>
         }
         sidebarTabs={{
+          defaultTab: 'zero',
           top: [
             {
+              id: 'zero',
               icon: <Icon reactIcon={<ZeroLogo />} />,
               content: <div>zero</div>,
             },
             {
+              id: 'home',
               icon: <Icon reactIcon={<LuHome />} />,
               content: <div>home</div>,
             },
             {
+              id: 'list',
               icon: <Icon reactIcon={<LuList />} />,
               content: <div>list</div>,
+            },
+          ],
+          bottom: [
+            {
+              id: 'search',
+              icon: <Icon reactIcon={<LuSearch />} />,
+              content: <div>search</div>,
+            },
+            {
+              id: 'user',
+              icon: <Icon reactIcon={<LuUserCircle2 />} />,
+              content: <div>user</div>,
+            },
+            {
+              id: 'settings',
+              icon: <Icon reactIcon={<LuSettings />} />,
+              content: <div>settings</div>,
             },
           ],
         }}
