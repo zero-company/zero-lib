@@ -29,11 +29,19 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
     >
       <TabsList
         className={cn(
-          'p-0 bg-inherit flex flex-col h-auto',
+          'p-0 bg-inherit flex flex-col h-screen overflow-y-auto justify-normal',
           HEADER_SIDEBAR_SIZE.W,
         )}
       >
-        {tabs?.top?.map((tab, key) => <span key={key}>{tab.icon}</span>)}
+        {tabs?.top?.map((tab, key) => (
+          <TabsTrigger
+            key={key}
+            value={key.toString()}
+            className='p-0 data-[state=active]:bg-inherit'
+          >
+            {tab.icon}
+          </TabsTrigger>
+        ))}
         <div className='flex-1' />
         <TabsTrigger value='1' className='p-0 data-[state=active]:bg-inherit'>
           <Icon reactIcon={<LuSearch />} />
