@@ -1,5 +1,5 @@
 'use client'
-import { cn, HEADER_SIDEBAR_SIZE } from '@/lib'
+import { cn, HEADER_SIDEBAR_SIZE, ZeroLogo, Icon } from '@/lib'
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
 
@@ -11,12 +11,9 @@ type Props = {
 export const Header = ({ className, header }: Props) => {
   return (
     <div
-      className={cn(
-        'flex flex-1 divide-x *:h-full',
-        HEADER_SIDEBAR_SIZE.H,
-        className,
-      )}
+      className={cn('flex flex-1 *:h-full', HEADER_SIDEBAR_SIZE.H, className)}
     >
+      <Icon reactIcon={<ZeroLogo />} className='-mr-2' />
       {header || (
         <div className='flex-1 p-2'>
           <p>zero-lib</p>

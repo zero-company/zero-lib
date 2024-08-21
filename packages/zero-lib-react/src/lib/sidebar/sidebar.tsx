@@ -91,6 +91,7 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
             {tab.content}
           </TabsContent>
         ))}
+        <div />
       </div>
     </Tabs>
   )

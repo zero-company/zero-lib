@@ -27,11 +27,6 @@ export default function Layout({ children }: Props) {
           defaultTab: 'home',
           top: [
             {
-              id: 'zero',
-              icon: <Icon reactIcon={<ZeroLogo />} />,
-              content: <div>zero</div>,
-            },
-            {
               id: 'home',
               icon: <Icon reactIcon={<LuHome />} />,
               content: <div>home</div>,
