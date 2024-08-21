@@ -28,6 +28,7 @@ type Props = {
   direction?: 'top' | 'bottom' | 'left' | 'right'
   size?: keyof typeof sizeVariants
   className?: string
+  hoverBrightness?: boolean
 }
 
 /**
@@ -39,12 +40,13 @@ export const Icon = ({
   direction,
   tooltipContent,
   className,
+  hoverBrightness = true,
 }: Props) => {
   return (
     <IconContext.Provider
       value={{
         className: cn(
-          'group-hover/icon:brightness-150',
+          'group-hover/brightIcon:brightness-150',
           iconSizeVariants[size],
         ),
       }}
@@ -55,7 +57,8 @@ export const Icon = ({
             <div
               id='Icon'
               className={cn(
-                'flex shrink-0 justify-center items-center group/icon',
+                'flex shrink-0 justify-center items-center',
+                hoverBrightness && 'group/brightIcon',
                 sizeVariants[size],
                 className,
               )}

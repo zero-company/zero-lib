@@ -13,7 +13,11 @@ export const Header = ({ className, header }: Props) => {
     <div
       className={cn('flex flex-1 *:h-full', HEADER_SIDEBAR_SIZE.H, className)}
     >
-      <Icon reactIcon={<ZeroLogo />} className='-mr-2' />
+      <Icon
+        reactIcon={<ZeroLogo />}
+        className='-mr-2'
+        hoverBrightness={false}
+      />
       {header || (
         <div className='flex-1 p-2'>
           <p>zero-lib</p>
