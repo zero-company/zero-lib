@@ -27,6 +27,7 @@ type Props = {
   tooltipContent?: React.ReactNode
   direction?: 'top' | 'bottom' | 'left' | 'right'
   size?: keyof typeof sizeVariants
+  className?: string
 }
 
 /**
@@ -37,6 +38,7 @@ export const Icon = ({
   reactIcon,
   direction,
   tooltipContent,
+  className,
 }: Props) => {
   return (
     <IconContext.Provider
@@ -55,6 +57,7 @@ export const Icon = ({
               className={cn(
                 'flex shrink-0 justify-center items-center group/icon',
                 sizeVariants[size],
+                className,
               )}
             >
               {reactIcon || <FaQuestion />}

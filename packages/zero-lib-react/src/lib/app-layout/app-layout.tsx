@@ -29,7 +29,12 @@ export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
       id='AppLayout'
       className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400 text-xs leading-none overflow-clip'
     >
-      <div className={cn('transition-all', !isSidebarOpen && '-ml-[100vw]')}>
+      <div
+        className={cn(
+          'transition-all',
+          !isSidebarOpen && '-ml-[100vw] sm:ml-0',
+        )}
+      >
         <Sidebar
           className='w-screen sm:w-64'
           tabs={{
@@ -37,7 +42,12 @@ export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
             top: [
               {
                 id: 'sidebar',
-                icon: <Icon reactIcon={<LuChevronRight />} />,
+                icon: (
+                  <div className='divide-y sm:hidden'>
+                    <Icon reactIcon={<LuChevronRight />} />
+                    <div />
+                  </div>
+                ),
                 onClick: () => setIsSidebarOpen(false),
               },
               ...(sidebarTabs?.top || []),
