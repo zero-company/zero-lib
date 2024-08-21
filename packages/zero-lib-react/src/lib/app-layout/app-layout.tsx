@@ -29,7 +29,7 @@ export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
       id='AppLayout'
       className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400 text-xs leading-none overflow-clip'
     >
-      <div>
+      <div className={cn('transition-all', !isSidebarOpen && '-ml-[100vw]')}>
         <Sidebar
           className='w-screen sm:w-64'
           tabs={sidebarTabs}
