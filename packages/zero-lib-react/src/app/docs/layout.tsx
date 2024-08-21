@@ -6,6 +6,7 @@ import {
   LuSearch,
   LuList,
   LuHome,
+  LuLayoutGrid,
 } from 'react-icons/lu'
 
 type Props = {
@@ -42,6 +43,11 @@ export default function Layout({ children }: Props) {
             },
           ],
           bottom: [
+            {
+              id: 'apps',
+              icon: <Icon reactIcon={<LuLayoutGrid />} />,
+              content: <div>apps</div>,
+            },
             {
               id: 'search',
               icon: <Icon reactIcon={<LuSearch />} />,
