@@ -38,7 +38,7 @@ export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
               {
                 id: 'sidebar',
                 icon: <Icon reactIcon={<LuChevronRight />} />,
-                content: <div>zero</div>,
+                onClick: () => setIsSidebarOpen(false),
               },
               ...(sidebarTabs?.top || []),
             ],
@@ -46,14 +46,6 @@ export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
           header={
             <div className='flex divide-x'>
               <Header header={header} />
-              <Button
-                size='sm'
-                variant='ghost'
-                className={cn('text-lg sm:hidden', HEADER_SIDEBAR_SIZE.SIZE)}
-                onClick={() => setIsSidebarOpen(false)}
-              >
-                <LuChevronRight />
-              </Button>
             </div>
           }
         />
