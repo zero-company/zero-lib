@@ -66,9 +66,6 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
               </div>
             )}
           </div>
-          <Button size='sm' variant='ghost' className='sm:hidden'>
-            <LuChevronRight />
-          </Button>
         </div>
         {[...topTabs, ...bottomTabs].map((tab, key) => (
           <TabsContent key={key} value={tab.id} className='m-0'>

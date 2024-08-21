@@ -11,6 +11,7 @@ import {
 } from '@/lib'
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
+import { useState } from 'react'
 
 type Props = {
   sidebar?: React.ReactNode
@@ -21,27 +22,32 @@ type Props = {
 }
 
 export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
   return (
     <div
       id='AppLayout'
       className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400 text-xs leading-none overflow-clip'
     >
-      <Sidebar
-        className='hidden sm:flex'
-        tabs={sidebarTabs}
-        header={
-          <div className='hidden sm:flex divide-x'>
-            <Header header={header} />
-            <Button
-              size='sm'
-              variant='ghost'
-              className={cn('text-lg sm:hidden', HEADER_SIDEBAR_SIZE.SIZE)}
-            >
-              <LuChevronRight />
-            </Button>
-          </div>
-        }
-      />
+      <div>
+        <Sidebar
+          tabs={sidebarTabs}
+          header={
+            <div className='flex divide-x'>
+              <Header header={header} />
+              <Button
+                size='sm'
+                variant='ghost'
+                className={cn('text-lg sm:hidden', HEADER_SIDEBAR_SIZE.SIZE)}
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                <LuChevronRight />
+              </Button>
+            </div>
+          }
+        />
+      </div>
+
       <div
         className={cn('flex-1 flex flex-col divide-y sm:-mt-px', BORDER_COLOR)}
       >
@@ -50,6 +56,7 @@ export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
             size='sm'
             variant='ghost'
             className={cn('text-lg', HEADER_SIDEBAR_SIZE.SIZE)}
+            onClick={() => setIsSidebarOpen(true)}
           >
             <LuChevronLeft />
           </Button>
