@@ -31,6 +31,7 @@ export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
     >
       <div>
         <Sidebar
+          className='w-screen sm:w-64'
           tabs={sidebarTabs}
           header={
             <div className='flex divide-x'>
