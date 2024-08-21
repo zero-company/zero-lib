@@ -32,7 +32,17 @@ export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
       <div className={cn('transition-all', !isSidebarOpen && '-ml-[100vw]')}>
         <Sidebar
           className='w-screen sm:w-64'
-          tabs={sidebarTabs}
+          tabs={{
+            ...sidebarTabs,
+            top: [
+              {
+                id: 'sidebar',
+                icon: <Icon reactIcon={<LuChevronRight />} />,
+                content: <div>zero</div>,
+              },
+              ...(sidebarTabs?.top || []),
+            ],
+          }}
           header={
             <div className='flex divide-x'>
               <Header header={header} />
