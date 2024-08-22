@@ -9,7 +9,7 @@ import {
   ZeroLogo,
   SidebarTabsProps,
 } from '@/lib'
-import { LuChevronLeft, LuChevronRight } from 'react-icons/lu'
+import { LuChevronLeft, LuChevronRight, LuMenu } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 
@@ -44,7 +44,7 @@ export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
                 id: 'sidebar',
                 icon: (
                   <div className='divide-y sm:hidden'>
-                    <Icon reactIcon={<LuChevronRight />} />
+                    <Icon reactIcon={<LuMenu />} />
                     <div />
                   </div>
                 ),
@@ -68,10 +68,10 @@ export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
           <Button
             size='sm'
             variant='ghost'
-            className={cn('text-lg', HEADER_SIDEBAR_SIZE.SIZE)}
+            className={cn(HEADER_SIDEBAR_SIZE.SIZE)}
             onClick={() => setIsSidebarOpen(true)}
           >
-            <LuChevronLeft />
+            <Icon reactIcon={<LuMenu />} />
           </Button>
           <Header header={header} />
         </div>
