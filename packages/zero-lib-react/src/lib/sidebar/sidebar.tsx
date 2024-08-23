@@ -27,6 +27,7 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
 
   return (
     <Tabs
+      id='Sidebar'
       defaultValue={tabs?.defaultTab}
       orientation='vertical'
       className={cn('w-64 flex flex-row divide-x', className)}
