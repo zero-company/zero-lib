@@ -2,7 +2,7 @@
   "$schema": "https://unpkg.com/@changesets/config@3.0.2/schema.json",
   "changelog": [
     "@changesets/changelog-github",
-    { "repo": "zero-company/zero-community" }
+    { "repo": "zero-company/zero-lib" }
   ],
   "commit": false,
   "fixed": [],
