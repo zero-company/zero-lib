@@ -1,12 +1,5 @@
 'use client'
-import { cn, Icon, ZeroLogo, HEADER_SIDEBAR_SIZE, BORDER_COLOR } from '@/lib'
-import {
-  LuSettings,
-  LuUserCircle2,
-  LuSearch,
-  LuChevronRight,
-} from 'react-icons/lu'
-import { Button } from '@/components/ui/button'
+import { cn, HEADER_SIDEBAR_SIZE } from '@/lib'
 import { Tabs, TabsTrigger, TabsContent, TabsList } from '@/components/ui/tabs'
 
 export type SidebarTabProps = {

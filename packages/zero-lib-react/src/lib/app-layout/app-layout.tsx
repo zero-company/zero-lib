@@ -6,10 +6,9 @@ import {
   BORDER_COLOR,
   HEADER_SIDEBAR_SIZE,
   Icon,
-  ZeroLogo,
   SidebarTabsProps,
 } from '@/lib'
-import { LuChevronLeft, LuChevronRight, LuMenu } from 'react-icons/lu'
+import { LuMenu } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 
