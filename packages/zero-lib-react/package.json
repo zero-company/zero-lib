@@ -1,10 +1,12 @@
 {
   "name": "@zero-company/zero-lib-react",
   "version": "0.1.0",
-  "private": true,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "concurrently \"pnpm storybook:dev\" \"pnpm next:dev\" \"pnpm lib:dev\"",
     "build": "concurrently \"pnpm storybook:build\" \"pnpm next:build\" \"pnpm lib:build\"",
