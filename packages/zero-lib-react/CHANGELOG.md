@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.2
+
+### Patch Changes
+
+- [#5](https://github.com/zero-company/zero-lib/pull/5) [`da32b6c`](https://github.com/zero-company/zero-lib/commit/da32b6c4132cc474af29abc1b2874f460dc2b89a) Thanks [@jigz](https://github.com/jigz)! - Update staticDirs
+
 ## 0.1.1
 
 ### Patch Changes
