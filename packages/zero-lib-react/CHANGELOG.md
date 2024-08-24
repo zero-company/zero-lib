@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.3
+
+### Patch Changes
+
+- [#7](https://github.com/zero-company/zero-lib/pull/7) [`7a54f98`](https://github.com/zero-company/zero-lib/commit/7a54f98dc0096e7195352df0838302ec8b62e425) Thanks [@jigz](https://github.com/jigz)! - Update README
+
 ## 0.1.2
 
 ### Patch Changes
