@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.4
+
+### Patch Changes
+
+- [#9](https://github.com/zero-company/zero-lib/pull/9) [`18a9cdb`](https://github.com/zero-company/zero-lib/commit/18a9cdb646ed77f6e61cf143ac226d63489dadd4) Thanks [@jigz](https://github.com/jigz)! - [zero-lib-react] Update tsconfig
+
 ## 0.1.3
 
 ### Patch Changes
