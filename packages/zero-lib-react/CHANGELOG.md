@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.5
+
+### Patch Changes
+
+- [#11](https://github.com/zero-company/zero-lib/pull/11) [`2ee9b22`](https://github.com/zero-company/zero-lib/commit/2ee9b2293c8727f81b6713265ed9fa4613c21219) Thanks [@jigz](https://github.com/jigz)! - Add tailwind:build
+
 ## 0.1.4
 
 ### Patch Changes
