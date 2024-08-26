@@ -4,6 +4,11 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**",
+    "dist-next/**",
+    "dist-storybook/**"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -11,7 +16,7 @@
     "dev": "concurrently \"pnpm storybook:dev\" \"pnpm next:dev\" \"pnpm lib:dev\"",
     "build": "concurrently \"pnpm storybook:build\" \"pnpm next:build\" \"pnpm lib:build\"",
     "lib:dev": "tsup --watch",
-    "lib:build": "tsup",
+    "lib:build": "tsup && pnpm tailwind:build",
     "next:dev": "next dev -p 8001",
     "next:build": "next build",
     "next:start": "next start",
