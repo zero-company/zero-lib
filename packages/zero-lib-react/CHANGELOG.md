@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.6
+
+### Patch Changes
+
+- [#13](https://github.com/zero-company/zero-lib/pull/13) [`1fbcf46`](https://github.com/zero-company/zero-lib/commit/1fbcf467615d45757b1b16e841d86224e0715d98) Thanks [@jigz](https://github.com/jigz)! - Add disabled sidebar tabs
+
 ## 0.1.5
 
 ### Patch Changes
