@@ -7,6 +7,7 @@ export type SidebarTabProps = {
   icon: React.ReactNode
   content?: React.ReactNode
   onClick?: () => void
+  disabled?: boolean
 }
 
 export type SidebarTabsProps = {
@@ -40,7 +41,7 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
       >
         {topTabs.map((tab, key) =>
           tab.onClick ? (
-            <button key={key} onClick={tab.onClick}>
+            <button key={key} onClick={tab.onClick} disabled={tab.disabled}>
               {tab.icon}
             </button>
           ) : (
@@ -48,6 +49,7 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
               key={key}
               value={tab.id}
               className='p-0 data-[state=active]:bg-inherit'
+              disabled={tab.disabled}
             >
               {tab.icon}
             </TabsTrigger>
@@ -56,7 +58,7 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
         <div className='flex-1' />
         {bottomTabs.map((tab, key) =>
           tab.onClick ? (
-            <button key={key} onClick={tab.onClick}>
+            <button key={key} onClick={tab.onClick} disabled={tab.disabled}>
               {tab.icon}
             </button>
           ) : (
@@ -64,6 +66,7 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
               key={key}
               value={tab.id}
               className='p-0 data-[state=active]:bg-inherit'
+              disabled={tab.disabled}
             >
               {tab.icon}
             </TabsTrigger>
