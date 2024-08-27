@@ -84,7 +84,7 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
           </div>
         </div>
         {[...topTabs, ...bottomTabs].map((tab, key) => (
-          <TabsContent key={key} value={tab.id} className='m-0'>
+          <TabsContent key={key} value={tab.id} className='m-0 divide-y'>
             {tab.content}
           </TabsContent>
         ))}

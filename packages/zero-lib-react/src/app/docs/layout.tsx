@@ -1,13 +1,7 @@
 'use client'
-import { AppLayout, Icon, ZeroLogo } from '@/lib'
-import {
-  LuSettings,
-  LuUserCircle2,
-  LuSearch,
-  LuList,
-  LuHome,
-  LuLayoutGrid,
-} from 'react-icons/lu'
+import { AppLayout, Icon } from '@/lib'
+import { LuList, LuHome } from 'react-icons/lu'
+import { GlobalSidebarTabs } from '@/components'
 
 type Props = {
   children: React.ReactNode
@@ -37,28 +31,7 @@ export default function Layout({ children }: Props) {
               content: <div>list</div>,
             },
           ],
-          bottom: [
-            {
-              id: 'apps',
-              icon: <Icon reactIcon={<LuLayoutGrid />} />,
-              content: <div>apps</div>,
-            },
-            {
-              id: 'search',
-              icon: <Icon reactIcon={<LuSearch />} />,
-              content: <div>search</div>,
-            },
-            {
-              id: 'user',
-              icon: <Icon reactIcon={<LuUserCircle2 />} />,
-              content: <div>user</div>,
-            },
-            {
-              id: 'settings',
-              icon: <Icon reactIcon={<LuSettings />} />,
-              content: <div>settings</div>,
-            },
-          ],
+          bottom: [...GlobalSidebarTabs],
         }}
       />
     </>
