@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.8
+
+### Patch Changes
+
+- [#17](https://github.com/zero-company/zero-lib/pull/17) [`da58b06`](https://github.com/zero-company/zero-lib/commit/da58b064a4e0ef1e047377cfa838bb0d4305f088) Thanks [@jigz](https://github.com/jigz)! - Fix tsconfig conflict
+
 ## 0.1.7
 
 ### Patch Changes
