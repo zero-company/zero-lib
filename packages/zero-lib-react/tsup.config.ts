@@ -7,5 +7,6 @@ export default defineConfig(options => ({
   sourcemap: true,
   minify: true,
   external: ['react'],
+  tsconfig: './tsup.tsconfig.json',
   ...options,
 }))
