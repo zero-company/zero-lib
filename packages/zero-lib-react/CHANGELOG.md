@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.7
+
+### Patch Changes
+
+- [#15](https://github.com/zero-company/zero-lib/pull/15) [`fbddd6a`](https://github.com/zero-company/zero-lib/commit/fbddd6a491bf95c64d4f7036b1e0bdb34aa0eda1) Thanks [@jigz](https://github.com/jigz)! - Fix Sidebar divider
+
 ## 0.1.6
 
 ### Patch Changes
