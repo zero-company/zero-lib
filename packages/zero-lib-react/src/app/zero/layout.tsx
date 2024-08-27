@@ -26,11 +26,6 @@ export default function Layout({ children }: Props) {
           defaultTab: 'home',
           top: [
             {
-              id: 'zero',
-              icon: <Icon reactIcon={<ZeroLogo />} />,
-              content: <div>zero</div>,
-            },
-            {
               id: 'home',
               icon: <Icon reactIcon={<LuHome />} />,
               content: <div>home</div>,
@@ -41,6 +36,7 @@ export default function Layout({ children }: Props) {
               id: 'search',
               icon: <Icon reactIcon={<LuSearch />} />,
               content: <div>search</div>,
+              disabled: true,
             },
             {
               id: 'user',
