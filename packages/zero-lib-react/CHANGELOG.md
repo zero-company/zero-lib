@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.9
+
+### Patch Changes
+
+- [#19](https://github.com/zero-company/zero-lib/pull/19) [`97ab731`](https://github.com/zero-company/zero-lib/commit/97ab731bad599242c278240752914635be3f586c) Thanks [@jigz](https://github.com/jigz)! - Fix/remove sidebar tabs focus style
+
 ## 0.1.8
 
 ### Patch Changes
