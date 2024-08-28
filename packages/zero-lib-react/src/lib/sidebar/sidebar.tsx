@@ -1,6 +1,6 @@
 'use client'
-import { cn, HEADER_SIDEBAR_SIZE } from '@/lib'
-import { Tabs, TabsTrigger, TabsContent, TabsList } from '@/components/ui/tabs'
+import { cn, HEADER_SIDEBAR_SIZE, TabsTrigger } from '@/lib'
+import { Tabs, TabsContent, TabsList } from '@/components/ui/tabs'
 
 export type SidebarTabProps = {
   id: string
@@ -22,28 +22,6 @@ type Props = {
   tabs?: SidebarTabsProps
 }
 
-export const SidebarTabTrigger = (
-  props: {
-    key: number
-  } & SidebarTabProps,
-) => {
-  const { content, icon, ...buttonProps } = props
-  return props.onClick ? (
-    <button {...buttonProps}>{icon}</button>
-  ) : (
-    <TabsTrigger
-      value={props.id}
-      className={cn(
-        'p-0 data-[state=active]:bg-inherit',
-        'focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring focus-visible:ring-offset-0',
-      )}
-      {...buttonProps}
-    >
-      {icon}
-    </TabsTrigger>
-  )
-}
-
 export const Sidebar = ({ className, header, tabs }: Props) => {
   const topTabs = tabs?.top || []
   const bottomTabs = tabs?.bottom || []
@@ -62,11 +40,15 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
         )}
       >
         {topTabs.map((tabProps, key) => (
-          <SidebarTabTrigger {...tabProps} key={key} />
+          <TabsTrigger {...tabProps} key={key} value={tabProps.id}>
+            {tabProps.icon}
+          </TabsTrigger>
         ))}
         <div className='flex-1' />
         {bottomTabs.map((tabProps, key) => (
-          <SidebarTabTrigger {...tabProps} key={key} />
+          <TabsTrigger {...tabProps} key={key} value={tabProps.id}>
+            {tabProps.icon}
+          </TabsTrigger>
         ))}
       </TabsList>
       <div className='flex-1 flex flex-col divide-y'>
