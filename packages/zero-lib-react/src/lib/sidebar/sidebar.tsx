@@ -22,6 +22,28 @@ type Props = {
   tabs?: SidebarTabsProps
 }
 
+export const SidebarTabTrigger = (
+  props: {
+    key: number
+  } & SidebarTabProps,
+) => {
+  const { content, icon, ...buttonProps } = props
+  return props.onClick ? (
+    <button {...buttonProps}>{icon}</button>
+  ) : (
+    <TabsTrigger
+      value={props.id}
+      className={cn(
+        'p-0 data-[state=active]:bg-inherit',
+        'focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring focus-visible:ring-offset-0',
+      )}
+      {...buttonProps}
+    >
+      {icon}
+    </TabsTrigger>
+  )
+}
+
 export const Sidebar = ({ className, header, tabs }: Props) => {
   const topTabs = tabs?.top || []
   const bottomTabs = tabs?.bottom || []
@@ -39,39 +61,13 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
           HEADER_SIDEBAR_SIZE.W,
         )}
       >
-        {topTabs.map((tab, key) =>
-          tab.onClick ? (
-            <button key={key} onClick={tab.onClick} disabled={tab.disabled}>
-              {tab.icon}
-            </button>
-          ) : (
-            <TabsTrigger
-              key={key}
-              value={tab.id}
-              className='p-0 data-[state=active]:bg-inherit'
-              disabled={tab.disabled}
-            >
-              {tab.icon}
-            </TabsTrigger>
-          ),
-        )}
+        {topTabs.map((tabProps, key) => (
+          <SidebarTabTrigger {...tabProps} key={key} />
+        ))}
         <div className='flex-1' />
-        {bottomTabs.map((tab, key) =>
-          tab.onClick ? (
-            <button key={key} onClick={tab.onClick} disabled={tab.disabled}>
-              {tab.icon}
-            </button>
-          ) : (
-            <TabsTrigger
-              key={key}
-              value={tab.id}
-              className='p-0 data-[state=active]:bg-inherit'
-              disabled={tab.disabled}
-            >
-              {tab.icon}
-            </TabsTrigger>
-          ),
-        )}
+        {bottomTabs.map((tabProps, key) => (
+          <SidebarTabTrigger {...tabProps} key={key} />
+        ))}
       </TabsList>
       <div className='flex-1 flex flex-col divide-y'>
         <div className={cn('flex divide-x *:h-full', HEADER_SIDEBAR_SIZE.H)}>
