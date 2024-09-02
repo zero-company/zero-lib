@@ -20,7 +20,7 @@ type Props = {
   sidebarTabs?: SidebarTabsProps
 }
 
-export const AppLayout = ({ header, sidebar, body, sidebarTabs }: Props) => {
+export const AppLayoutV1 = ({ header, sidebar, body, sidebarTabs }: Props) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
