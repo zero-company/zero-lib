@@ -19,10 +19,10 @@ export default function Layout({ children }: Props) {
         }
         sidebar={
           <>
-            <div>
+            <div className='p-2'>
               <h1>Home</h1>
             </div>
-            <div>
+            <div className='p-2'>
               <h1>List</h1>
             </div>
           </>

@@ -8,7 +8,7 @@ import {
   Icon,
   SidebarTabsProps,
 } from '@/lib'
-import { LuMenu } from 'react-icons/lu'
+import { LuMenu, LuPanelLeftOpen, LuPanelLeftClose } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 
@@ -40,7 +40,7 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
             className={cn(HEADER_SIDEBAR_SIZE.SIZE, 'flex sm:hidden')}
             onClick={() => setIsSidebarOpen(false)}
           >
-            <Icon reactIcon={<LuMenu />} />
+            <Icon reactIcon={<LuPanelLeftClose />} />
           </Button>
           <Header header={header} />
         </div>
@@ -61,7 +61,7 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
             className={cn(HEADER_SIDEBAR_SIZE.SIZE)}
             onClick={() => setIsSidebarOpen(true)}
           >
-            <Icon reactIcon={<LuMenu />} />
+            <Icon reactIcon={<LuPanelLeftOpen />} />
           </Button>
           <Header header={header} />
         </div>
