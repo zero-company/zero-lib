@@ -7,6 +7,7 @@ import {
   HEADER_SIDEBAR_SIZE,
   Icon,
   SidebarTabsProps,
+  ZeroLogo,
 } from '@/lib'
 import { LuMenu, LuPanelLeftOpen, LuPanelLeftClose } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
@@ -43,6 +44,7 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
             <Icon reactIcon={<LuPanelLeftClose />} />
           </Button>
           <Header header={header} />
+          <Icon reactIcon={<ZeroLogo />} />
         </div>
         {sidebar}
         <div />
@@ -64,6 +66,7 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
             <Icon reactIcon={<LuPanelLeftOpen />} />
           </Button>
           <Header header={header} />
+          <Icon reactIcon={<ZeroLogo />} />
         </div>
 
         {body}
