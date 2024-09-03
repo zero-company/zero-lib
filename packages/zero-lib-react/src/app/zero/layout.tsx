@@ -1,5 +1,5 @@
 'use client'
-import { AppLayout, Icon } from '@/lib'
+import { AppLayoutV1, Icon } from '@/lib'
 import { LuHome } from 'react-icons/lu'
 import { GlobalSidebarTabs } from '@/components'
 
@@ -10,7 +10,7 @@ type Props = {
 export default function Layout({ children }: Props) {
   return (
     <>
-      <AppLayout
+      <AppLayoutV1
         body={children}
         header={
           <div className='flex-1 p-2'>
