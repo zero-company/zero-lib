@@ -8,6 +8,7 @@ import {
   Icon,
   SidebarTabsProps,
   ZeroLogo,
+  Footer,
 } from '@/lib'
 import { LuMenu, LuPanelLeftOpen, LuPanelLeftClose } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
@@ -47,7 +48,8 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
           <Icon reactIcon={<ZeroLogo />} />
         </div>
         {sidebar}
-        <div />
+        <div className='flex-1' />
+        <Footer />
       </div>
 
       <div
@@ -68,7 +70,6 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
           <Header header={header} />
           <Icon reactIcon={<ZeroLogo />} />
         </div>
-
         {body}
         <div />
       </div>
