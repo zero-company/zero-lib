@@ -20,7 +20,7 @@ export default function Layout({ children }: Props) {
           </div>
         }
         sidebar={
-          <div className='flex flex-col items-start p-2 gap-2 *:w-full'>
+          <div className='flex flex-col items-start p-2 *:w-full'>
             <Button
               size='sm'
               className='text-xs gap-2 justify-start'
