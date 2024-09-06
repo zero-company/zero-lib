@@ -71,7 +71,6 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
           <Icon reactIcon={<ZeroLogo />} />
         </div>
         {body}
-        <div />
       </div>
     </div>
   )

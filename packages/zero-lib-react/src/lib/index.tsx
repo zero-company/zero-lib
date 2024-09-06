@@ -1,5 +1,6 @@
 export * from './utils'
 export * from './constants'
+export * from './custom-colors'
 export * from './zero/zero-logo'
 export * from './icon/icon'
 export * from './icon/icon-v2'
