@@ -27,14 +27,14 @@ export default function Layout({ children }: Props) {
                 className='text-xs gap-2 justify-start'
                 variant='ghost'
               >
-                <IconV2 reactIcon={<LuHome />} size='sm' /> Home
+                <IconV2 reactIcon={<LuHome />} size='sm' /> Browse
               </Button>
               <Button
                 size='sm'
                 className='text-xs gap-2 justify-start'
                 variant='ghost'
               >
-                <IconV2 reactIcon={<LuList />} size='sm' /> List
+                <IconV2 reactIcon={<LuList />} size='sm' /> Outline
               </Button>
             </div>
             <div className='p-2'>

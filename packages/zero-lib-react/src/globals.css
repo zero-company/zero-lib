@@ -32,16 +32,11 @@
   }
 
   .dark {
-    /* Vanilla
     --background: 240 10% 3.9%;
-    --popover: 240 10% 3.9%;
-    --card: 240 10% 3.9%;
-    */
-    --background: #18181b; /* bg-zinc-900 */
     --foreground: 0 0% 98%;
-    --card: #18181b;
+    --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 5.9% 10%; /* bg-zinc-900 */
+    --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
@@ -68,7 +63,12 @@
   * {
     @apply border-border;
   }
+  html {
+    @apply scroll-smooth;
+  }
   body {
-    @apply bg-zinc-900 text-zinc-400 font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
   }
 }

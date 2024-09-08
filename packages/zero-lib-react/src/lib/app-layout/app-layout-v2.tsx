@@ -37,7 +37,7 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
   return (
     <div
       id='AppLayoutV2'
-      className='flex divide-x w-screen h-screen bg-zinc-900 text-zinc-400 text-xs leading-none overflow-clip'
+      className='flex divide-x w-screen h-screen leading-none overflow-clip'
     >
       <div
         className={cn(

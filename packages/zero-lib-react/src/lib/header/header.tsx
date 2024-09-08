@@ -12,7 +12,7 @@ export const Header = ({ className, header }: Props) => {
     <div
       id='Header'
       className={cn(
-        'flex flex-1 *:h-full divide-x',
+        'flex flex-1 *:h-full divide-x text-xs',
         HEADER_SIDEBAR_SIZE.H,
         className,
       )}
