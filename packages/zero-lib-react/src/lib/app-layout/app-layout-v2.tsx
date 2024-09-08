@@ -9,10 +9,20 @@ import {
   SidebarTabsProps,
   ZeroLogo,
   Footer,
+  SupportCard,
 } from '@/lib'
 import { LuMenu, LuPanelLeftOpen, LuPanelLeftClose } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 type Props = {
   sidebar?: React.ReactNode
@@ -49,6 +59,28 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
         </div>
         {sidebar}
         <div className='flex-1' />
+        <p>Apps</p>
+        <p>Search</p>
+        <p>User</p>
+        <p>Settings</p>
+        <div>
+          <Select>
+            <SelectTrigger className='w-[180px]'>
+              <SelectValue placeholder='Select a fruit' />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Fruits</SelectLabel>
+                <SelectItem value='apple'>Apple</SelectItem>
+                <SelectItem value='banana'>Banana</SelectItem>
+                <SelectItem value='blueberry'>Blueberry</SelectItem>
+                <SelectItem value='grapes'>Grapes</SelectItem>
+                <SelectItem value='pineapple'>Pineapple</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
+        <SupportCard />
         <Footer />
       </div>
 
