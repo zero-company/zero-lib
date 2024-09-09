@@ -41,7 +41,7 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
     >
       <div
         className={cn(
-          'transition-all w-screen sm:w-64 divide-y flex flex-col shrink-0',
+          'transition-all w-screen sm:w-64 divide-y flex flex-col shrink-0 overflow-y-auto',
           !isSidebarOpen && '-ml-[100vw] sm:ml-0',
         )}
       >

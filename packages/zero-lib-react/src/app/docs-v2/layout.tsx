@@ -24,14 +24,14 @@ export default function Layout({ children }: Props) {
             <div className='flex flex-col items-start p-2 *:w-full'>
               <Button
                 size='sm'
-                className='text-xs gap-2 justify-start'
+                className='text-xs gap-2 justify-start h-8'
                 variant='ghost'
               >
                 <IconV2 reactIcon={<LuHome />} size='sm' /> Browse
               </Button>
               <Button
                 size='sm'
-                className='text-xs gap-2 justify-start'
+                className='text-xs gap-2 justify-start h-8'
                 variant='ghost'
               >
                 <IconV2 reactIcon={<LuList />} size='sm' /> Outline
