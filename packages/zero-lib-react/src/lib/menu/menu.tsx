@@ -47,7 +47,7 @@ export const Menu = ({ label, options }: Props) => {
           variant='ghost'
         >
           {option.icon && (
-            <span className='absolute left-3'>
+            <span className='absolute -ml-6'>
               <IconV2 reactIcon={option.icon} size='sm' />
             </span>
           )}
