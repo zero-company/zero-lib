@@ -45,43 +45,12 @@ export default function Layout({ children }: Props) {
               </Button>
             </div>
 
-            <div className='flex flex-col items-start p-2 *:w-full'>
-              <Button
-                size='sm'
-                className='text-xs gap-2 justify-start h-8 px-2'
-                variant='ghost'
-              >
-                <IconV2 reactIcon={<LuLayoutGrid />} size='sm' /> Apps
-              </Button>
-              <Button
-                size='sm'
-                className='text-xs gap-2 justify-start h-8 px-2'
-                variant='ghost'
-              >
-                <IconV2 reactIcon={<LuSearch />} size='sm' /> Search
-              </Button>
-              <Button
-                size='sm'
-                className='text-xs gap-2 justify-start h-8 px-2'
-                variant='ghost'
-              >
-                <IconV2 reactIcon={<LuUserCircle2 />} size='sm' /> User
-              </Button>
-              <Button
-                size='sm'
-                className='text-xs gap-2 justify-start h-8 px-2'
-                variant='ghost'
-              >
-                <IconV2 reactIcon={<LuSettings />} size='sm' /> Settings
-              </Button>
-            </div>
-
             <Menu
               options={[
-                { name: 'Apps' },
-                { name: 'Search' },
-                { name: 'User' },
-                { name: 'Settings' },
+                { name: 'Apps', icon: <LuLayoutGrid /> },
+                { name: 'Search', icon: <LuSearch /> },
+                { name: 'User', icon: <LuUserCircle2 /> },
+                { name: 'Settings', icon: <LuSettings /> },
               ]}
             />
           </>
