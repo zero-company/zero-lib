@@ -22,13 +22,13 @@ export default function Layout({ children }: Props) {
       <AppLayoutV2
         body={children}
         header={
-          <div className='p-2'>
+          <div className='p-1'>
             <p>zero-docs</p>
           </div>
         }
         sidebar={
           <>
-            <div className='flex flex-col items-start p-2 *:w-full'>
+            <div className='flex flex-col items-start p-1 *:w-full'>
               <Button
                 size='sm'
                 className='text-xs gap-2 justify-start h-8 px-2'
@@ -75,6 +75,15 @@ export default function Layout({ children }: Props) {
                 <IconV2 reactIcon={<LuSettings />} size='sm' /> Settings
               </Button>
             </div>
+
+            <Menu
+              options={[
+                { name: 'Apps' },
+                { name: 'Search' },
+                { name: 'User' },
+                { name: 'Settings' },
+              ]}
+            />
           </>
         }
       />

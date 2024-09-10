@@ -4,8 +4,18 @@ import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import { Button } from '@/components/ui/button'
 
-type Props = {}
+type Option = {
+  name: string
+  icon?: React.ReactNode
+  disabled?: boolean
+}
+
+type Props = {
+  label?: string
+  options: Option[]
+}
 
 /* 
 TODO: CheckMenu
@@ -15,33 +25,21 @@ TODO: Label
 TODO: Notif badge count
 */
 
-export const Menu = ({}: Props) => {
+export const Menu = ({ label, options }: Props) => {
   return (
-    <div>
-      <div className='pl-8'>
-        <span className='absolute left-2'></span>
-        <p className='pb-2 text-xs text-muted-foreground'>Menu</p>
-        <RadioGroup defaultValue='comfortable' className='-ml-6'>
-          <div className='flex items-center space-x-2'>
-            <RadioGroupItem value='default' id='r1' />
-            <Label htmlFor='r1' className='text-xs'>
-              Default
-            </Label>
-          </div>
-          <div className='flex items-center space-x-2'>
-            <RadioGroupItem value='comfortable' id='r2' />
-            <Label htmlFor='r2' className='text-xs'>
-              Comfortable
-            </Label>
-          </div>
-          <div className='flex items-center space-x-2'>
-            <RadioGroupItem value='compact' id='r3' />
-            <Label htmlFor='r3' className='text-xs'>
-              Compact
-            </Label>
-          </div>
-        </RadioGroup>
-      </div>
+    <div className='flex flex-col p-1'>
+      <span className='absolute left-2'></span>
+      {label && <p className='pb-2 text-xs text-muted-foreground'>{label}</p>}
+      {options.map((option, key) => (
+        <Button
+          key={key}
+          size='sm'
+          className='text-xs gap-2 justify-start h-8 p-2 pl-8'
+          variant='ghost'
+        >
+          {option.name}
+        </Button>
+      ))}
     </div>
   )
 }
