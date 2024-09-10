@@ -59,11 +59,7 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
         </div>
         {sidebar}
         <div className='flex-1' />
-        <p>Apps</p>
-        <p>Search</p>
-        <p>User</p>
-        <p>Settings</p>
-        <div>
+        <div className='hidden'>
           <Select>
             <SelectTrigger className='w-[180px]'>
               <SelectValue placeholder='Select a fruit' />

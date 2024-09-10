@@ -1,6 +1,13 @@
 'use client'
 import { AppLayoutV2, Icon, IconV2, Menu } from '@/lib'
-import { LuList, LuHome } from 'react-icons/lu'
+import {
+  LuList,
+  LuHome,
+  LuLayoutGrid,
+  LuSettings,
+  LuUserCircle2,
+  LuSearch,
+} from 'react-icons/lu'
 import { GlobalSidebarTabs } from '@/components'
 import { Button } from '@/components/ui/button'
 import { Mail } from 'lucide-react'
@@ -37,8 +44,36 @@ export default function Layout({ children }: Props) {
                 <IconV2 reactIcon={<LuList />} size='sm' /> Outline
               </Button>
             </div>
-            <div className='p-2'>
-              <Menu />
+
+            <div className='flex flex-col items-start p-2 *:w-full'>
+              <Button
+                size='sm'
+                className='text-xs gap-2 justify-start h-8 px-2'
+                variant='ghost'
+              >
+                <IconV2 reactIcon={<LuLayoutGrid />} size='sm' /> Apps
+              </Button>
+              <Button
+                size='sm'
+                className='text-xs gap-2 justify-start h-8 px-2'
+                variant='ghost'
+              >
+                <IconV2 reactIcon={<LuSearch />} size='sm' /> Search
+              </Button>
+              <Button
+                size='sm'
+                className='text-xs gap-2 justify-start h-8 px-2'
+                variant='ghost'
+              >
+                <IconV2 reactIcon={<LuUserCircle2 />} size='sm' /> User
+              </Button>
+              <Button
+                size='sm'
+                className='text-xs gap-2 justify-start h-8 px-2'
+                variant='ghost'
+              >
+                <IconV2 reactIcon={<LuSettings />} size='sm' /> Settings
+              </Button>
             </div>
           </>
         }
