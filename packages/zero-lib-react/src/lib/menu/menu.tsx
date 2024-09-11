@@ -18,6 +18,8 @@ type Option = {
   name: string
   icon?: React.ReactNode
   disabled?: boolean
+  onClick?: () => void
+  href?: string
 }
 
 type Props = {
@@ -45,6 +47,7 @@ export const Menu = ({ label, options }: Props) => {
           size='sm'
           className='text-xs gap-2 justify-start h-8 p-2 pl-8'
           variant='ghost'
+          disabled={option.disabled}
         >
           {option.icon && (
             <span className='absolute -ml-6'>

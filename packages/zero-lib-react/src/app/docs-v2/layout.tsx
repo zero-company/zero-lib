@@ -48,9 +48,9 @@ export default function Layout({ children }: Props) {
             <Menu
               options={[
                 { name: 'Apps', icon: <LuLayoutGrid /> },
-                { name: 'Search', icon: <LuSearch /> },
-                { name: 'User', icon: <LuUserCircle2 /> },
-                { name: 'Settings', icon: <LuSettings /> },
+                { name: 'Search', icon: <LuSearch />, disabled: true },
+                { name: 'User', icon: <LuUserCircle2 />, disabled: true },
+                { name: 'Settings', icon: <LuSettings />, disabled: true },
               ]}
             />
           </>
