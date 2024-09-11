@@ -48,6 +48,7 @@ export const Menu = ({ label, options }: Props) => {
           className='text-xs gap-2 justify-start h-8 p-2 pl-8'
           variant='ghost'
           disabled={option.disabled}
+          onClick={option.onClick}
         >
           {option.icon && (
             <span className='absolute -ml-6'>
