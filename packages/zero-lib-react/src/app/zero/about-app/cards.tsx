@@ -1,3 +1,4 @@
+import { cn } from '@/lib'
 import {
   Card,
   CardContent,
@@ -12,15 +13,15 @@ import { Button } from '@/components/ui/button'
 
 type Props = {
   title?: string
-  substitle?: string
+  description?: string
 }
 
-export const FeatureCard = ({}: Props) => {
+export const FeatureCard = ({ title, description }: Props) => {
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Cookie Settings</CardTitle>
-        <CardDescription>Manage your cookie settings here.</CardDescription>
+      <CardHeader className={cn(!title && !description && 'p-3')}>
+        <CardTitle hidden={!title}>{title}</CardTitle>
+        <CardDescription hidden={!description}>{description}</CardDescription>
       </CardHeader>
       <CardContent className='grid gap-6'>
         <div className='flex items-center justify-between space-x-2'>
