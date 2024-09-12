@@ -1,5 +1,5 @@
 'use client'
-import { AppLayoutV2, Icon, IconV2, Menu } from '@/lib'
+import { AppLayoutV2, IconV2, Menu } from '@/lib'
 import {
   LuList,
   LuHome,
@@ -10,7 +10,6 @@ import {
 } from 'react-icons/lu'
 import { GlobalSidebarTabs } from '@/components'
 import { Button } from '@/components/ui/button'
-import { Mail } from 'lucide-react'
 
 type Props = {
   children: React.ReactNode
