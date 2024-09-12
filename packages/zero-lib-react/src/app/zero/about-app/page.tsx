@@ -10,19 +10,14 @@ export default function Page() {
           title='Centralize'
           features={[
             {
-              title: 'Strictly Necessary',
+              title: 'All Content in one Place',
               description:
-                'These cookies are essential in order to use the website and use its features.',
+                'One library to manage your notes/images/music/videos.',
             },
             {
-              title: 'Functional Cookies',
+              title: 'One File',
               description:
-                'These cookies allow the website to provide personalized functionality.',
-            },
-            {
-              title: 'Performance Cookies',
-              description:
-                'These cookies help to improve the performance of the website.',
+                'All index data in one file, large size content stored separately.',
             },
           ]}
         />
@@ -30,19 +25,14 @@ export default function Page() {
           title='Control'
           features={[
             {
-              title: 'Strictly Necessary',
+              title: 'User Controlled',
               description:
-                'These cookies are essential in order to use the website and use its features.',
+                'No vendor locking, no unauthorized manipulation of user data.',
             },
             {
-              title: 'Functional Cookies',
+              title: 'File Storage',
               description:
-                'These cookies allow the website to provide personalized functionality.',
-            },
-            {
-              title: 'Performance Cookies',
-              description:
-                'These cookies help to improve the performance of the website.',
+                'Agnostic data storage with multiple clouds syncing.',
             },
           ]}
         />
@@ -50,19 +40,16 @@ export default function Page() {
           title='Secure'
           features={[
             {
-              title: 'Strictly Necessary',
-              description:
-                'These cookies are essential in order to use the website and use its features.',
+              title: 'User Encryption',
+              description: 'Open source zero trust E2E encryption.',
             },
             {
-              title: 'Functional Cookies',
-              description:
-                'These cookies allow the website to provide personalized functionality.',
+              title: 'Advanced Security Features',
+              description: 'Add new data without auth.',
             },
             {
-              title: 'Performance Cookies',
-              description:
-                'These cookies help to improve the performance of the website.',
+              title: 'Auth Protocols',
+              description: '(Lockout Prevention)',
             },
           ]}
         />
@@ -70,19 +57,19 @@ export default function Page() {
           title='Manage'
           features={[
             {
-              title: 'Strictly Necessary',
+              title: 'Advanced Search',
               description:
-                'These cookies are essential in order to use the website and use its features.',
+                'Search with advanced filtering and sorting. (layered queries, inclusion/exclusion, random sorting)',
             },
             {
-              title: 'Functional Cookies',
+              title: 'Tag System',
               description:
-                'These cookies allow the website to provide personalized functionality.',
+                'Customize your data tags. (tag aliases, merged group tags, metatags)',
             },
             {
-              title: 'Performance Cookies',
+              title: 'History Tracking',
               description:
-                'These cookies help to improve the performance of the website.',
+                'Automatically tracks user browsing. (latest viewed, oldest viewed, most viewed, least viewed)',
             },
           ]}
         />
