@@ -30,6 +30,16 @@ export default function Page() {
                 'One library to manage your notes/images/music/videos.',
             },
             {
+              title: 'Bookmark External Data Sources',
+              description:
+                '',
+            },
+            {
+              title: 'Actual Universal ID Registry',
+              description:
+                '',
+            },
+            {
               title: 'One File',
               description:
                 'All index data in one file, large size content stored separately.',
@@ -98,7 +108,7 @@ export default function Page() {
           features={[
             {
               title:
-                'Your video/music/image removed from your library by a vendor.',
+                'Your images/music/videos removed from your library w/o permission or notification.',
               description: '',
             },
             {
@@ -116,11 +126,23 @@ export default function Page() {
               description: '',
             },
             {
-              title: 'Non-cloud features locked behind a paywall',
+              title: 'Non-cloud features locked behind a paywall.',
               description: '',
             },
             {
-              title: 'Feature complaints falling on deaf ears',
+              title: 'Feature complaints falling on deaf ears.',
+              description: '',
+            },
+            {
+              title: 'Unfairly closed/banned account resulting in data loss.',
+              description: '',
+            },
+            {
+              title: 'Your favorite feature/service paywalled/shutdown.',
+              description: '',
+            },
+            {
+              title: 'Unable to sleep knowing any of the above can happen at any time.',
               description: '',
             },
           ]}
