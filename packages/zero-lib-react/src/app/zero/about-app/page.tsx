@@ -12,12 +12,12 @@ export default function Page() {
             {
               title: 'Open Source',
               description:
-                'Free to contribute to this project, and we have nothing to hide.',
+                'Free to contribute to this project, and we have nothing to hide. (AGPL-3.0)',
             },
             {
               title: 'Requests',
               description:
-                'We are open to requests/suggestions on any of our projects.',
+                'Team is open to requests/suggestions on any of our projects.',
             },
           ]}
         />
