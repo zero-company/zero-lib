@@ -82,7 +82,7 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
 
       <div
         className={cn(
-          'flex-1 flex flex-col divide-y sm:-mt-px w-screen min-w-[100vw] shrink-0',
+          'flex-1 flex flex-col divide-y sm:-mt-px w-screen min-w-[100vw] sm:min-w-0 shrink-0',
           BORDER_COLOR,
         )}
       >
