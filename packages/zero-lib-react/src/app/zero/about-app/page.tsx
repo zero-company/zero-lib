@@ -7,6 +7,21 @@ export default function Page() {
       <p className=''>About App</p>
       <div className='flex flex-wrap gap-2'>
         <FeatureCard
+          title='Use this App'
+          features={[
+            {
+              title: 'Open Source',
+              description:
+                'Free to contribute to this project, and we have nothing to hide.',
+            },
+            {
+              title: 'Requests',
+              description:
+                'We are open to requests/suggestions on any of our projects.',
+            },
+          ]}
+        />
+        <FeatureCard
           title='Centralize'
           features={[
             {
@@ -30,9 +45,14 @@ export default function Page() {
                 'No vendor locking, no unauthorized manipulation of user data.',
             },
             {
+              title: 'Offline Support',
+              description:
+                'Most features work offline unless requiring cloud resources.',
+            },
+            {
               title: 'File Storage',
               description:
-                'Agnostic data storage with multiple clouds syncing.',
+                'Agnostic data storage lets your store in your choice of provider. (multiple cloud syncing)',
             },
           ]}
         />
@@ -49,7 +69,7 @@ export default function Page() {
             },
             {
               title: 'Auth Protocols',
-              description: '(Lockout Prevention)',
+              description: 'App authentication. (Lockout Prevention)',
             },
           ]}
         />
@@ -69,7 +89,7 @@ export default function Page() {
             {
               title: 'History Tracking',
               description:
-                'Automatically tracks user browsing. (latest viewed, oldest viewed, most viewed, least viewed)',
+                'Automatically tracks user browsing. (latest viewed, oldest viewed, most viewed, least viewed, last added, last modified)',
             },
           ]}
         />
