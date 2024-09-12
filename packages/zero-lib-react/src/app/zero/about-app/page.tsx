@@ -5,9 +5,11 @@ export default function Page() {
   return (
     <main className='flex flex-col p-2 gap-2'>
       <p className=''>About App</p>
-      <div className='flex gap-2'>
-        <FeatureCard />
-        <FeatureCard />
+      <div className='flex flex-wrap gap-2'>
+        <FeatureCard title='Centralize' />
+        <FeatureCard title='Control' />
+        <FeatureCard title='Secure' />
+        <FeatureCard title='Manage' />
       </div>
     </main>
   )

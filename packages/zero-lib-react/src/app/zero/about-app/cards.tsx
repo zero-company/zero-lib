@@ -18,7 +18,7 @@ type Props = {
 
 export const FeatureCard = ({ title, description }: Props) => {
   return (
-    <Card>
+    <Card className='w-full sm:w-96 shrink-0'>
       <CardHeader className={cn(!title && !description && 'p-3')}>
         <CardTitle hidden={!title}>{title}</CardTitle>
         <CardDescription hidden={!description}>{description}</CardDescription>
@@ -32,7 +32,6 @@ export const FeatureCard = ({ title, description }: Props) => {
               its features.
             </span>
           </Label>
-          <Switch id='necessary' defaultChecked />
         </div>
         <div className='flex items-center justify-between space-x-2'>
           <Label htmlFor='functional' className='flex flex-col space-y-1'>
@@ -42,7 +41,6 @@ export const FeatureCard = ({ title, description }: Props) => {
               functionality.
             </span>
           </Label>
-          <Switch id='functional' />
         </div>
         <div className='flex items-center justify-between space-x-2'>
           <Label htmlFor='performance' className='flex flex-col space-y-1'>
@@ -51,7 +49,6 @@ export const FeatureCard = ({ title, description }: Props) => {
               These cookies help to improve the performance of the website.
             </span>
           </Label>
-          <Switch id='performance' />
         </div>
       </CardContent>
       <CardFooter>
