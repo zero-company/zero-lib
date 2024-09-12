@@ -17,7 +17,7 @@ export default function Page() {
             {
               title: 'Requests',
               description:
-                'Team is open to requests/suggestions on any of our projects.',
+                'Team is open to requests/suggestions/complaints on any of our projects.',
             },
           ]}
         />
@@ -90,6 +90,38 @@ export default function Page() {
               title: 'History Tracking',
               description:
                 'Automatically tracks user browsing. (latest viewed, oldest viewed, most viewed, least viewed, last added, last modified)',
+            },
+          ]}
+        />
+        <FeatureCard
+          title='Problems Solved'
+          features={[
+            {
+              title:
+                'Your video/music/image removed from your library by a vendor.',
+              description: '',
+            },
+            {
+              title:
+                'Looking for a specific piece of data across multiple libraries.',
+              description: '',
+            },
+            {
+              title:
+                'Manually exporting backups of data from multiple sources.',
+              description: '',
+            },
+            {
+              title: 'Managing a huge list of user data in your own files.',
+              description: '',
+            },
+            {
+              title: 'Non-cloud features locked behind a paywall',
+              description: '',
+            },
+            {
+              title: 'Feature complaints falling on deaf ears',
+              description: '',
             },
           ]}
         />
