@@ -10,9 +10,19 @@ export default function Page() {
           title='Use this App'
           features={[
             {
-              title: 'Open Source',
+              title: 'Open Source Forever',
               description:
-                'Free to contribute to this project, and we have nothing to hide. (AGPL-3.0)',
+                'Source code is transparent and forkable, so long as there are contributors this won\'t end up in a project graveyard. (AGPL-3.0)',
+            },
+            {
+              title: 'Free to Use',
+              description:
+                'Completely free aside from features requiring cloud services',
+            },
+            {
+              title: 'Agnostic Compatibility',
+              description:
+                '',
             },
             {
               title: 'Requests',
@@ -31,13 +41,11 @@ export default function Page() {
             },
             {
               title: 'Bookmark External Data Sources',
-              description:
-                '',
+              description: '',
             },
             {
               title: 'Actual Universal ID Registry',
-              description:
-                '',
+              description: '',
             },
             {
               title: 'One File',
@@ -142,7 +150,8 @@ export default function Page() {
               description: '',
             },
             {
-              title: 'Unable to sleep knowing any of the above can happen at any time.',
+              title:
+                'Unable to sleep knowing any of the above can happen at any time.',
               description: '',
             },
           ]}
