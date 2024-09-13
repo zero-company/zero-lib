@@ -70,7 +70,7 @@ export default function Page() {
             {
               title: 'File Storage',
               description:
-                'Agnostic data storage lets your store in your choice of provider. (multiple cloud syncing)',
+                'Agnostic data storage lets you store data in your choice vendor. (multiple cloud syncing)',
             },
           ]}
         />
@@ -79,7 +79,8 @@ export default function Page() {
           features={[
             {
               title: 'User Encryption',
-              description: 'Open source zero trust E2E encryption. (general/specific encryption)',
+              description:
+                'Open source zero trust E2E encryption. (general/specific encryption)',
             },
             {
               title: 'Advanced Security Features',
@@ -107,7 +108,7 @@ export default function Page() {
             {
               title: 'History Tracking',
               description:
-                'Automatically tracks user browsing. (latest viewed, oldest viewed, most viewed, least viewed, last added, last modified)',
+                'Optionally tracks user browsing. (latest viewed, oldest viewed, most viewed, least viewed, last added, last modified)',
             },
           ]}
         />
