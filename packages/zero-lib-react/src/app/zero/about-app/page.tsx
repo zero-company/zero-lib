@@ -14,6 +14,11 @@ export default function Page() {
                 'Completely free aside from cloud-specific features.',
             },
             {
+              title: 'Offline Support',
+              description:
+                'Most features work offline unless requiring cloud resources.',
+            },
+            {
               title: 'Agnostic Compatibility',
               description: 'Not dependent on any one vendor.',
             },
@@ -33,18 +38,18 @@ export default function Page() {
           title='Centralize'
           features={[
             {
-              title: 'All Content in one Place',
+              title: 'All your Data in One Place',
               description:
                 'One library to manage your notes, images, music, videos, etc.',
             },
             {
-              title: 'Bookmark External Data Sources',
-              description: '',
+              title: 'Bookmark External Data',
+              description: 'Extract and Save data from third party sources.',
             },
             {
               title: 'Actual Universal ID Registry',
               description:
-                'Generate a unique ID for each and every piece of data.',
+                'Generate unique IDs for each and every piece of data.',
             },
             {
               title: 'One Compiled File',
@@ -57,37 +62,27 @@ export default function Page() {
           title='Control'
           features={[
             {
-              title: 'User Controlled',
+              title: 'User Controlled Data',
               description:
                 'No vendor locking, no unauthorized manipulation of user data.',
             },
             {
-              title: 'Offline Support',
-              description:
-                'Most features work offline unless requiring cloud resources.',
-            },
-            {
               title: 'File Storage',
               description:
-                'Agnostic data storage lets you store data in your choice vendor. (multiple cloud syncing)',
+                'Store your data in your choice of vendor/s. (multiple cloud syncing)',
             },
-          ]}
-        />
-        <FeatureCard
-          title='Secure'
-          features={[
             {
               title: 'User Encryption',
               description:
-                'Open source zero trust E2E encryption. (general/specific encryption)',
-            },
-            {
-              title: 'Advanced Security Features',
-              description: 'Add new data without auth.',
+                'Open source zero trust E2E  data encryption. (general/specific encryption)',
             },
             {
               title: 'Auth Protocols',
               description: 'App authentication. (Lockout Prevention)',
+            },
+            {
+              title: 'Advanced Security Features',
+              description: 'Authless features.',
             },
           ]}
         />
