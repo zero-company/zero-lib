@@ -10,19 +10,23 @@ import {
 } from 'react-icons/lu'
 import { GlobalSidebarTabs } from '@/components'
 import { Button } from '@/components/ui/button'
+import { usePathname } from 'next/navigation'
 
 type Props = {
   children: React.ReactNode
 }
 
 export default function Layout({ children }: Props) {
+  const pathname = usePathname()
+
   return (
     <>
       <AppLayoutV2
         body={children}
         header={
           <div className='p-1'>
-            <p>zero</p>
+            <p className='tracking-wider'>{pathname.substring(1)}</p>
+            <p className='tracking-wider text-muted-foreground'>note:</p>
           </div>
         }
         sidebar={
