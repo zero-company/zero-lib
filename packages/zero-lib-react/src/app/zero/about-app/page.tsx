@@ -10,24 +10,23 @@ export default function Page() {
           title='Use this App'
           features={[
             {
-              title: 'Open Source Forever',
-              description:
-                'Source code is transparent and forkable, so long as there are contributors this won\'t end up in a project graveyard. (AGPL-3.0)',
-            },
-            {
               title: 'Free to Use',
               description:
-                'Completely free aside from features requiring cloud services',
+                'Completely free aside from cloud-specific features.',
             },
             {
               title: 'Agnostic Compatibility',
-              description:
-                '',
+              description: 'Does not depend on any one vendor.',
             },
             {
               title: 'Requests',
               description:
                 'Team is open to requests/suggestions/complaints on any of our projects.',
+            },
+            {
+              title: 'Open Source Forever',
+              description:
+                "Transparent and forkable source code, so long as there are contributors this won't end up in a project graveyard. (AGPL-3.0)",
             },
           ]}
         />
