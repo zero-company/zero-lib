@@ -10,13 +10,13 @@ import {
 import { Label } from '@/components/ui/label'
 
 type Feature = {
-  title: string
-  description: string
+  title: React.ReactNode
+  description: React.ReactNode
 }
 
 type Props = {
-  title?: string
-  description?: string
+  title?: React.ReactNode
+  description?: React.ReactNode
   features: Feature[]
 }
 

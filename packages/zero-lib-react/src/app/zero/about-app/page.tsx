@@ -11,40 +11,40 @@ export default function Page() {
             {
               title: '',
               description:
-                'Vendor removes images/music/videos from your library/playlist w/o permission.',
+                '- Vendor removes images/music/videos from your library/playlist w/o permission.',
             },
             {
               title: '',
               description:
-                'Searching for specific data across multiple libraries.',
+                '- Searching for specific data across multiple libraries.',
             },
             {
               title: '',
               description:
-                'Manually exporting backup data from multiple sources.',
+                '- Manually exporting backup data from multiple sources.',
             },
             {
               title: '',
               description:
-                'Managing a huge list of user data in your own files.',
+                '- Managing a huge list of user data in your own files.',
             },
             {
               title: '',
-              description: 'Feature complaints falling on deaf ears.',
-            },
-            {
-              title: '',
-              description:
-                'Unfairly closed/banned account resulting in data loss.',
-            },
-            {
-              title: '',
-              description: 'Shutdown/Paywalling of an app with your data.',
+              description: '- Feature complaints falling on deaf ears.',
             },
             {
               title: '',
               description:
-                'Unable to sleep, knowing any of the above can happen at any time.',
+                '- Unfairly closed/banned account resulting in data loss.',
+            },
+            {
+              title: '',
+              description: '- Shutdown/Paywalling of an app with your data.',
+            },
+            {
+              title: '',
+              description:
+                "- Can't sleep knowing any of the above can happen at any time.",
             },
           ]}
         />
