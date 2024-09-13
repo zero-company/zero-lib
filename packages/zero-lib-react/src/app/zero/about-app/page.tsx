@@ -16,7 +16,7 @@ export default function Page() {
             },
             {
               title: 'Agnostic Compatibility',
-              description: 'Does not depend on any one vendor.',
+              description: 'Not dependent on any one vendor.',
             },
             {
               title: 'Requests',
@@ -36,7 +36,7 @@ export default function Page() {
             {
               title: 'All Content in one Place',
               description:
-                'One library to manage your notes/images/music/videos.',
+                'One library to manage your notes, images, music, videos, etc.',
             },
             {
               title: 'Bookmark External Data Sources',
@@ -44,12 +44,13 @@ export default function Page() {
             },
             {
               title: 'Actual Universal ID Registry',
-              description: '',
+              description:
+                'Generate a unique ID for each and every piece of data.',
             },
             {
-              title: 'One File',
+              title: 'One Compiled File',
               description:
-                'All index data in one file, large size content stored separately.',
+                'Easier to manage, backup and secure one file. large size contents are stored separately.',
             },
           ]}
         />
@@ -78,7 +79,7 @@ export default function Page() {
           features={[
             {
               title: 'User Encryption',
-              description: 'Open source zero trust E2E encryption.',
+              description: 'Open source zero trust E2E encryption. (general/specific encryption)',
             },
             {
               title: 'Advanced Security Features',
