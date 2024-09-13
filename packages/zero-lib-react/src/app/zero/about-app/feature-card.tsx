@@ -22,7 +22,7 @@ type Props = {
 
 export const FeatureCard = ({ title, description, features }: Props) => {
   return (
-    <Card className='w-full sm:w-96 shrink-0'>
+    <Card className='w-full sm:max-w-80 shrink-0'>
       <CardHeader className={cn(!title && !description && 'p-3')}>
         <CardTitle hidden={!title}>{title}</CardTitle>
         <CardDescription hidden={!description}>{description}</CardDescription>
