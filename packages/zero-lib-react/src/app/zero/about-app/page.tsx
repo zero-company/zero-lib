@@ -4,7 +4,6 @@ import { FeatureCard } from './feature-card'
 export default function Page() {
   return (
     <main className='flex flex-col p-2 gap-2'>
-      <p className=''>About App</p>
       <div className='flex flex-wrap gap-2'>
         <FeatureCard
           title='Use this App'
