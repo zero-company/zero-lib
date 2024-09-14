@@ -1,5 +1,5 @@
 'use client'
-import { AppLayoutV2, IconV2, Menu } from '@/lib'
+import { AppLayoutV2, IconV2, Menu, SupportCard, Footer } from '@/lib'
 import {
   LuList,
   LuHome,
@@ -11,6 +11,15 @@ import {
 import { GlobalSidebarTabs } from '@/components'
 import { Button } from '@/components/ui/button'
 import { usePathname } from 'next/navigation'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 type Props = {
   children: React.ReactNode
@@ -24,9 +33,9 @@ export default function Layout({ children }: Props) {
       <AppLayoutV2
         body={children}
         header={
-          <div className='p-1'>
+          <div className='p-1 pl-8'>
             <p className='tracking-wider'>{pathname.substring(1)}</p>
-            <p className='tracking-wider text-muted-foreground'>note:</p>
+            <p className='tracking-wider text-muted-foreground'>----</p>
           </div>
         }
         sidebar={
@@ -71,6 +80,12 @@ export default function Layout({ children }: Props) {
                 },
               ]}
             />
+          </>
+        }
+        footer={
+          <>
+            <SupportCard />
+            <Footer />
           </>
         }
       />

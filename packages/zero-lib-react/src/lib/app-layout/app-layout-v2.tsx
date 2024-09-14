@@ -1,37 +1,25 @@
 'use client'
 import {
   cn,
-  Sidebar,
   Header,
   BORDER_COLOR,
   HEADER_SIDEBAR_SIZE,
   Icon,
-  SidebarTabsProps,
   ZeroLogo,
-  Footer,
-  SupportCard,
 } from '@/lib'
-import { LuMenu, LuPanelLeftOpen, LuPanelLeftClose } from 'react-icons/lu'
+import { LuPanelLeftOpen, LuPanelLeftClose } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 
 type Props = {
   sidebar?: React.ReactNode
   header?: React.ReactNode
+  footer?: React.ReactNode
   page?: React.ReactNode
   body?: React.ReactNode
 }
 
-export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
+export const AppLayoutV2 = ({ header, footer, sidebar, body }: Props) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
@@ -59,25 +47,7 @@ export const AppLayoutV2 = ({ header, sidebar, body }: Props) => {
         </div>
         {sidebar}
         <div className='flex-1' />
-        <div className='hidden'>
-          <Select>
-            <SelectTrigger className='w-[180px]'>
-              <SelectValue placeholder='Select a fruit' />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Fruits</SelectLabel>
-                <SelectItem value='apple'>Apple</SelectItem>
-                <SelectItem value='banana'>Banana</SelectItem>
-                <SelectItem value='blueberry'>Blueberry</SelectItem>
-                <SelectItem value='grapes'>Grapes</SelectItem>
-                <SelectItem value='pineapple'>Pineapple</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-        </div>
-        <SupportCard />
-        <Footer />
+        {footer}
       </div>
 
       <div
