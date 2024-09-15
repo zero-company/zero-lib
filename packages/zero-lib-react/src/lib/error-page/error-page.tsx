@@ -3,12 +3,22 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import {
+  ReasonPhrases,
+  StatusCodes,
+  getReasonPhrase,
+  getStatusCode,
+} from 'http-status-codes'
 
 export const ErrorPage = () => {
   return (
     <div className='flex w-full h-full justify-center'>
-      <div className='flex max-w-4xl items-center justify-center py-12'>
-        <div className='mx-auto grid w-[350px] gap-6'>
+      <div className='flex max-w-4xl flex-col justify-center'>
+        <h1 className='text-3xl font-bold'>{StatusCodes.NOT_FOUND}</h1>
+        <p className='text-balance text-muted-foreground'>
+          {ReasonPhrases.NOT_FOUND}
+        </p>
+        <div className=' hidden mx-auto grid w-[350px] gap-6'>
           <div className='grid gap-2'>
             <h1 className='text-3xl font-bold'>Error</h1>
             <p className='text-balance text-muted-foreground'>
@@ -16,27 +26,6 @@ export const ErrorPage = () => {
             </p>
           </div>
           <div className='grid gap-4'>
-            <div className='grid gap-2'>
-              <Label htmlFor='email'>Email</Label>
-              <Input
-                id='email'
-                type='email'
-                placeholder='m@example.com'
-                required
-              />
-            </div>
-            <div className='grid gap-2'>
-              <div className='flex items-center'>
-                <Label htmlFor='password'>Password</Label>
-                <Link
-                  href='/forgot-password'
-                  className='ml-auto inline-block text-sm underline'
-                >
-                  Forgot your password?
-                </Link>
-              </div>
-              <Input id='password' type='password' required />
-            </div>
             <Button type='submit' className='w-full'>
               Login
             </Button>
