@@ -3,5 +3,5 @@ import Docs from '@/components/markdown/docs.mdx'
 import { Markdown } from '@/lib'
 
 export default function Page() {
-  return <Markdown>{false && <Docs />}</Markdown>
+  return <Markdown>{<Docs />}</Markdown>
 }

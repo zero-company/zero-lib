@@ -7,6 +7,7 @@ import {
   Icon,
   ZeroLogo,
   Footer,
+  SupportCard,
 } from '@/lib'
 import { LuPanelLeftOpen, LuPanelLeftClose } from 'react-icons/lu'
 import { Button } from '@/components/ui/button'
@@ -48,7 +49,12 @@ export const AppLayoutV2 = ({ header, footer, sidebar, body }: Props) => {
         </div>
         {sidebar}
         <div className='flex-1' />
-        {footer || <Footer />}
+        {footer || (
+          <>
+            <SupportCard />
+            <Footer />
+          </>
+        )}
       </div>
 
       <div
