@@ -1,10 +1,7 @@
 import Link from 'next/link'
 import Docs from '@/components/markdown/docs.mdx'
+import { Markdown } from '@/lib'
 
 export default function Page() {
-  return (
-    <main className='prose prose-invert p-2'>
-      <Docs />
-    </main>
-  )
+  return <Markdown>{false && <Docs />}</Markdown>
 }

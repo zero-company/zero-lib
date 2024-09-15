@@ -68,7 +68,7 @@ export const AppLayoutV2 = ({ header, footer, sidebar, body }: Props) => {
           <Header header={header} />
           <Icon reactIcon={<ZeroLogo />} />
         </div>
-        <div className='overflow-y-auto'>{body}</div>
+        <div className='overflow-y-auto h-full'>{body}</div>
       </div>
     </div>
   )
