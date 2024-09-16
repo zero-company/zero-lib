@@ -1,5 +1,7 @@
 import createMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeSlug from 'rehype-slug'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

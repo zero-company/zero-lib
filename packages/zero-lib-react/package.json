@@ -81,7 +81,9 @@
     "vaul": "^0.9.1",
     "zod": "^3.23.8",
     "http-status-codes": "^2.3.0",
-    "remark-gfm": "^4.0.0"
+    "remark-gfm": "^4.0.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.2.2",
