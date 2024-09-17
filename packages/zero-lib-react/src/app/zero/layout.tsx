@@ -32,18 +32,7 @@ export default function Layout({ children }: Props) {
     <>
       <AppLayoutV2
         body={children}
-        header={
-          <Header
-            header={
-              <div className='p-1'>
-                <p className='tracking-wider'>{pathname.substring(1)}</p>
-                <p className='tracking-wider text-muted-foreground'>
-                  0-msg/0-sys
-                </p>
-              </div>
-            }
-          />
-        }
+        header={<Header />}
         sidebar={
           <>
             <div className='flex flex-col items-start p-1 *:w-full'>
