@@ -1,5 +1,5 @@
 'use client'
-import { AppLayoutV2, IconV2, Menu, SupportCard, Footer } from '@/lib'
+import { AppLayoutV2, IconV2, Menu, SupportCard, Footer, Header } from '@/lib'
 import {
   LuList,
   LuHome,
@@ -33,10 +33,16 @@ export default function Layout({ children }: Props) {
       <AppLayoutV2
         body={children}
         header={
-          <div className='p-1'>
-            <p className='tracking-wider'>{pathname.substring(1)}</p>
-            <p className='tracking-wider text-muted-foreground'>----</p>
-          </div>
+          <Header
+            header={
+              <div className='p-1'>
+                <p className='tracking-wider'>{pathname.substring(1)}</p>
+                <p className='tracking-wider text-muted-foreground'>
+                  0-msg/0-sys
+                </p>
+              </div>
+            }
+          />
         }
         sidebar={
           <>

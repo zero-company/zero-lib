@@ -72,7 +72,7 @@ export const AppLayoutV2 = ({ header, footer, sidebar, body }: Props) => {
           >
             <Icon reactIcon={<LuPanelLeftOpen />} />
           </Button>
-          <Header header={header} />
+          {header}
           <Icon reactIcon={<ZeroLogo />} />
         </div>
         <div className='flex overflow-y-auto h-full'>{body}</div>
