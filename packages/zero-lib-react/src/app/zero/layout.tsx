@@ -33,7 +33,7 @@ export default function Layout({ children }: Props) {
       <AppLayoutV2
         body={children}
         header={
-          <div className='p-1 pl-8'>
+          <div className='p-1'>
             <p className='tracking-wider'>{pathname.substring(1)}</p>
             <p className='tracking-wider text-muted-foreground'>----</p>
           </div>
