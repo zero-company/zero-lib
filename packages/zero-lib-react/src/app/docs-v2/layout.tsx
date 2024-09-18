@@ -9,7 +9,7 @@ import {
   LuSearch,
 } from 'react-icons/lu'
 import { GlobalSidebarTabs } from '@/components'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/shadcn'
 
 type Props = {
   children: React.ReactNode
