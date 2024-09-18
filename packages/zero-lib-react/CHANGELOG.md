@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.10
+
+### Patch Changes
+
+- [#21](https://github.com/zero-company/zero-lib/pull/21) [`994d6e8`](https://github.com/zero-company/zero-lib/commit/994d6e89e8816a7ee291939122b976d5e753f818) Thanks [@jigz](https://github.com/jigz)! - Add AppLayoutV2
+
 ## 0.1.9
 
 ### Patch Changes
