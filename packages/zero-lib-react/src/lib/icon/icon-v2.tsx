@@ -1,14 +1,13 @@
 'use client'
-
-import { cn } from '@/lib/utils'
-import { FaQuestion } from 'react-icons/fa'
-import { IconContext } from 'react-icons'
 import {
+  cn,
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip'
+} from '@/components/shadcn'
+import { FaQuestion } from 'react-icons/fa'
+import { IconContext } from 'react-icons'
 
 const sizeVariants = {
   default: 'size-10',

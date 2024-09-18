@@ -9,7 +9,7 @@ import {
   LuSearch,
 } from 'react-icons/lu'
 import { GlobalSidebarTabs } from '@/components'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/shadcn/ui/button'
 import { usePathname } from 'next/navigation'
 import {
   Select,
@@ -19,7 +19,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select'
+} from '@/components/shadcn/ui/select'
 
 type Props = {
   children: React.ReactNode

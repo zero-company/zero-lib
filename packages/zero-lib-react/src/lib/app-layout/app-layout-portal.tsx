@@ -1,5 +1,5 @@
 'use client'
-import { cn } from '@/components/shadcn/utils'
+import { cn } from '@/components/shadcn'
 import { Sidebar, Header, BORDER_COLOR } from '@/lib'
 
 type Props = {

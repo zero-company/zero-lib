@@ -1,6 +1,5 @@
-import { IconV2 } from '@/lib'
-import { Button } from '@/components/ui/button'
-import { LuList, LuHome } from 'react-icons/lu'
+'use client'
+import { cn, Button } from '@/components/shadcn'
 
 export const SupportCard = () => {
   return (

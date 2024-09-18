@@ -1,6 +1,6 @@
 'use client'
+import { cn, Button } from '@/components/shadcn'
 import {
-  cn,
   Header,
   BORDER_COLOR,
   HEADER_SIDEBAR_SIZE,
@@ -10,7 +10,6 @@ import {
   SupportCard,
 } from '@/lib'
 import { LuPanelLeftOpen, LuPanelLeftClose } from 'react-icons/lu'
-import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 
 type Props = {

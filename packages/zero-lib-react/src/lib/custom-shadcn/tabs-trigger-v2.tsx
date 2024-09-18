@@ -1,8 +1,7 @@
 'use client'
-import { cn } from '@/lib'
-import { TabsTrigger as ShadcnTabsTrigger } from '@/components/ui/tabs'
+import { cn, TabsTrigger as ShadcnTabsTrigger } from '@/components/shadcn'
 
-export const TabsTrigger = (props: {
+export const TabsTriggerV2 = (props: {
   key: number
   children: React.ReactNode
   value: string

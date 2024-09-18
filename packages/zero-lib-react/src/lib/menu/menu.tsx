@@ -1,18 +1,6 @@
 'use client'
-import Link from 'next/link'
-import { IconV2, cn } from '@/lib'
-import { buttonVariants } from '@/components/ui/button'
-import { Label } from '@/components/ui/label'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { Button } from '@/components/ui/button'
-import {
-  LuList,
-  LuHome,
-  LuLayoutGrid,
-  LuSettings,
-  LuUserCircle2,
-  LuSearch,
-} from 'react-icons/lu'
+import { Button } from '@/components/shadcn'
+import { IconV2 } from '@/lib'
 
 type Option = {
   name: string
