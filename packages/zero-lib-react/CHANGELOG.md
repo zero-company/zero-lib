@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.11
+
+### Patch Changes
+
+- [#23](https://github.com/zero-company/zero-lib/pull/23) [`0531231`](https://github.com/zero-company/zero-lib/commit/053123149394935ffee0e4bb4a1cf259411f6ad0) Thanks [@jigz](https://github.com/jigz)! - Fix Shadcn aliases
+
 ## 0.1.10
 
 ### Patch Changes
