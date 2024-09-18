@@ -1,13 +1,14 @@
-import { cn } from '@/components/shadcn/utils'
+'use client'
 import {
+  cn,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/shadcn/ui/card'
-import { Label } from '@/components/shadcn/ui/label'
+  Label,
+} from '@/components/shadcn'
 
 type Feature = {
   title: React.ReactNode
