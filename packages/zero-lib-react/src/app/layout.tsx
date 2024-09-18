@@ -3,9 +3,9 @@ import React from 'react'
 import { Inter } from 'next/font/google'
 import './../globals.css'
 import { Inter as FontSans } from 'next/font/google'
-import { cn } from '@/lib/utils'
+import { cn } from '@/components/shadcn/utils'
 import { ThemeProvider } from '@/components/theme-provider'
-import { TooltipProvider } from '@/components/ui/tooltip'
+import { TooltipProvider } from '@/components/shadcn/ui/tooltip'
 
 const inter = Inter({ subsets: ['latin'] })
 const fontSans = FontSans({

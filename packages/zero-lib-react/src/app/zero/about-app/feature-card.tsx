@@ -1,4 +1,4 @@
-import { cn } from '@/lib'
+import { cn } from '@/components/shadcn/utils'
 import {
   Card,
   CardContent,
@@ -6,8 +6,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
-import { Label } from '@/components/ui/label'
+} from '@/components/shadcn/ui/card'
+import { Label } from '@/components/shadcn/ui/label'
 
 type Feature = {
   title: React.ReactNode
