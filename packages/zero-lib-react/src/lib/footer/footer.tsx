@@ -1,4 +1,4 @@
-import { SupportCard } from '@/lib'
+'use client'
 
 export const Footer = () => {
   return (

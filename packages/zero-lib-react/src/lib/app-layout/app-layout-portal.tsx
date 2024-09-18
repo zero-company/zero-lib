@@ -1,6 +1,6 @@
 'use client'
-
-import { cn, Sidebar, Header, BORDER_COLOR } from '@/lib'
+import { cn } from '@/components/shadcn'
+import { Sidebar, Header, BORDER_COLOR } from '@/lib'
 
 type Props = {
   sidebar?: React.ReactNode

@@ -9,17 +9,8 @@ import {
   LuSearch,
 } from 'react-icons/lu'
 import { GlobalSidebarTabs } from '@/components'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/shadcn'
 import { usePathname } from 'next/navigation'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 
 type Props = {
   children: React.ReactNode

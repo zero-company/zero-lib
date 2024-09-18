@@ -1,6 +1,6 @@
 'use client'
-import { cn, HEADER_SIDEBAR_SIZE, ZeroLogo, Icon } from '@/lib'
-import { Button } from '@/components/ui/button'
+import { cn } from '@/components/shadcn'
+import { HEADER_SIDEBAR_SIZE } from '@/lib'
 import { usePathname } from 'next/navigation'
 
 type Props = {

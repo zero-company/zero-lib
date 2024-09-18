@@ -1,13 +1,14 @@
-import { cn } from '@/lib'
+'use client'
 import {
+  cn,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
-import { Label } from '@/components/ui/label'
+  Label,
+} from '@/components/shadcn'
 
 type Feature = {
   title: React.ReactNode

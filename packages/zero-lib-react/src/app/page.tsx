@@ -1,5 +1,4 @@
 'use client'
-
 import { SplashPage } from '@/lib'
 
 export default function Home() {

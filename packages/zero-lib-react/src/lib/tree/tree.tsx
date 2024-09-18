@@ -1,4 +1,5 @@
-import { cn } from '@/lib/utils'
+'use client'
+import { cn } from '@/components/shadcn'
 
 export type Directory = {
   path: string

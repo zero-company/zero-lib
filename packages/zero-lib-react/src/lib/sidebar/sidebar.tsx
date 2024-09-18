@@ -1,6 +1,6 @@
 'use client'
-import { cn, HEADER_SIDEBAR_SIZE, TabsTrigger } from '@/lib'
-import { Tabs, TabsContent, TabsList } from '@/components/ui/tabs'
+import { HEADER_SIDEBAR_SIZE, TabsTriggerV2 } from '@/lib'
+import { cn, Tabs, TabsContent, TabsList } from '@/components/shadcn'
 
 export type SidebarTabProps = {
   id: string
@@ -40,15 +40,15 @@ export const Sidebar = ({ className, header, tabs }: Props) => {
         )}
       >
         {topTabs.map((tabProps, key) => (
-          <TabsTrigger {...tabProps} key={key} value={tabProps.id}>
+          <TabsTriggerV2 {...tabProps} key={key} value={tabProps.id}>
             {tabProps.icon}
-          </TabsTrigger>
+          </TabsTriggerV2>
         ))}
         <div className='flex-1' />
         {bottomTabs.map((tabProps, key) => (
-          <TabsTrigger {...tabProps} key={key} value={tabProps.id}>
+          <TabsTriggerV2 {...tabProps} key={key} value={tabProps.id}>
             {tabProps.icon}
-          </TabsTrigger>
+          </TabsTriggerV2>
         ))}
       </TabsList>
       <div className='flex-1 flex flex-col divide-y'>
