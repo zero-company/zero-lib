@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.12
+
+### Patch Changes
+
+- [#25](https://github.com/zero-company/zero-lib/pull/25) [`6ae9c59`](https://github.com/zero-company/zero-lib/commit/6ae9c59435c25c38366eba026ab6eecbb3a49b46) Thanks [@jigz](https://github.com/jigz)! - Add Menu links
+
 ## 0.1.11
 
 ### Patch Changes
