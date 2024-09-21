@@ -4,7 +4,7 @@ import { IconV2 } from '@/lib'
 import Link from 'next/link'
 
 type Option = {
-  children: React.ReactNode
+  children?: React.ReactNode
   icon?: React.ReactNode
   disabled?: boolean
   onClick?: () => void
@@ -48,12 +48,12 @@ export const Menu = ({ label, options }: Props) => {
         <p className='text-xs text-muted-foreground pb-1 pl-2'>{label}</p>
       )}
       {options.map((option, key) =>
-        option.onClick ? (
-          <MenuButton key={key} option={option} />
-        ) : (
+        option.href && !option.onClick ? (
           <Link key={key} href={option.href || ''}>
             <MenuButton option={option} />
           </Link>
+        ) : (
+          <MenuButton key={key} option={option} />
         ),
       )}
     </div>

@@ -1,5 +1,13 @@
 'use client'
-import { AppLayoutV2, IconV2, Menu, SupportCard, Footer, Header } from '@/lib'
+import {
+  AppLayoutV2,
+  IconV2,
+  Menu,
+  SupportCard,
+  Footer,
+  Header,
+  ZeroLogo,
+} from '@/lib'
 import {
   LuList,
   LuHome,
@@ -7,10 +15,9 @@ import {
   LuSettings,
   LuUserCircle2,
   LuSearch,
+  LuAppWindow,
 } from 'react-icons/lu'
 import { GlobalSidebarTabs } from '@/components'
-import { Button } from '@/components/shadcn'
-import Link from 'next/link'
 
 type Props = {
   children: React.ReactNode
@@ -32,9 +39,13 @@ export default function Layout({ children }: Props) {
                   onClick: () => console.log('click'),
                 },
                 {
-                  children: 'Outline',
-                  icon: <LuList />,
-                  href: '/outline',
+                  children: 'App',
+                  icon: <LuAppWindow />,
+                },
+                {
+                  children: 'Zero',
+                  icon: <IconV2 reactIcon={<ZeroLogo />} size='sm' />,
+                  href: '/about-zero',
                 },
               ]}
             />
