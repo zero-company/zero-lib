@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.13
+
+### Patch Changes
+
+- [#27](https://github.com/zero-company/zero-lib/pull/27) [`a5bb2ee`](https://github.com/zero-company/zero-lib/commit/a5bb2ee459a9d0f65312c2949b23a5c81fe95e38) Thanks [@jigz](https://github.com/jigz)! - Fix Menu prop bugs
+
 ## 0.1.12
 
 ### Patch Changes
