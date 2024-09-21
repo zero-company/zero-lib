@@ -10,15 +10,13 @@ import {
 } from 'react-icons/lu'
 import { GlobalSidebarTabs } from '@/components'
 import { Button } from '@/components/shadcn'
-import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 type Props = {
   children: React.ReactNode
 }
 
 export default function Layout({ children }: Props) {
-  const pathname = usePathname()
-
   return (
     <>
       <AppLayoutV2
@@ -26,42 +24,43 @@ export default function Layout({ children }: Props) {
         header={<Header />}
         sidebar={
           <>
-            <div className='flex flex-col items-start p-1 *:w-full'>
-              <Button
-                size='sm'
-                className='text-xs gap-2 justify-start h-8 px-2'
-                variant='ghost'
-              >
-                <IconV2 reactIcon={<LuHome />} size='sm' /> Browse
-              </Button>
-              <Button
-                size='sm'
-                className='text-xs gap-2 justify-start h-8 px-2'
-                variant='ghost'
-              >
-                <IconV2 reactIcon={<LuList />} size='sm' /> Outline
-              </Button>
-            </div>
-
             <Menu
               options={[
-                { name: 'Apps', icon: <LuLayoutGrid />, href: '/apps' },
                 {
-                  name: 'Search',
+                  children: 'Browse',
+                  icon: <LuHome />,
+                  onClick: () => console.log('click'),
+                },
+                {
+                  children: 'Outline',
+                  icon: <LuList />,
+                  href: '/outline',
+                },
+              ]}
+            />
+            <Menu
+              options={[
+                {
+                  children: 'Apps',
+                  icon: <LuLayoutGrid />,
+                  //href: '/apps'
+                },
+                {
+                  children: 'Search',
                   icon: <LuSearch />,
-                  href: '/search',
+                  //href: '/search',
                   disabled: true,
                 },
                 {
-                  name: 'User',
+                  children: 'User',
                   icon: <LuUserCircle2 />,
-                  href: '/user',
+                  //href: '/user',
                   disabled: true,
                 },
                 {
-                  name: 'Settings',
+                  children: 'Settings',
                   icon: <LuSettings />,
-                  href: '/settings',
+                  //href: '/settings',
                   disabled: true,
                 },
               ]}

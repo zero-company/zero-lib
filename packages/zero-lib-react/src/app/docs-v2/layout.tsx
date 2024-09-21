@@ -46,23 +46,27 @@ export default function Layout({ children }: Props) {
 
             <Menu
               options={[
-                { name: 'Apps', icon: <LuLayoutGrid />, href: '/apps' },
                 {
-                  name: 'Search',
+                  children: 'Apps',
+                  icon: <LuLayoutGrid />,
+                  //href: '/apps'
+                },
+                {
+                  children: 'Search',
                   icon: <LuSearch />,
-                  href: '/search',
+                  //href: '/search',
                   disabled: true,
                 },
                 {
-                  name: 'User',
+                  children: 'User',
                   icon: <LuUserCircle2 />,
-                  href: '/user',
+                  //href: '/user',
                   disabled: true,
                 },
                 {
-                  name: 'Settings',
+                  children: 'Settings',
                   icon: <LuSettings />,
-                  href: '/settings',
+                  //href: '/settings',
                   disabled: true,
                 },
               ]}
