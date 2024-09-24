@@ -2,6 +2,13 @@
 import { cn, Button, ButtonProps } from '@/components/shadcn'
 import { GRADIENTS } from '@/lib'
 
+const TEXTSIZES = {
+  sm: 'text-xs',
+  lg: 'text-md',
+  default: 'text-sm',
+  icon: 'text-sm',
+}
+
 type Props = {
   size?: ButtonProps['size']
   className?: string
@@ -20,7 +27,8 @@ export const GradientButton = ({
       <Button
         size={size}
         className={cn(
-          'text-xs text-white gap-2 flex-1',
+          'text-white',
+          TEXTSIZES[size || 'default'],
           GRADIENTS[gradient],
           className,
         )}
