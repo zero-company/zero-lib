@@ -10,3 +10,16 @@ export const ZERO_LINKS = {
   twitter: `https://twitter.com/ZeroComms`,
   facebook: `https://facebook.com/ZeroComms`,
 }
+
+export const ZERO_ABOUT = {
+  shortbio: `Sick of Commercial Apps? Try Open Source.`,
+  bio: `Sick of Commercial Apps? Try Open Source.
+  - T removed a song from my playlist
+  - U banned my account
+  - V was discontinued
+  - W doesn't work offline
+  - X won't listen to feedback
+  - Y violates my privacy
+  - Z simply does not care
+  `,
+}
