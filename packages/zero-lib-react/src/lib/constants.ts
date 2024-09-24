@@ -22,4 +22,7 @@ export const ZERO_ABOUT = {
   - Y violates my privacy
   - Z simply does not care
   `,
+  warning: `
+  Beware of false accounts, emails, and links, Refer to our ONLY source for official links. https://github.com/zero-company/zero-community
+  `,
 }
