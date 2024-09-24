@@ -8,15 +8,7 @@ import {
   Header,
   ZeroLogo,
   Button,
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  Input,
-  Label,
+  GradientButton,
 } from '@/lib'
 import {
   LuList,
@@ -30,7 +22,12 @@ import {
   LuInfo,
   LuBookOpen,
 } from 'react-icons/lu'
-import { GlobalSidebarTabs } from '@/components'
+import {
+  GlobalSidebarTabs,
+  SUPPORT_ZERO_LINK,
+  JOIN_COMMUNITY_LINK,
+} from '@/components'
+import Link from 'next/link'
 
 type Props = {
   children: React.ReactNode
@@ -83,7 +80,20 @@ export default function Layout({ children }: Props) {
         }
         footer={
           <>
-            <SupportCard />
+            <div className='flex p-2 gap-2'>
+              <Link href={SUPPORT_ZERO_LINK} className='flex-1' target='_blank'>
+                <GradientButton className='w-full'>Support Zero</GradientButton>
+              </Link>
+              <Link
+                href={JOIN_COMMUNITY_LINK}
+                className='flex-1'
+                target='_blank'
+              >
+                <GradientButton gradient='purple2' className='w-full'>
+                  Join Community
+                </GradientButton>
+              </Link>
+            </div>
             <Footer />
           </>
         }
