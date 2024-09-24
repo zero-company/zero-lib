@@ -9,6 +9,7 @@ import {
   ZeroLogo,
   Button,
   GradientButton,
+  ZERO_LINKS,
 } from '@/lib'
 import {
   LuList,
@@ -22,11 +23,8 @@ import {
   LuInfo,
   LuBookOpen,
 } from 'react-icons/lu'
-import {
-  GlobalSidebarTabs,
-  SUPPORT_ZERO_LINK,
-  JOIN_COMMUNITY_LINK,
-} from '@/components'
+import { FaFacebookF, FaGithub, FaTwitter, FaGlobe } from 'react-icons/fa6'
+import { GlobalSidebarTabs } from '@/components'
 import Link from 'next/link'
 
 type Props = {
@@ -81,17 +79,47 @@ export default function Layout({ children }: Props) {
         footer={
           <>
             <div className='flex p-2 gap-2'>
-              <Link href={SUPPORT_ZERO_LINK} className='flex-1' target='_blank'>
+              <Link
+                href={ZERO_LINKS.buymeacoffee}
+                className='flex-1'
+                target='_blank'
+              >
                 <GradientButton className='w-full'>Support Zero</GradientButton>
               </Link>
               <Link
-                href={JOIN_COMMUNITY_LINK}
+                href={ZERO_LINKS.discord}
                 className='flex-1'
                 target='_blank'
               >
                 <GradientButton gradient='purple2' className='w-full'>
                   Join Community
                 </GradientButton>
+              </Link>
+            </div>
+            <div className='h-8 divide-x flex *:flex *:flex-1 *:justify-center *:h-full *:p-2'>
+              <Link
+                href={ZERO_LINKS.website}
+                className='flex-1'
+                target='_blank'
+              >
+                <IconV2 size='sm' reactIcon={<FaGlobe />} />
+              </Link>
+              <Link href={ZERO_LINKS.github} className='flex-1' target='_blank'>
+                <IconV2 size='sm' reactIcon={<FaGithub />} />
+              </Link>
+              <Link
+                href={ZERO_LINKS.twitter}
+                className='flex-1'
+                target='_blank'
+              >
+                <IconV2 size='sm' reactIcon={<FaTwitter />} />
+              </Link>
+              <Link
+                href={ZERO_LINKS.facebook}
+                className='flex-1'
+                target='_blank'
+              >
+                <IconV2 size='sm' reactIcon={<FaFacebookF />} />
               </Link>
             </div>
             <Footer />
