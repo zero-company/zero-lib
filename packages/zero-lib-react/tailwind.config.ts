@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 import { fontFamily } from 'tailwindcss/defaultTheme'
-import { CUSTOM_COLORS } from './src/lib/custom-colors'
+import { CUSTOM_COLORS } from './src/lib/colors'
 
 const config = {
   darkMode: ['class'],
