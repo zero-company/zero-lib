@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.14
+
+### Patch Changes
+
+- [#29](https://github.com/zero-company/zero-lib/pull/29) [`4e349fb`](https://github.com/zero-company/zero-lib/commit/4e349fb70bc8b1281d422732b0d3b3971c13b87d) Thanks [@jigz](https://github.com/jigz)! - Add GradientButton
+
 ## 0.1.13
 
 ### Patch Changes
