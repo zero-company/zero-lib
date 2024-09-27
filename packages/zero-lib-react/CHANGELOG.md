@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.16
+
+### Patch Changes
+
+- [#33](https://github.com/zero-company/zero-lib/pull/33) [`0a7dc0b`](https://github.com/zero-company/zero-lib/commit/0a7dc0b5bafb179702098acdec10f5c6e0810acc) Thanks [@jigz](https://github.com/jigz)! - Switch to shadcn newyork
+
 ## 0.1.15
 
 ### Patch Changes
