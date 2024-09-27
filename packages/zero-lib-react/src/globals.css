@@ -71,4 +71,15 @@
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--border));
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-200/[.2];
+  }
 }
