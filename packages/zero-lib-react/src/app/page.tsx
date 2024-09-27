@@ -7,7 +7,7 @@ export default function Home() {
       <head>
         <meta httpEquiv='refresh' content='0; url=/zero/' />
       </head>
-      <main>
+      <main className='flex w-screen h-screen'>
         <SplashPage />
       </main>
     </>
