@@ -1,5 +1,6 @@
 'use client'
 import { GradientButton } from '@/lib'
+import Link from 'next/link'
 
 export default function Page() {
   return (
@@ -19,6 +20,12 @@ export default function Page() {
           <GradientButton gradient='pink1'>Pink1</GradientButton>
           <GradientButton gradient='pink2'>Pink2</GradientButton>
         </div>
+      </div>
+      <div>
+        <h3>Pages</h3>
+        <Link href='./splash-page' className='flex-1' target='_blank'>
+          SplashPage
+        </Link>
       </div>
     </div>
   )
