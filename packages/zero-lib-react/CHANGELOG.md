@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.15
+
+### Patch Changes
+
+- [#31](https://github.com/zero-company/zero-lib/pull/31) [`a03042c`](https://github.com/zero-company/zero-lib/commit/a03042c636a7ce003ac0160d0e1e7452eaaf56b4) Thanks [@jigz](https://github.com/jigz)! - Fix SplashPage
+
 ## 0.1.14
 
 ### Patch Changes
