@@ -26,12 +26,16 @@ import {
 import { FaFacebookF, FaGithub, FaTwitter, FaGlobe } from 'react-icons/fa6'
 import { GlobalSidebarTabs } from '@/components'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 type Props = {
   children: React.ReactNode
 }
 
 export default function Layout({ children }: Props) {
+  const pathname = usePathname()
+  const pathnameDepth1 = pathname.split('/')[1]
+
   return (
     <>
       <AppLayoutV2
@@ -44,19 +48,18 @@ export default function Layout({ children }: Props) {
                 {
                   children: 'Components',
                   icon: <LuList />,
-                  href: '/zero',
+                  href: `/${pathnameDepth1}`,
                 },
                 {
                   children: 'Docs',
                   icon: <LuBookOpen />,
-                  href: '/zero/docs',
+                  href: `/${pathnameDepth1}/docs`,
                   disabled: true,
                 },
                 {
                   children: 'About',
                   icon: <LuInfo />,
-                  href: '/zero/about',
-                  disabled: true,
+                  href: `/${pathnameDepth1}/about-app`,
                 },
               ]}
             />
