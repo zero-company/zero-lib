@@ -25,12 +25,22 @@ export default function Page() {
         <h3>Pages</h3>
         <div className='space-x-2 space-y-2'>
           <Link href='./splash-page' className='flex-1' target='_blank'>
-            SplashPage
+            Splash
           </Link>
           <Link href='./notfound-page' className='flex-1' target='_blank'>
-            NotFoundPage
+            NotFound
+          </Link>
+          <Link href='./signin-page' className='flex-1' target='_blank'>
+            Signin
+          </Link>
+          <Link href='./signup-page' className='flex-1' target='_blank'>
+            Signup
           </Link>
         </div>
+      </div>
+      <div>
+        <h3>Cards</h3>
+        <div className='space-x-2 space-y-2'></div>
       </div>
     </div>
   )
