@@ -8,14 +8,12 @@ import {
   CardTitle,
 } from '@/lib'
 
-type Props = {
-  className?: string
-}
+type Props = {}
 
-export const NotFoundPage = ({ className }: Props) => {
+export const NotFoundPage = ({}: Props) => {
   return (
-    <div className='flex-1 flex justify-center items-center'>
-      <Card className='mx-auto max-w-sm'>
+    <div className='flex-1 flex'>
+      <Card className='max-w-sm m-auto'>
         <CardHeader>
           <CardTitle className='text-xl'>[404] Not Found</CardTitle>
           <CardDescription>This page could not be found.</CardDescription>

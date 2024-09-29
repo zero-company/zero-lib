@@ -10,12 +10,11 @@ export const SplashPage = ({ className }: Props) => {
   return (
     <div
       className={cn(
-        'flex-1 flex h-screen flex-col justify-center items-center',
+        'flex-1 flex flex-col justify-center items-center',
         className,
       )}
     >
-      <ZeroLogo className='size-24 text-white mb-4' />
-      <h1 className='tracking-widest text-xl'>zero</h1>
+      <ZeroLogo className='size-24 text-white mb-4 m-auto' />
     </div>
   )
 }
