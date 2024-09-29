@@ -22,6 +22,9 @@ import {
   LuNavigationOff,
   LuInfo,
   LuBookOpen,
+  LuLogIn,
+  LuLogOut,
+  LuUserPlus,
 } from 'react-icons/lu'
 import { FaFacebookF, FaGithub, FaTwitter, FaGlobe } from 'react-icons/fa6'
 import { GlobalSidebarTabs } from '@/components'
@@ -61,15 +64,24 @@ export default function Layout({ children }: Props) {
                   icon: <LuInfo />,
                   href: `/${pathnameDepth1}/about-app`,
                 },
+              ]}
+            />
+            <Menu
+              options={[
+                {
+                  children: 'Sign Up',
+                  icon: <LuUserPlus />,
+                  href: `/${pathnameDepth1}/signup`,
+                },
                 {
                   children: 'Sign In',
-                  icon: <LuInfo />,
+                  icon: <LuLogIn />,
                   href: `/${pathnameDepth1}/signin`,
                 },
                 {
-                  children: 'Sign Up',
-                  icon: <LuInfo />,
-                  href: `/${pathnameDepth1}/signup`,
+                  children: 'Sign Out',
+                  icon: <LuLogOut />,
+                  disabled: true,
                 },
               ]}
             />

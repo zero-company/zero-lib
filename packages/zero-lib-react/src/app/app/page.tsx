@@ -34,7 +34,9 @@ export default function Page() {
       </div>
       <div>
         <h3>Cards</h3>
-        <div className='space-x-2 space-y-2'></div>
+        <div className='space-x-2 space-y-2'>
+          
+        </div>
       </div>
     </div>
   )
