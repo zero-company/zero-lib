@@ -61,6 +61,16 @@ export default function Layout({ children }: Props) {
                   icon: <LuInfo />,
                   href: `/${pathnameDepth1}/about-app`,
                 },
+                {
+                  children: 'Sign In',
+                  icon: <LuInfo />,
+                  href: `/${pathnameDepth1}/signin`,
+                },
+                {
+                  children: 'Sign Up',
+                  icon: <LuInfo />,
+                  href: `/${pathnameDepth1}/signup`,
+                },
               ]}
             />
             <Menu

@@ -30,12 +30,6 @@ export default function Page() {
           <Link href='./notfound-page' className='flex-1' target='_blank'>
             NotFound
           </Link>
-          <Link href='./signin-page' className='flex-1' target='_blank'>
-            Signin
-          </Link>
-          <Link href='./signup-page' className='flex-1' target='_blank'>
-            Signup
-          </Link>
         </div>
       </div>
       <div>

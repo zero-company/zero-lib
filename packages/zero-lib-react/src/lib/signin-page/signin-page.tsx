@@ -16,15 +16,12 @@ type Props = {
   className?: string
 }
 
-const description =
-  "A login form with email and password. There's an option to login with Google and a link to sign up if you don't have an account."
-
 export const SigninPage = ({ className }: Props) => {
   return (
     <div className={cn('flex-1 flex h-screen flex-col p-2', className)}>
       <Card className='mx-auto max-w-sm m-auto'>
         <CardHeader>
-          <CardTitle className='text-2xl'>Sign In</CardTitle>
+          <CardTitle className='text-xl'>Sign In</CardTitle>
           <CardDescription>
             Enter your email below to login to your account
           </CardDescription>

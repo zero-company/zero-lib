@@ -16,9 +16,6 @@ type Props = {
   className?: string
 }
 
-const description =
-  "A login form with email and password. There's an option to login with Google and a link to sign up if you don't have an account."
-
 export const SignupPage = ({ className }: Props) => {
   return (
     <div className={cn('flex-1 flex h-screen flex-col p-2', className)}>
