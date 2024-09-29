@@ -16,18 +16,13 @@ type Props = {
   className?: string
 }
 
-export const description =
+const description =
   "A login form with email and password. There's an option to login with Google and a link to sign up if you don't have an account."
 
 export const SignupPage = ({ className }: Props) => {
   return (
-    <div
-      className={cn(
-        'flex-1 flex h-screen flex-col justify-center items-center',
-        className,
-      )}
-    >
-      <Card className='mx-auto max-w-sm'>
+    <div className={cn('flex-1 flex h-screen flex-col p-2', className)}>
+      <Card className='mx-auto max-w-sm m-auto'>
         <CardHeader>
           <CardTitle className='text-xl'>Sign Up</CardTitle>
           <CardDescription>
