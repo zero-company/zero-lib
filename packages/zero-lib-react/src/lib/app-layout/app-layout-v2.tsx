@@ -34,7 +34,7 @@ export const AppLayoutV2 = ({ header, footer, sidebar, body }: Props) => {
           !isSidebarOpen && '-ml-[100vw] sm:ml-0',
         )}
       >
-        <div className='flex divide-x'>
+        <div className='flex divide-x sm:-ml-px'>
           <Button
             size='sm'
             variant='ghost'
@@ -62,7 +62,7 @@ export const AppLayoutV2 = ({ header, footer, sidebar, body }: Props) => {
           BORDER_COLOR,
         )}
       >
-        <div className='flex sm:hidden divide-x'>
+        <div className='flex sm:hidden divide-x sm:-ml-px'>
           <Button
             size='sm'
             variant='ghost'
@@ -71,7 +71,7 @@ export const AppLayoutV2 = ({ header, footer, sidebar, body }: Props) => {
           >
             <Icon reactIcon={<LuPanelLeftOpen />} />
           </Button>
-          {header}
+          <Header header={header} />
           <Icon reactIcon={<ZeroLogo />} />
         </div>
         <div className='flex overflow-y-auto h-full'>{body}</div>
