@@ -1,6 +1,13 @@
 'use client'
-import { Button } from '@/components/shadcn'
-import { IconV2 } from '@/lib'
+import { Button, buttonVariants } from '@/components/shadcn'
+import {
+  IconV2,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  cn,
+} from '@/lib'
 import Link from 'next/link'
 import { LuChevronDown, LuChevronUp, LuChevronsUpDown } from 'react-icons/lu'
 
@@ -25,6 +32,30 @@ TODO: ExpandMenu
 TODO: Label
 TODO: Notif badge count
 */
+
+const MenuAccordion = ({ option }: { option: Option }) => (
+  <Accordion type='single' collapsible className='w-full'>
+    <AccordionItem value='item-1' className='border-none'>
+      <AccordionTrigger
+        disabled={option.disabled}
+        onClick={option.onClick}
+        className={cn(
+          buttonVariants({ variant: 'ghost', size: 'sm' }),
+          'py-0 text-xs gap-2 justify-start h-8 pl-8 pr-1 w-full hover:no-underline',
+        )}
+      >
+        {option.icon && (
+          <span className='-ml-6'>
+            <IconV2 reactIcon={option.icon} size='sm' />
+          </span>
+        )}
+        {option.children}
+        <div className='flex-1' />
+      </AccordionTrigger>
+      <AccordionContent>{option.subMenu}</AccordionContent>
+    </AccordionItem>
+  </Accordion>
+)
 
 const MenuButton = ({ option }: { option: Option }) => (
   <Button
@@ -51,15 +82,17 @@ export const MenuV2 = ({ label, options }: Props) => {
       {label && (
         <p className='text-xs text-muted-foreground pb-1 pl-2'>{label}</p>
       )}
-      {options.map((option, key) =>
-        option.href && !option.onClick ? (
-          <Link key={key} href={option.href || ''}>
-            <MenuButton option={option} />
-          </Link>
-        ) : (
-          <MenuButton key={key} option={option} />
-        ),
-      )}
+
+      {options.map((option, key) => {
+        if (option.subMenu) return <MenuAccordion key={key} option={option} />
+        else if (option.href && !option.onClick)
+          return (
+            <Link key={key} href={option.href || ''}>
+              <MenuButton option={option} />
+            </Link>
+          )
+        else return <MenuButton key={key} option={option} />
+      })}
     </div>
   )
 }

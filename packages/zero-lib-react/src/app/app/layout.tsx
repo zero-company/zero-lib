@@ -73,7 +73,7 @@ export default function Layout({ children }: Props) {
                   children: 'User',
                   icon: <LuUserCircle2 />,
                   subMenu: (
-                    <Menu
+                    <MenuV2
                       options={[
                         {
                           children: 'Sign Up',
@@ -84,6 +84,31 @@ export default function Layout({ children }: Props) {
                           children: 'Sign In',
                           icon: <LuLogIn />,
                           href: `/${pathnameDepth1}/signin`,
+                        },
+                        {
+                          children: 'menu',
+                          icon: <LuUserPlus />,
+                          subMenu: (
+                            <MenuV2
+                              options={[
+                                {
+                                  children: 'Sign Up',
+                                  icon: <LuUserPlus />,
+                                  href: `/${pathnameDepth1}/signup`,
+                                },
+                                {
+                                  children: 'Sign In',
+                                  icon: <LuLogIn />,
+                                  href: `/${pathnameDepth1}/signin`,
+                                },
+                                {
+                                  children: 'Sign Out',
+                                  icon: <LuLogOut />,
+                                  disabled: true,
+                                },
+                              ]}
+                            />
+                          ),
                         },
                         {
                           children: 'Sign Out',
