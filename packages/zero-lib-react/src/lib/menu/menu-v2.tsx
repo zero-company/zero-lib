@@ -52,7 +52,7 @@ const MenuAccordion = ({ option }: { option: Option }) => (
         {option.children}
         <div className='flex-1' />
       </AccordionTrigger>
-      <AccordionContent>{option.subMenu}</AccordionContent>
+      <AccordionContent className='p-0'>{option.subMenu}</AccordionContent>
     </AccordionItem>
   </Accordion>
 )

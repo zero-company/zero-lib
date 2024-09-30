@@ -14,6 +14,7 @@ import {
 } from '@/lib'
 import {
   LuList,
+  LuUser,
   LuHome,
   LuLayoutGrid,
   LuSettings,
@@ -71,14 +72,15 @@ export default function Layout({ children }: Props) {
               options={[
                 {
                   children: 'User',
-                  icon: <LuUserCircle2 />,
+                  icon: <LuUser />,
                   subMenu: (
                     <MenuV2
                       options={[
                         {
-                          children: 'Sign Up',
-                          icon: <LuUserPlus />,
-                          href: `/${pathnameDepth1}/signup`,
+                          children: 'Account',
+                          icon: <LuUserCircle2 />,
+                          href: `/${pathnameDepth1}/account`,
+                          disabled: true,
                         },
                         {
                           children: 'Sign In',
@@ -86,34 +88,14 @@ export default function Layout({ children }: Props) {
                           href: `/${pathnameDepth1}/signin`,
                         },
                         {
-                          children: 'menu',
-                          icon: <LuUserPlus />,
-                          subMenu: (
-                            <MenuV2
-                              options={[
-                                {
-                                  children: 'Sign Up',
-                                  icon: <LuUserPlus />,
-                                  href: `/${pathnameDepth1}/signup`,
-                                },
-                                {
-                                  children: 'Sign In',
-                                  icon: <LuLogIn />,
-                                  href: `/${pathnameDepth1}/signin`,
-                                },
-                                {
-                                  children: 'Sign Out',
-                                  icon: <LuLogOut />,
-                                  disabled: true,
-                                },
-                              ]}
-                            />
-                          ),
-                        },
-                        {
                           children: 'Sign Out',
                           icon: <LuLogOut />,
                           disabled: true,
+                        },
+                        {
+                          children: 'Sign Up',
+                          icon: <LuUserPlus />,
+                          href: `/${pathnameDepth1}/signup`,
                         },
                       ]}
                     />
