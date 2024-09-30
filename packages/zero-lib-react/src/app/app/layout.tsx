@@ -3,6 +3,7 @@ import {
   AppLayoutV2,
   IconV2,
   Menu,
+  MenuV2,
   SupportCard,
   Footer,
   Header,
@@ -46,7 +47,7 @@ export default function Layout({ children }: Props) {
         header={<Header />}
         sidebar={
           <>
-            <Menu
+            <MenuV2
               options={[
                 {
                   children: 'Components',
@@ -66,7 +67,7 @@ export default function Layout({ children }: Props) {
                 },
               ]}
             />
-            <Menu
+            <MenuV2
               options={[
                 {
                   children: 'User',
@@ -95,7 +96,7 @@ export default function Layout({ children }: Props) {
                 },
               ]}
             />
-            <Menu
+            <MenuV2
               options={[
                 {
                   children: 'OnClick',
