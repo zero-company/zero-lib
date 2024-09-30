@@ -69,19 +69,29 @@ export default function Layout({ children }: Props) {
             <Menu
               options={[
                 {
-                  children: 'Sign Up',
-                  icon: <LuUserPlus />,
-                  href: `/${pathnameDepth1}/signup`,
-                },
-                {
-                  children: 'Sign In',
-                  icon: <LuLogIn />,
-                  href: `/${pathnameDepth1}/signin`,
-                },
-                {
-                  children: 'Sign Out',
-                  icon: <LuLogOut />,
-                  disabled: true,
+                  children: 'User',
+                  icon: <LuUserCircle2 />,
+                  subMenu: (
+                    <Menu
+                      options={[
+                        {
+                          children: 'Sign Up',
+                          icon: <LuUserPlus />,
+                          href: `/${pathnameDepth1}/signup`,
+                        },
+                        {
+                          children: 'Sign In',
+                          icon: <LuLogIn />,
+                          href: `/${pathnameDepth1}/signin`,
+                        },
+                        {
+                          children: 'Sign Out',
+                          icon: <LuLogOut />,
+                          disabled: true,
+                        },
+                      ]}
+                    />
+                  ),
                 },
               ]}
             />
