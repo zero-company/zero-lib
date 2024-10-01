@@ -28,7 +28,6 @@ type Props = {
 /* 
 TODO: CheckMenu
 TODO: RadioMenu
-TODO: ExpandMenu
 TODO: Label
 TODO: Notif badge count
 */
@@ -41,7 +40,7 @@ const MenuAccordion = ({ option }: { option: Option }) => (
         onClick={option.onClick}
         className={cn(
           buttonVariants({ variant: 'ghost', size: 'sm' }),
-          'py-0 text-xs gap-2 justify-start h-8 pl-8 pr-1 w-full hover:no-underline',
+          'py-0 gap-2 justify-start h-8 pl-8 pr-1 w-full hover:no-underline',
         )}
       >
         {option.icon && (
@@ -60,7 +59,7 @@ const MenuAccordion = ({ option }: { option: Option }) => (
 const MenuButton = ({ option }: { option: Option }) => (
   <Button
     size='sm'
-    className='text-xs gap-2 justify-start h-8 pl-8 pr-1 w-full'
+    className='gap-2 justify-start h-8 pl-8 pr-1 w-full'
     variant='ghost'
     disabled={option.disabled}
     onClick={option.onClick}
@@ -78,11 +77,8 @@ const MenuButton = ({ option }: { option: Option }) => (
 
 export const MenuV2 = ({ label, options }: Props) => {
   return (
-    <div className='flex flex-col p-1'>
-      {label && (
-        <p className='text-xs text-muted-foreground pb-1 pl-2'>{label}</p>
-      )}
-
+    <div className='flex flex-col p-1 text-xs'>
+      {label && <p className='text-muted-foreground pb-1 pl-2'>{label}</p>}
       {options.map((option, key) => {
         if (option.subMenu) return <MenuAccordion key={key} option={option} />
         else if (option.href && !option.onClick)
