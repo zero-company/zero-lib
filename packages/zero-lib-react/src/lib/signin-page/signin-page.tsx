@@ -19,7 +19,7 @@ type Props = {
 export const SigninPage = ({ className }: Props) => {
   return (
     <div className={cn('flex-1 flex flex-col p-2', className)}>
-      <Card className='mx-auto max-w-sm m-auto'>
+      <Card className='mx-auto max-w-sm m-auto rounded-md'>
         <CardHeader>
           <CardTitle className='text-xl'>Sign In</CardTitle>
           <CardDescription>

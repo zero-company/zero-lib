@@ -10,6 +10,7 @@ import {
   CardTitle,
   Input,
   Label,
+  StatusCard,
 } from '@/lib'
 
 type Props = {
@@ -20,13 +21,8 @@ export const SignupPage = ({ className }: Props) => {
   return (
     <div className={cn('flex-1 flex flex-col p-2', className)}>
       <div className='m-auto space-y-2'>
-        <Card className='mx-auto max-w-sm m-auto w-full text-sm'>
-          <CardHeader>
-            <p>• [validation] Invalid email</p>
-            <p>• [server] Authentication error</p>
-          </CardHeader>
-        </Card>
-        <Card className='mx-auto max-w-sm m-auto w-full'>
+        <StatusCard />
+        <Card className='mx-auto max-w-sm m-auto w-full rounded-md *:p-4'>
           <CardHeader>
             <CardTitle className='text-xl'>Sign Up</CardTitle>
             <CardDescription>

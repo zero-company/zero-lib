@@ -9,12 +9,19 @@ import {
   CardTitle,
   Input,
   Label,
+  cn,
 } from '@/lib'
+import React from 'react'
 
-export const CardV2 = () => {
+type Props = {
+  className?: string
+  children?: React.ReactNode
+}
+
+export const CardV2 = (props: Props) => {
   return (
-    <div>
-      <p>card</p>
-    </div>
+    <Card className={cn('rounded-md *:p-4', props.className)}>
+      {props.children}
+    </Card>
   )
 }
