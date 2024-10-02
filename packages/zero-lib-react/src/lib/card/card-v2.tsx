@@ -15,10 +15,10 @@ import {
 import React from 'react'
 
 const CARDCOLORS = {
-  info: cn('', STATECLASSES.infoBorder),
-  success: cn('', STATECLASSES.successBorder),
-  warning: cn('', STATECLASSES.warningBorder),
-  error: cn('', STATECLASSES.errorBorder),
+  info: cn('', STATECLASSES.infoBorder, STATECLASSES.infoBg),
+  success: cn('', STATECLASSES.successBorder, STATECLASSES.successBg),
+  warning: cn('', STATECLASSES.warningBorder, STATECLASSES.warningBg),
+  error: cn('', STATECLASSES.errorBorder, STATECLASSES.errorBg),
   default: ``,
 }
 

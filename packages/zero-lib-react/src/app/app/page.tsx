@@ -1,5 +1,5 @@
 'use client'
-import { GradientButton } from '@/lib'
+import { GradientButton, CardV2, CardHeader } from '@/lib'
 import Link from 'next/link'
 
 export default function Page() {
@@ -34,8 +34,22 @@ export default function Page() {
       </div>
       <div>
         <h3>Cards</h3>
-        <div className='space-x-2 space-y-2'>
-          
+        <div className='space-y-2 text-sm'>
+          <CardV2>
+            <CardHeader>Default</CardHeader>
+          </CardV2>
+          <CardV2 color='info'>
+            <CardHeader>Info</CardHeader>
+          </CardV2>
+          <CardV2 color='success'>
+            <CardHeader>Success</CardHeader>
+          </CardV2>
+          <CardV2 color='warning'>
+            <CardHeader>Warning</CardHeader>
+          </CardV2>
+          <CardV2 color='error'>
+            <CardHeader>Error</CardHeader>
+          </CardV2>
         </div>
       </div>
     </div>
