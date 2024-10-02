@@ -12,13 +12,17 @@ import {
   CardV2,
 } from '@/lib'
 
-export const StatusCard = () => {
+type Props = {
+  className?: string
+  children: React.ReactNode
+}
+
+export const StatusCard = (props: Props) => {
   return (
-    <CardV2 className='mx-auto max-w-sm m-auto w-full text-sm'>
-      <CardHeader>
-        <p>• [validation] Invalid email</p>
-        <p>• [server] Authentication error</p>
-      </CardHeader>
+    <CardV2
+      className={cn('mx-auto max-w-sm m-auto w-full text-sm', props.className)}
+    >
+      <CardHeader>{props.children}</CardHeader>
     </CardV2>
   )
 }

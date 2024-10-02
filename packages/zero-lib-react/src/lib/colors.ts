@@ -10,6 +10,13 @@ export const GRADIENTS = {
   pink2: 'bg-gradient-to-br from-[#F857A6] to-[#FF5858]',
 } as const
 
+export const STATECOLORS = {
+  info: '#4493f8',
+  success: '#3fb950',
+  warning: '#d29922',
+  error: '#f85149',
+}
+
 export const MATERIAL_COLORS = {
   mred: {
     50: '#FFEBEE',

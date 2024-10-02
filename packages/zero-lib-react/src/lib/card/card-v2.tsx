@@ -13,6 +13,14 @@ import {
 } from '@/lib'
 import React from 'react'
 
+const CARDCOLORS = {
+  blue: '',
+  green: '',
+  yellow: '',
+  red: '',
+  default: '',
+}
+
 type Props = {
   className?: string
   children?: React.ReactNode
