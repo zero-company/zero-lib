@@ -62,7 +62,7 @@ export const SignupPage = ({ className }: Props) => {
 
   return (
     <div className={cn('flex-1 flex flex-col p-2', className)}>
-      <div className='m-auto space-y-2'>
+      <div className='m-auto space-y-2 max-w-sm w-full'>
         {errorMessages.length > 0 && (
           <CardV2 color='error' className='text-xs'>
             <CardHeader>
@@ -72,7 +72,7 @@ export const SignupPage = ({ className }: Props) => {
             </CardHeader>
           </CardV2>
         )}
-        <CardV2 className='mx-auto max-w-sm m-auto w-screen'>
+        <CardV2 className='mx-auto m-auto'>
           <CardHeader>
             <CardTitle className='text-xl'>Sign Up</CardTitle>
             <CardDescription>
