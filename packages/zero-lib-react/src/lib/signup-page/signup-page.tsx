@@ -24,10 +24,17 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
-  username: z.string().min(4),
+  username: z.string().min(4, {
+    message: 'Username must be at least 4 characters.',
+  }),
   email: z.string().email(),
-  password: z.string().min(8),
+  password: z.string().min(8, {
+    message: 'Password must be at least 8 characters.',
+  }),
 })
+const formSchemaKeys = formSchema.keyof()
+type FormSchemaType = z.infer<typeof formSchema>
+type FormSchemaKeysType = z.infer<typeof formSchemaKeys>
 
 type Props = {
   className?: string
@@ -47,13 +54,20 @@ export const SignupPage = ({ className }: Props) => {
     console.log(values)
   }
 
+  const formErrors = form.formState.errors
+  const keys = Object.keys(formErrors) as FormSchemaKeysType[]
+  const errorMessages = keys.map(
+    (error: FormSchemaKeysType) => formErrors[error]?.message,
+  )
+
   return (
     <div className={cn('flex-1 flex flex-col p-2', className)}>
       <div className='m-auto space-y-2'>
         <CardV2 color='error' className='text-xs'>
           <CardHeader>
-            <p>• [validation] Invalid email</p>
-            <p>• [server] Authentication error</p>
+            {errorMessages.map((message, key) => (
+              <p key={key}>• {message}</p>
+            ))}
           </CardHeader>
         </CardV2>
         <CardV2 className='mx-auto max-w-sm m-auto w-full'>
@@ -78,7 +92,6 @@ export const SignupPage = ({ className }: Props) => {
                       <FormControl>
                         <Input placeholder='JohnDoe' {...field} />
                       </FormControl>
-                      <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -91,7 +104,6 @@ export const SignupPage = ({ className }: Props) => {
                       <FormControl>
                         <Input placeholder='JohnDoe@gmail.com' {...field} />
                       </FormControl>
-                      <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -104,7 +116,6 @@ export const SignupPage = ({ className }: Props) => {
                       <FormControl>
                         <Input type='password' {...field} />
                       </FormControl>
-                      <FormMessage />
                     </FormItem>
                   )}
                 />
