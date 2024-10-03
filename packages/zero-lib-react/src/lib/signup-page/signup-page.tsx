@@ -24,9 +24,9 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: 'Username must be at least 2 characters.',
-  }),
+  username: z.string().min(4),
+  email: z.string().email(),
+  password: z.string().min(8),
 })
 
 type Props = {
@@ -34,60 +34,83 @@ type Props = {
 }
 
 export const SignupPage = ({ className }: Props) => {
-  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: '',
+      email: '',
+      password: '',
     },
   })
 
-  // 2. Define a submit handler.
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     console.log(values)
   }
 
   return (
     <div className={cn('flex-1 flex flex-col p-2', className)}>
       <div className='m-auto space-y-2'>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
-            <FormField
-              control={form.control}
-              name='username'
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Username</FormLabel>
-                  <FormControl>
-                    <Input placeholder='shadcn' {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    This is your public display name.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type='submit'>Submit</Button>
-          </form>
-        </Form>
-
         <CardV2 color='error' className='text-xs'>
           <CardHeader>
             <p>• [validation] Invalid email</p>
             <p>• [server] Authentication error</p>
           </CardHeader>
         </CardV2>
-        <Card className='mx-auto max-w-sm m-auto w-full rounded-md *:p-4'>
+        <CardV2 className='mx-auto max-w-sm m-auto w-full'>
           <CardHeader>
             <CardTitle className='text-xl'>Sign Up</CardTitle>
             <CardDescription>
               Enter your information to create an account
             </CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className='!pt-0'>
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className='space-y-4'
+              >
+                <FormField
+                  control={form.control}
+                  name='username'
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Username</FormLabel>
+                      <FormControl>
+                        <Input placeholder='JohnDoe' {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name='email'
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder='JohnDoe@gmail.com' {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name='password'
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Password</FormLabel>
+                      <FormControl>
+                        <Input type='password' {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type='submit'>Submit</Button>
+              </form>
+            </Form>
             <div className='grid gap-4'>
               <div className='grid grid-cols-2 gap-4'>
                 <div className='grid gap-2'>
@@ -126,7 +149,7 @@ export const SignupPage = ({ className }: Props) => {
               </Link>
             </div>
           </CardContent>
-        </Card>
+        </CardV2>
       </div>
     </div>
   )
