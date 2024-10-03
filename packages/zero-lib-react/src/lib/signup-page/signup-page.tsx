@@ -116,7 +116,7 @@ export const SignupPage = ({ className }: Props) => {
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
-                        <Input type='password' {...field} />
+                        <Input type='password' placeholder='••••' {...field} />
                       </FormControl>
                     </FormItem>
                   )}
