@@ -38,9 +38,11 @@ type FormSchemaKeysType = z.infer<typeof formSchemaKeys>
 
 type Props = {
   className?: string
+  signinUrl: string
+  onSubmit: (values: z.infer<typeof formSchema>) => void
 }
 
-export const SignupPage = ({ className }: Props) => {
+export const SignupPage = ({ className, signinUrl, onSubmit }: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -49,10 +51,6 @@ export const SignupPage = ({ className }: Props) => {
       password: '',
     },
   })
-
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values)
-  }
 
   const formErrors = form.formState.errors
   const keys = Object.keys(formErrors) as FormSchemaKeysType[]
@@ -123,15 +121,15 @@ export const SignupPage = ({ className }: Props) => {
                 />
                 <div className='grid gap-4'>
                   <Button type='submit' className='w-full'>
-                    Create an account
+                    Create Account
                   </Button>
-                  <Button variant='outline' className='w-full'>
-                    Sign up with GitHub
+                  <Button variant='outline' className='w-full hidden'>
+                    Sign up with Google
                   </Button>
                 </div>
                 <div className='mt-4 text-center text-sm'>
                   Already have an account?{' '}
-                  <Link href='#' className='underline'>
+                  <Link href={signinUrl || '/app/signin'} className='underline'>
                     Sign in
                   </Link>
                 </div>

@@ -4,7 +4,7 @@ import { SignupPage } from '@/lib'
 export default function Page() {
   return (
     <>
-      <SignupPage />
+      <SignupPage signinUrl='/app/signin' onSubmit={(values)=> console.log(values)}/>
     </>
   )
 }
