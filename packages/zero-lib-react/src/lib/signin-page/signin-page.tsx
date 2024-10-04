@@ -10,6 +10,7 @@ import {
   CardTitle,
   Input,
   Label,
+  Page,
 } from '@/lib'
 
 type Props = {
@@ -18,7 +19,7 @@ type Props = {
 
 export const SigninPage = ({ className }: Props) => {
   return (
-    <div className={cn('flex-1 flex flex-col p-2', className)}>
+    <Page layout='center' innerClassName='max-w-sm w-full'>
       <Card className='mx-auto max-w-sm m-auto rounded-md'>
         <CardHeader>
           <CardTitle className='text-xl'>Sign In</CardTitle>
@@ -64,6 +65,6 @@ export const SigninPage = ({ className }: Props) => {
           </div>
         </CardContent>
       </Card>
-    </div>
+    </Page>
   )
 }

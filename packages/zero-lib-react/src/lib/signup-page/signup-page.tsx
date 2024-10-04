@@ -18,6 +18,7 @@ import {
   FormLabel,
   FormDescription,
   FormMessage,
+  Page,
 } from '@/lib'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -57,87 +58,82 @@ export const SignupPage = ({ className, signinUrl, onSubmit }: Props) => {
   const errorMessages = formErrorKeys.map(
     (error: FormSchemaKeysType) => formErrors[error]?.message,
   )
-
+  // max-w-sm w-full
   return (
-    <div className={cn('flex-1 flex flex-col p-2', className)}>
-      <div className='m-auto space-y-2 max-w-sm w-full'>
-        {errorMessages.length > 0 && (
-          <CardV2 color='error' className='text-xs'>
-            <CardHeader>
-              {errorMessages.map((message, key) => (
-                <p key={key}>• {message}</p>
-              ))}
-            </CardHeader>
-          </CardV2>
-        )}
-        <CardV2 className='mx-auto m-auto'>
+    <Page layout='center' innerClassName='max-w-sm w-full'>
+      {errorMessages.length > 0 && (
+        <CardV2 color='error' className='text-xs'>
           <CardHeader>
-            <CardTitle className='text-xl'>Sign Up</CardTitle>
-            <CardDescription>
-              Enter your information to create an account
-            </CardDescription>
+            {errorMessages.map((message, key) => (
+              <p key={key}>• {message}</p>
+            ))}
           </CardHeader>
-          <CardContent className='!pt-0'>
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className='space-y-4'
-              >
-                <FormField
-                  control={form.control}
-                  name='username'
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Username</FormLabel>
-                      <FormControl>
-                        <Input placeholder='JohnDoe' {...field} />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name='email'
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input placeholder='JohnDoe@gmail.com' {...field} />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name='password'
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Password</FormLabel>
-                      <FormControl>
-                        <Input type='password' placeholder='••••' {...field} />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-                <div className='grid gap-4'>
-                  <Button type='submit' className='w-full'>
-                    Create Account
-                  </Button>
-                  <Button variant='outline' className='w-full hidden'>
-                    Sign up with Google
-                  </Button>
-                </div>
-                <div className='mt-4 text-center text-sm'>
-                  Already have an account?{' '}
-                  <Link href={signinUrl || '/app/signin'} className='underline'>
-                    Sign in
-                  </Link>
-                </div>
-              </form>
-            </Form>
-          </CardContent>
         </CardV2>
-      </div>
-    </div>
+      )}
+      <CardV2 className='mx-auto m-auto'>
+        <CardHeader>
+          <CardTitle className='text-xl'>Sign Up</CardTitle>
+          <CardDescription>
+            Enter your information to create an account
+          </CardDescription>
+        </CardHeader>
+        <CardContent className='!pt-0'>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
+              <FormField
+                control={form.control}
+                name='username'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Username</FormLabel>
+                    <FormControl>
+                      <Input placeholder='JohnDoe' {...field} />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='email'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder='JohnDoe@gmail.com' {...field} />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='password'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Password</FormLabel>
+                    <FormControl>
+                      <Input type='password' placeholder='••••' {...field} />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <div className='grid gap-4'>
+                <Button type='submit' className='w-full'>
+                  Create Account
+                </Button>
+                <Button variant='outline' className='w-full hidden'>
+                  Sign up with Google
+                </Button>
+              </div>
+              <div className='mt-4 text-center text-sm'>
+                Already have an account?{' '}
+                <Link href={signinUrl || '/app/signin'} className='underline'>
+                  Sign in
+                </Link>
+              </div>
+            </form>
+          </Form>
+        </CardContent>
+      </CardV2>
+    </Page>
   )
 }
