@@ -20,6 +20,7 @@ export * from './menu/menu-v2'
 export * from './markdown/markdown'
 export * from './button/gradient-button'
 export * from './card/card-v2'
+export * from './page/page'
 
 export * from './splash-page/splash-page'
 export * from './error-page/error-page'

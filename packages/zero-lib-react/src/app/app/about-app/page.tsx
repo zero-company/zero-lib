@@ -1,13 +1,12 @@
-import { FeatureCard } from './feature-card'
-import { Markdown } from '@/lib'
+import { Markdown, Page } from '@/lib'
 import AboutApp from '@/components/markdown/about-app.mdx'
 
-export default function Page() {
+export default function AboutPage() {
   return (
-    <>
+    <Page layout='center' className='py-6'>
       <Markdown>
         <AboutApp />
       </Markdown>
-    </>
+    </Page>
   )
 }

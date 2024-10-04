@@ -53,8 +53,8 @@ export const SignupPage = ({ className, signinUrl, onSubmit }: Props) => {
   })
 
   const formErrors = form.formState.errors
-  const keys = Object.keys(formErrors) as FormSchemaKeysType[]
-  const errorMessages = keys.map(
+  const formErrorKeys = Object.keys(formErrors) as FormSchemaKeysType[]
+  const errorMessages = formErrorKeys.map(
     (error: FormSchemaKeysType) => formErrors[error]?.message,
   )
 

@@ -7,7 +7,7 @@ type Props = {
 
 export const Markdown = ({ children }: Props) => {
   return children ? (
-    <div className='prose prose-invert p-2'>{children}</div>
+    <div className='prose prose-invert'>{children}</div>
   ) : (
     <ErrorPage />
   )
