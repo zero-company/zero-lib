@@ -4,6 +4,7 @@ import {
   cn,
   Button,
   Card,
+  CardV2,
   CardContent,
   CardDescription,
   CardHeader,
@@ -12,15 +13,56 @@ import {
   Label,
   Page,
 } from '@/lib'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+const formSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8, {
+    message: 'Password must be at least 8 characters.',
+  }),
+})
+const formSchemaKeys = formSchema.keyof()
+type FormSchemaType = z.infer<typeof formSchema>
+type FormSchemaKeysType = z.infer<typeof formSchemaKeys>
 
 type Props = {
-  className?: string
+  signupUrl: string
+  onSubmit: (values: z.infer<typeof formSchema>) => void
+  forgotPasswordUrl: string
 }
 
-export const SigninPage = ({ className }: Props) => {
+export const SigninPage = ({
+  signupUrl,
+  onSubmit,
+  forgotPasswordUrl,
+}: Props) => {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  })
+  const formErrors = form.formState.errors
+  const formErrorKeys = Object.keys(formErrors) as FormSchemaKeysType[]
+  const errorMessages = formErrorKeys.map(
+    (error: FormSchemaKeysType) => formErrors[error]?.message,
+  )
+
   return (
     <Page layout='center' innerClassName='max-w-sm w-full'>
-      <Card className='mx-auto max-w-sm m-auto rounded-md'>
+      {errorMessages.length > 0 && (
+        <CardV2 color='error' className='text-xs'>
+          <CardHeader>
+            {errorMessages.map((message, key) => (
+              <p key={key}>• {message}</p>
+            ))}
+          </CardHeader>
+        </CardV2>
+      )}
+      <CardV2>
         <CardHeader>
           <CardTitle className='text-xl'>Sign In</CardTitle>
           <CardDescription>
@@ -64,7 +106,7 @@ export const SigninPage = ({ className }: Props) => {
             </Link>
           </div>
         </CardContent>
-      </Card>
+      </CardV2>
     </Page>
   )
 }

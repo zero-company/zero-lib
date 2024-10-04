@@ -1,23 +1,18 @@
 'use client'
 import Link from 'next/link'
 import {
-  cn,
   Button,
-  Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
   Input,
-  Label,
   CardV2,
   Form,
   FormField,
   FormControl,
   FormItem,
   FormLabel,
-  FormDescription,
-  FormMessage,
   Page,
 } from '@/lib'
 import { useForm } from 'react-hook-form'
@@ -38,12 +33,11 @@ type FormSchemaType = z.infer<typeof formSchema>
 type FormSchemaKeysType = z.infer<typeof formSchemaKeys>
 
 type Props = {
-  className?: string
   signinUrl: string
   onSubmit: (values: z.infer<typeof formSchema>) => void
 }
 
-export const SignupPage = ({ className, signinUrl, onSubmit }: Props) => {
+export const SignupPage = ({ signinUrl, onSubmit }: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -52,13 +46,12 @@ export const SignupPage = ({ className, signinUrl, onSubmit }: Props) => {
       password: '',
     },
   })
-
   const formErrors = form.formState.errors
   const formErrorKeys = Object.keys(formErrors) as FormSchemaKeysType[]
   const errorMessages = formErrorKeys.map(
     (error: FormSchemaKeysType) => formErrors[error]?.message,
   )
-  // max-w-sm w-full
+
   return (
     <Page layout='center' innerClassName='max-w-sm w-full'>
       {errorMessages.length > 0 && (
@@ -70,7 +63,7 @@ export const SignupPage = ({ className, signinUrl, onSubmit }: Props) => {
           </CardHeader>
         </CardV2>
       )}
-      <CardV2 className='mx-auto m-auto'>
+      <CardV2>
         <CardHeader>
           <CardTitle className='text-xl'>Sign Up</CardTitle>
           <CardDescription>
