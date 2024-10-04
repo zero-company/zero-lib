@@ -23,8 +23,8 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8, {
+  email: z.string({ required_error: 'Email required' }).email(),
+  password: z.string({ required_error: 'Password required' }).min(8, {
     message: 'Password must be at least 8 characters.',
   }),
 })
@@ -45,10 +45,6 @@ export const SigninPage = ({
 }: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: '',
-      password: '',
-    },
   })
   const formErrors = form.formState.errors
   const formErrorKeys = Object.keys(formErrors) as FormSchemaKeysType[]
@@ -94,15 +90,15 @@ export const SigninPage = ({
                 name='password'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className='flex'>
-                      Password
+                    <div className='flex'>
+                      <FormLabel>Password</FormLabel>
                       <Link
                         href={forgotPasswordUrl}
                         className='ml-auto text-sm underline'
                       >
                         Forgot your password?
                       </Link>
-                    </FormLabel>
+                    </div>
                     <FormControl>
                       <Input type='password' placeholder='••••' {...field} />
                     </FormControl>
