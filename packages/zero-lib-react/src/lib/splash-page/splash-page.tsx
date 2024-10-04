@@ -1,20 +1,13 @@
 'use client'
 import { ZeroLogo } from '../zero/zero-logo'
-import { cn } from '@/lib'
+import { Page } from '@/lib'
 
-type Props = {
-  className?: string
-}
+type Props = {}
 
-export const SplashPage = ({ className }: Props) => {
+export const SplashPage = ({}: Props) => {
   return (
-    <div
-      className={cn(
-        'flex-1 flex flex-col justify-center items-center',
-        className,
-      )}
-    >
+    <Page layout='center'>
       <ZeroLogo className='size-24 text-white mb-4 m-auto' />
-    </div>
+    </Page>
   )
 }
