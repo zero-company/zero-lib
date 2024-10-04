@@ -114,7 +114,7 @@ export const SignupPage = ({ signinUrl, onSubmit }: Props) => {
               </div>
               <div className='mt-4 text-center text-sm'>
                 Already have an account?{' '}
-                <Link href={signinUrl || '/app/signin'} className='underline'>
+                <Link href={signinUrl} className='underline'>
                   Sign in
                 </Link>
               </div>
