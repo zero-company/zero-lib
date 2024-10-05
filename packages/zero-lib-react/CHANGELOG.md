@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.17
+
+### Patch Changes
+
+- [#36](https://github.com/zero-company/zero-lib/pull/36) [`89290a7`](https://github.com/zero-company/zero-lib/commit/89290a782a475ec4aa92c140ff96c28e4da39846) Thanks [@jigz](https://github.com/jigz)! - Add auth pages
+
 ## 0.1.16
 
 ### Patch Changes
