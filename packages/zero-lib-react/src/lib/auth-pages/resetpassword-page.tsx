@@ -1,16 +1,13 @@
 'use client'
 import Link from 'next/link'
 import {
-  cn,
   Button,
-  Card,
   CardV2,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
   Input,
-  Label,
   Page,
   Form,
   FormField,
@@ -23,7 +20,12 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
-  email: z.string({ required_error: 'Email required' }).email(),
+  password: z.string({ required_error: 'Password required' }).min(8, {
+    message: 'Password must be at least 8 characters.',
+  }),
+  verifyPassword: z.string({ required_error: 'Password required' }).min(8, {
+    message: 'Password must be at least 8 characters.',
+  }),
 })
 const formSchemaKeys = formSchema.keyof()
 type FormSchemaType = z.infer<typeof formSchema>
@@ -35,7 +37,8 @@ type Props = {
   onSubmit: (values: z.infer<typeof formSchema>) => void
 }
 
-export const ForgotPasswordPage = ({
+// use url query change password recovery token
+export const ResetPasswordPage = ({
   signupUrl,
   signinUrl,
   onSubmit,
@@ -62,29 +65,39 @@ export const ForgotPasswordPage = ({
       )}
       <CardV2>
         <CardHeader>
-          <CardTitle className='text-xl'>Forgot Password</CardTitle>
-          <CardDescription>
-            Enter your email then wait for confirmation
-          </CardDescription>
+          <CardTitle className='text-xl'>Reset Password</CardTitle>
+          <CardDescription>Enter your new Password</CardDescription>
         </CardHeader>
         <CardContent className='!pt-0'>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
               <FormField
                 control={form.control}
-                name='email'
+                name='password'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input placeholder='JohnDoe@gmail.com' {...field} />
+                      <Input type='password' placeholder='••••' {...field} />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='verifyPassword'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Verify Password</FormLabel>
+                    <FormControl>
+                      <Input type='password' placeholder='••••' {...field} />
                     </FormControl>
                   </FormItem>
                 )}
               />
               <div className='grid gap-4'>
                 <Button type='submit' className='w-full'>
-                  Send
+                  Reset
                 </Button>
               </div>
               <div className='mt-4 text-center text-sm'>

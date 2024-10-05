@@ -15,12 +15,9 @@ import {
 import {
   LuList,
   LuUser,
-  LuHome,
   LuLock,
-  LuLayoutGrid,
-  LuSettings,
   LuUserCircle2,
-  LuSearch,
+  LuAsterisk,
   LuMousePointerClick,
   LuNavigationOff,
   LuInfo,
@@ -102,6 +99,11 @@ export default function Layout({ children }: Props) {
                           children: 'Forgot Password',
                           icon: <LuLock />,
                           href: `/${pathnameDepth1}/forgotpassword`,
+                        },
+                        {
+                          children: 'Reset Password',
+                          icon: <LuAsterisk />,
+                          href: `/${pathnameDepth1}/resetpassword`,
                         },
                       ]}
                     />
