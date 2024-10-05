@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.18
+
+### Patch Changes
+
+- [#38](https://github.com/zero-company/zero-lib/pull/38) [`2562efd`](https://github.com/zero-company/zero-lib/commit/2562efd9bd8d5e6b3a12b85544dd3fdb5025a11b) Thanks [@jigz](https://github.com/jigz)! - Add ResetPasswordPage
+
 ## 0.1.17
 
 ### Patch Changes
