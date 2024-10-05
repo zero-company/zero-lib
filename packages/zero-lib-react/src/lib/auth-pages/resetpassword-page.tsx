@@ -20,7 +20,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
-  password: z.string().min(1, { message: 'New Password required' }).min(8, {
+  newPassword: z.string().min(1, { message: 'New Password required' }).min(8, {
     message: 'New Password must be at least 8 characters.',
   }),
   verifyPassword: z
@@ -49,7 +49,7 @@ export const ResetPasswordPage = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      password: '',
+      newPassword: '',
       verifyPassword: '',
     },
   })
@@ -80,7 +80,7 @@ export const ResetPasswordPage = ({
             <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
               <FormField
                 control={form.control}
-                name='password'
+                name='newPassword'
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>New Password</FormLabel>
