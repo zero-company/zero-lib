@@ -3,6 +3,7 @@ import {
   AppLayoutV2,
   IconV2,
   Menu,
+  MenuV2,
   SupportCard,
   Footer,
   Header,
@@ -13,7 +14,9 @@ import {
 } from '@/lib'
 import {
   LuList,
+  LuUser,
   LuHome,
+  LuLock,
   LuLayoutGrid,
   LuSettings,
   LuUserCircle2,
@@ -22,6 +25,9 @@ import {
   LuNavigationOff,
   LuInfo,
   LuBookOpen,
+  LuLogIn,
+  LuLogOut,
+  LuUserPlus,
 } from 'react-icons/lu'
 import { FaFacebookF, FaGithub, FaTwitter, FaGlobe } from 'react-icons/fa6'
 import { GlobalSidebarTabs } from '@/components'
@@ -43,7 +49,7 @@ export default function Layout({ children }: Props) {
         header={<Header />}
         sidebar={
           <>
-            <Menu
+            <MenuV2
               options={[
                 {
                   children: 'Components',
@@ -63,7 +69,47 @@ export default function Layout({ children }: Props) {
                 },
               ]}
             />
-            <Menu
+            <MenuV2
+              options={[
+                {
+                  children: 'User',
+                  icon: <LuUser />,
+                  subMenu: (
+                    <MenuV2
+                      options={[
+                        {
+                          children: 'Account',
+                          icon: <LuUserCircle2 />,
+                          href: `/${pathnameDepth1}/account`,
+                          disabled: true,
+                        },
+                        {
+                          children: 'Sign In',
+                          icon: <LuLogIn />,
+                          href: `/${pathnameDepth1}/signin`,
+                        },
+                        {
+                          children: 'Sign Out',
+                          icon: <LuLogOut />,
+                          disabled: true,
+                        },
+                        {
+                          children: 'Sign Up',
+                          icon: <LuUserPlus />,
+                          href: `/${pathnameDepth1}/signup`,
+                        },
+                        {
+                          children: 'Forgot Password',
+                          icon: <LuLock />,
+                          href: `/${pathnameDepth1}/forgotpassword`,
+                        },
+                      ]}
+                    />
+                  ),
+                },
+              ]}
+            />
+            <MenuV2
               options={[
                 {
                   children: 'OnClick',

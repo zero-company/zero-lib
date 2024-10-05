@@ -13,7 +13,7 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "concurrently \"pnpm storybook:dev\" \"pnpm next:dev\" \"pnpm lib:dev\"",
+    "dev": "concurrently \"pnpm next:dev\" \"pnpm lib:dev\"",
     "build": "concurrently \"pnpm storybook:build\" \"pnpm next:build\" \"pnpm lib:build\"",
     "lib:dev": "tsup --watch",
     "lib:build": "tsup && pnpm tailwind:build",

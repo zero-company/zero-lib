@@ -2,6 +2,7 @@
 import { Button } from '@/components/shadcn'
 import { IconV2 } from '@/lib'
 import Link from 'next/link'
+import { LuChevronDown, LuChevronUp } from 'react-icons/lu'
 
 type Option = {
   children?: React.ReactNode
@@ -9,6 +10,7 @@ type Option = {
   disabled?: boolean
   onClick?: () => void
   href?: string
+  subMenu?: React.ReactNode
 }
 
 type Props = {
@@ -27,7 +29,7 @@ TODO: Notif badge count
 const MenuButton = ({ option }: { option: Option }) => (
   <Button
     size='sm'
-    className='text-xs gap-2 justify-start h-8 p-2 pl-8 w-full'
+    className='text-xs gap-2 justify-start h-8 pl-8 pr-1 w-full'
     variant='ghost'
     disabled={option.disabled}
     onClick={option.onClick}
@@ -38,6 +40,8 @@ const MenuButton = ({ option }: { option: Option }) => (
       </span>
     )}
     {option.children}
+    <div className='flex-1' />
+    {option.subMenu && <IconV2 reactIcon={<LuChevronDown />} size='sm' />}
   </Button>
 )
 
