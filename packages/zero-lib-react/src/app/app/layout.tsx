@@ -103,7 +103,7 @@ export default function Layout({ children }: Props) {
                         {
                           children: 'Reset Password',
                           icon: <LuAsterisk />,
-                          href: `/${pathnameDepth1}/resetpassword`,
+                          href: `/${pathnameDepth1}/resetpassword?resetPasswordToken=my-project`,
                         },
                       ]}
                     />

@@ -20,6 +20,10 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
+  resetPasswordToken: z.string({
+    required_error: 'Invalid Reset Password Token',
+    invalid_type_error: 'Invalid Reset Password Token',
+  }),
   newPassword: z.string().min(1, { message: 'New Password required' }).min(8, {
     message: 'New Password must be at least 8 characters.',
   }),
@@ -35,6 +39,7 @@ type FormSchemaType = z.infer<typeof formSchema>
 type FormSchemaKeysType = z.infer<typeof formSchemaKeys>
 
 type Props = {
+  resetPasswordToken?: string
   signupUrl: string
   signinUrl: string
   onSubmit: (values: z.infer<typeof formSchema>) => void
@@ -42,6 +47,7 @@ type Props = {
 
 // use url query change password recovery token
 export const ResetPasswordPage = ({
+  resetPasswordToken,
   signupUrl,
   signinUrl,
   onSubmit,
@@ -49,6 +55,7 @@ export const ResetPasswordPage = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      resetPasswordToken,
       newPassword: '',
       verifyPassword: '',
     },
@@ -78,6 +85,17 @@ export const ResetPasswordPage = ({
         <CardContent className='!pt-0'>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
+              <FormField
+                control={form.control}
+                name='resetPasswordToken'
+                render={({ field }) => (
+                  <FormItem className='-m-4'>
+                    <FormControl>
+                      <Input type='hidden' {...field} />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
               <FormField
                 control={form.control}
                 name='newPassword'
