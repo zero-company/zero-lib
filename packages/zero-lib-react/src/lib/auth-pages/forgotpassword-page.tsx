@@ -20,7 +20,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
-  email: z.string({ required_error: 'Email required' }).email(),
+  email: z.string().min(1, { message: 'Email required' }).email(),
 })
 const formSchemaKeys = formSchema.keyof()
 type FormSchemaType = z.infer<typeof formSchema>
@@ -39,6 +39,9 @@ export const ForgotPasswordPage = ({
 }: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: '',
+    },
   })
   const formErrors = form.formState.errors
   const formErrorKeys = Object.keys(formErrors) as FormSchemaKeysType[]

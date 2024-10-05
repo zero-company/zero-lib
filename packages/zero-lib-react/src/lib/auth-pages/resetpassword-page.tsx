@@ -20,11 +20,12 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
-  password: z.string({ required_error: 'New Password required' }).min(8, {
+  password: z.string().min(1, { message: 'New Password required' }).min(8, {
     message: 'New Password must be at least 8 characters.',
   }),
   verifyPassword: z
-    .string({ required_error: 'Verify Password required' })
+    .string()
+    .min(1, { message: 'Verify Password required' })
     .min(8, {
       message: 'Verify Password must be at least 8 characters.',
     }),
@@ -47,6 +48,10 @@ export const ResetPasswordPage = ({
 }: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      password: '',
+      verifyPassword: '',
+    },
   })
   const formErrors = form.formState.errors
   const formErrorKeys = Object.keys(formErrors) as FormSchemaKeysType[]
