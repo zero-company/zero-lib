@@ -1,30 +1,30 @@
 'use client'
 import Link from 'next/link'
 import {
+  cn,
   Button,
+  Card,
+  CardV2,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
   Input,
-  CardV2,
+  Label,
+  Page,
   Form,
   FormField,
   FormControl,
   FormItem,
   FormLabel,
-  Page,
 } from '@/lib'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
-  username: z.string({ required_error: 'Username required' }).min(4, {
-    message: 'Username must be at least 4 characters.',
-  }),
-  email: z.string({ required_error: 'Email required' }).email(),
-  password: z.string({ required_error: 'Password required' }).min(8, {
+  email: z.string().min(1, { message: 'Email required' }).email(),
+  password: z.string().min(1, { message: 'Password required' }).min(8, {
     message: 'Password must be at least 8 characters.',
   }),
 })
@@ -33,13 +33,22 @@ type FormSchemaType = z.infer<typeof formSchema>
 type FormSchemaKeysType = z.infer<typeof formSchemaKeys>
 
 type Props = {
-  signinUrl: string
+  signupUrl: string
   onSubmit: (values: z.infer<typeof formSchema>) => void
+  forgotPasswordUrl: string
 }
 
-export const SignupPage = ({ signinUrl, onSubmit }: Props) => {
+export const SigninPage = ({
+  signupUrl,
+  onSubmit,
+  forgotPasswordUrl,
+}: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
   })
   const formErrors = form.formState.errors
   const formErrorKeys = Object.keys(formErrors) as FormSchemaKeysType[]
@@ -60,26 +69,14 @@ export const SignupPage = ({ signinUrl, onSubmit }: Props) => {
       )}
       <CardV2>
         <CardHeader>
-          <CardTitle className='text-xl'>Sign Up</CardTitle>
+          <CardTitle className='text-xl'>Sign In</CardTitle>
           <CardDescription>
-            Enter your information to create an account
+            Enter your email below to login to your account
           </CardDescription>
         </CardHeader>
         <CardContent className='!pt-0'>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
-              <FormField
-                control={form.control}
-                name='username'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Username</FormLabel>
-                    <FormControl>
-                      <Input placeholder='JohnDoe' {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
               <FormField
                 control={form.control}
                 name='email'
@@ -97,7 +94,15 @@ export const SignupPage = ({ signinUrl, onSubmit }: Props) => {
                 name='password'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <div className='flex'>
+                      <FormLabel>Password</FormLabel>
+                      <Link
+                        href={forgotPasswordUrl}
+                        className='ml-auto text-sm underline'
+                      >
+                        Forgot your password?
+                      </Link>
+                    </div>
                     <FormControl>
                       <Input type='password' placeholder='••••' {...field} />
                     </FormControl>
@@ -106,16 +111,13 @@ export const SignupPage = ({ signinUrl, onSubmit }: Props) => {
               />
               <div className='grid gap-4'>
                 <Button type='submit' className='w-full'>
-                  Create Account
-                </Button>
-                <Button variant='outline' className='w-full hidden'>
-                  Sign up with Google
+                  Login
                 </Button>
               </div>
               <div className='mt-4 text-center text-sm'>
-                Already have an account?{' '}
-                <Link href={signinUrl} className='underline'>
-                  Sign in
+                Don&apos;t have an account?{' '}
+                <Link href={signupUrl} className='underline'>
+                  Sign up
                 </Link>
               </div>
             </form>
