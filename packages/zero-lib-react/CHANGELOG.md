@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.19
+
+### Patch Changes
+
+- [#40](https://github.com/zero-company/zero-lib/pull/40) [`ca531ff`](https://github.com/zero-company/zero-lib/commit/ca531ff5a94ca7e8ab10c704017685478495d667) Thanks [@jigz](https://github.com/jigz)! - Fix useSearchParams
+
 ## 0.1.18
 
 ### Patch Changes
