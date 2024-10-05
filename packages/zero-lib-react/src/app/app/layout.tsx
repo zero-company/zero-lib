@@ -16,6 +16,7 @@ import {
   LuList,
   LuUser,
   LuHome,
+  LuLock,
   LuLayoutGrid,
   LuSettings,
   LuUserCircle2,
@@ -96,6 +97,11 @@ export default function Layout({ children }: Props) {
                           children: 'Sign Up',
                           icon: <LuUserPlus />,
                           href: `/${pathnameDepth1}/signup`,
+                        },
+                        {
+                          children: 'Forgot Password',
+                          icon: <LuLock />,
+                          href: `/${pathnameDepth1}/forgotpassword`,
                         },
                       ]}
                     />
