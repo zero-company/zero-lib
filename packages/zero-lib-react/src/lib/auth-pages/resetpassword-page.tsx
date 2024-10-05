@@ -45,7 +45,6 @@ type Props = {
   onSubmit: (values: z.infer<typeof formSchema>) => void
 }
 
-// use url query change password recovery token
 export const ResetPasswordPage = ({
   resetPasswordToken,
   signupUrl,
