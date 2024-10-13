@@ -4,7 +4,7 @@ import { nanoid, customAlphabet } from 'nanoid'
 export const generateZeroId = ({ prefix }: { prefix: string }) => {
   //const id2 = customAlphabet('1234567890abcdef', 36)
   const keys = Array.from({ length: 6 }, () =>
-    customAlphabet('1234567890abcdef', 6),
+    customAlphabet('1234567890abcdef', 6)(),
   )
   return [prefix, ...keys].join('-')
 }
