@@ -1,0 +1,21 @@
+{
+  "name": "zero-lib",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "repository": "zero-company/zero-lib",
+  "scripts": {
+    "build": ""
+  },
+  "dependencies": {
+    "nanoid": "^5.0.7"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
