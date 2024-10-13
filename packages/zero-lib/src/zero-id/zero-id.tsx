@@ -1,8 +1,6 @@
 import { nanoid, customAlphabet } from 'nanoid'
 
-// c079f8d9a49b392351cde7b9a010336b4b25
 export const generateZeroId = ({ prefix }: { prefix: string }) => {
-  //const id2 = customAlphabet('1234567890abcdef', 36)
   const keys = Array.from({ length: 6 }, () =>
     customAlphabet('1234567890abcdef', 6)(),
   )
