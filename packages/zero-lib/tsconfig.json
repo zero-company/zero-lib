@@ -1,6 +1,7 @@
 {
-  "extends": "@repo/typescript-config/base.json",
-  "compilerOptions": {
-    "lib": ["ES2015"]
-  }
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
