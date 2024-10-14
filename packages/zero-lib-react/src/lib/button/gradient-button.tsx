@@ -14,6 +14,7 @@ type Props = {
   className?: string
   children: React.ReactNode
   gradient?: keyof typeof GRADIENTS
+  onClick?: () => void
 }
 
 export const GradientButton = ({
@@ -21,10 +22,12 @@ export const GradientButton = ({
   className,
   size = 'sm',
   gradient = 'purple1',
+  onClick,
 }: Props) => {
   return (
     children && (
       <Button
+        onClick={onClick}
         size={size}
         className={cn(
           'text-white',

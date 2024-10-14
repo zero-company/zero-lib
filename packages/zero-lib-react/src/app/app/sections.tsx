@@ -1,6 +1,8 @@
 'use client'
 import { GradientButton, CardV2, CardHeader } from '@/lib'
+import { useState } from 'react'
 import Link from 'next/link'
+import { generateZeroId } from '@zero-company/zero-lib'
 
 export const GradientButtonSection = () => (
   <div>
@@ -60,12 +62,18 @@ export const CardSection = () => (
 )
 
 export const FunctionSection = () => {
+  const [zeroId, setZeroId] = useState<string>()
+
   return (
     <div>
       <h3>Functions</h3>
       <div className='space-x-2 space-y-2'>
-        <GradientButton>Generate</GradientButton>
-        <p></p>
+        <GradientButton
+          onClick={() => setZeroId(generateZeroId({ prefix: 'zero1' }))}
+        >
+          Generate
+        </GradientButton>
+        <p>{zeroId || 'null'}</p>
       </div>
     </div>
   )
