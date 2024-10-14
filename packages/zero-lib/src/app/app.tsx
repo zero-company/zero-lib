@@ -11,16 +11,6 @@ const App = () => {
   return (
     <div className='prose prose-invert p-2'>
       <h1>zero-lib</h1>
-      <h2>generateZeroId</h2>
-      <div className='card'>
-        <button onClick={() => setZeroId(generateZeroId({ prefix: 'zero1' }))}>
-          zeroId is {zeroId || 'null'}
-        </button>
-      </div>
-      <p>
-        isZeroIdValid
-        {isZeroIdValid.toString()}
-      </p>
     </div>
   )
 }
