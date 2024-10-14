@@ -58,3 +58,15 @@ export const CardSection = () => (
     </div>
   </div>
 )
+
+export const FunctionSection = () => {
+  return (
+    <div>
+      <h3>Functions</h3>
+      <div className='space-x-2 space-y-2'>
+        <GradientButton>Generate</GradientButton>
+        <p></p>
+      </div>
+    </div>
+  )
+}

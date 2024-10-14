@@ -237,6 +237,9 @@ importers:
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13
+      '@zero-company/zero-lib':
+        specifier: workspace:*
+        version: link:../zero-lib
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -358,9 +361,6 @@ importers:
       '@types/react-dom':
         specifier: ^18
         version: 18.3.0
-      '@zero-company/zero-lib':
-        specifier: workspace:*
-        version: link:../zero-lib
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
