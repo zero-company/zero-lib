@@ -67,13 +67,13 @@ export const FunctionSection = () => {
   return (
     <div>
       <h3>Functions</h3>
-      <div className='space-x-2 space-y-2'>
+      <div className='flex gap-2'>
         <GradientButton
           onClick={() => setZeroId(generateZeroId({ prefix: 'zero1' }))}
         >
           Generate
         </GradientButton>
-        <p>{zeroId || 'null'}</p>
+        <p className='!m-0'>{zeroId || 'null'}</p>
       </div>
     </div>
   )
