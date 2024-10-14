@@ -1,23 +1,30 @@
 import { nanoid, customAlphabet } from 'nanoid'
 
+const PARTCOUNT = 6
+const PARTSIZE = 6
+
+const isHex = (str?: string | null) => {
+  let RegExp = /^[0-9a-f]{6}$/i
+  return str ? RegExp.test(str) : false
+}
+
 export const generateZeroId = ({ prefix }: { prefix: string }) => {
-  const keys = Array.from({ length: 6 }, () =>
-    customAlphabet('1234567890abcdef', 6)(),
+  const keys = Array.from({ length: PARTCOUNT }, () =>
+    customAlphabet('1234567890abcdef', PARTSIZE)(),
   )
   return [prefix, ...keys].join('-')
 }
 
-// zero1-c079f8-d9a49b-392351-cde7b9-a01033-6b4b25
-export const parseZeroId = (zeroId: string) => {
-  const [prefix, ...parts] = zeroId.split('-')
+export const parseZeroId = ({ zeroId }: { zeroId?: string | null }) => {
+  const [prefix, ...parts] = zeroId?.split('-') || []
+  const arePartsValidHex = parts.every(x => isHex(x))
+  const isZeroIdValid = [parts.length === PARTCOUNT, arePartsValidHex].every(
+    x => x === true,
+  )
   return {
     zeroId,
+    parts,
     prefix,
+    isZeroIdValid,
   }
 }
-
-export const formatZeroId = (zeroId: string, prefix: string) => {
-  return ``
-}
-
-export const validateZeroId = (zeroId: string) => {}
