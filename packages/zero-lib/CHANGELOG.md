@@ -1,5 +1,11 @@
 # @zero-company/zero-lib
 
+## 1.0.3
+
+### Patch Changes
+
+- [#46](https://github.com/zero-company/zero-lib/pull/46) [`cf77bff`](https://github.com/zero-company/zero-lib/commit/cf77bff804ead3fc12c462e32f7c53b29443ec3f) Thanks [@jigz](https://github.com/jigz)! - Update exports
+
 ## 1.0.2
 
 ### Patch Changes
