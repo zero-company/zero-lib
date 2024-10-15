@@ -1,5 +1,14 @@
 # @zero-company/zero-lib-react
 
+## 0.1.21
+
+### Patch Changes
+
+- [#44](https://github.com/zero-company/zero-lib/pull/44) [`d2e936e`](https://github.com/zero-company/zero-lib/commit/d2e936e45b28d4322a168a4bd1904364ea381760) Thanks [@jigz](https://github.com/jigz)! - Add generateZeroIds
+
+- Updated dependencies [[`d2e936e`](https://github.com/zero-company/zero-lib/commit/d2e936e45b28d4322a168a4bd1904364ea381760)]:
+  - @zero-company/zero-lib@1.0.2
+
 ## 0.1.20
 
 ### Patch Changes
