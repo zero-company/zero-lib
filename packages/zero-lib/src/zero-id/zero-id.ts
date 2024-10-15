@@ -15,6 +15,20 @@ export const generateZeroId = ({ prefix }: { prefix: string }) => {
   return [prefix, ...keys].join('-')
 }
 
+export const generateZeroIds = ({
+  prefix,
+  length = 8,
+}: {
+  prefix: string
+  length?: number
+}) =>
+  Array.from(
+    {
+      length,
+    },
+    () => generateZeroId({ prefix }),
+  )
+
 export const parseZeroId = ({ zeroId }: { zeroId?: string | null }) => {
   const [prefix, ...parts] = zeroId?.split('-') || []
   const arePartsValidHex = parts.every(x => isHex(x))
