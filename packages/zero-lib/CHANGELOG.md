@@ -1,5 +1,11 @@
 # @zero-company/zero-lib
 
+## 1.0.4
+
+### Patch Changes
+
+- [#48](https://github.com/zero-company/zero-lib/pull/48) [`f11b624`](https://github.com/zero-company/zero-lib/commit/f11b62439eaf3597ad44268b23dee0ace9bf81a9) Thanks [@jigz](https://github.com/jigz)! - Remove zero-lib module type
+
 ## 1.0.3
 
 ### Patch Changes
