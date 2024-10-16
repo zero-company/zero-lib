@@ -1,5 +1,11 @@
 # @zero-company/zero-lib
 
+## 1.0.5
+
+### Patch Changes
+
+- [#50](https://github.com/zero-company/zero-lib/pull/50) [`5ec6188`](https://github.com/zero-company/zero-lib/commit/5ec618882b5bae06c283eb6adc60c0679c550723) Thanks [@jigz](https://github.com/jigz)! - Add type
+
 ## 1.0.4
 
 ### Patch Changes
