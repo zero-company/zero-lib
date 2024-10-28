@@ -30,3 +30,5 @@ export * from './auth-pages/signin-page'
 export * from './auth-pages/signup-page'
 export * from './auth-pages/resetpassword-page'
 export * from './auth-pages/forgotpassword-page'
+
+export * from './email/email-verification-token-email'

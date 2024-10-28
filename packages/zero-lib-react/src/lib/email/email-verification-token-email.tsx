@@ -1,3 +1,4 @@
+'use client'
 import { Html, Button } from '@react-email/components'
 
 type Props = {
