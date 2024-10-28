@@ -1,5 +1,5 @@
 'use client'
-import { Html, Button } from '@react-email/components'
+import { Html, Button, render } from '@react-email/components'
 
 type Props = {
   url: string
@@ -12,3 +12,6 @@ export const EmailVerificationTokenEmail = ({ url }: Props) => {
     </Html>
   )
 }
+
+export const renderEmailVerificationTokenEmail = async () =>
+  await render(<EmailVerificationTokenEmail url='https://example.com' />)
