@@ -8,7 +8,7 @@ export default function Page() {
 
   return (
     <>
-      <div className='flex flex-col bg-white'>
+      <div className='flex flex-col bg-white overflow-y-auto'>
         <p>Email Verification Token</p>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
