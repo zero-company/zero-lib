@@ -2,7 +2,7 @@
 import { HEADER_SIDEBAR_SIZE, TabsTriggerV2 } from '@/lib'
 import { cn, Tabs, TabsContent, TabsList } from '@/components/shadcn'
 
-export type SidebarTabProps = {
+export type SidebarTabPropsV1 = {
   id: string
   icon: React.ReactNode
   content?: React.ReactNode
@@ -10,19 +10,19 @@ export type SidebarTabProps = {
   disabled?: boolean
 }
 
-export type SidebarTabsProps = {
+export type SidebarTabsPropsV1 = {
   defaultTab?: string
-  top?: SidebarTabProps[]
-  bottom?: SidebarTabProps[]
+  top?: SidebarTabPropsV1[]
+  bottom?: SidebarTabPropsV1[]
 }
 
 type Props = {
   className?: string
   header?: React.ReactNode
-  tabs?: SidebarTabsProps
+  tabs?: SidebarTabsPropsV1
 }
 
-export const Sidebar = ({ className, header, tabs }: Props) => {
+export const SidebarV1 = ({ className, header, tabs }: Props) => {
   const topTabs = tabs?.top || []
   const bottomTabs = tabs?.bottom || []
 

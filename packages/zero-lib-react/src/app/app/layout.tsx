@@ -11,6 +11,8 @@ import {
   Button,
   GradientButton,
   ZERO_LINKS,
+  SidebarProvider,
+  SidebarV2,
 } from '@/lib'
 import {
   LuList,
@@ -111,6 +113,7 @@ export default function Layout({ children }: Props) {
                 },
               ]}
             />
+            <SidebarV2 />
             <MenuV2
               options={[
                 {
