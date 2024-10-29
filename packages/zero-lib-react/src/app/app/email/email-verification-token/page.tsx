@@ -9,10 +9,12 @@ export default function Page() {
   // max-w-screen-sm
   return (
     <>
-      <div className='flex flex-col overflow-y-auto max-w-4xl w-full'>
-        <p>Email Verification Token</p>
-        {html && <iframe className='h-[40rem]' srcDoc={html} />}
-        <Textarea className='h-[40rem]' readOnly value={html || 'null'} />
+      <div className='flex flex-col overflow-y-auto max-w-4xl w-full *:shrink-0'>
+        <div className='p-4'>
+          <p>Email Verification Token</p>
+          <Textarea className='h-[10rem] ' readOnly value={html || 'null'} />
+        </div>
+        {html && <iframe className='h-[80rem]' srcDoc={html} />}
       </div>
     </>
   )
