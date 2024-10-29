@@ -73,7 +73,7 @@ export const EmailV1 = ({ children, preview }: Props) => {
           className='bg-background text-foreground my-auto mx-auto font-sans p-2'
           style={{}}
         >
-          <div className='border border-solid border-border rounded max-w-[465px]'>
+          <div className='border border-solid border-border rounded max-w-[465px] mx-auto'>
             <Header className={`${tw.borderB}`} />
             <div className={`p-2`}>{children}</div>
             <Footer className={`${tw.borderT}`} />
