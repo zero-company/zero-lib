@@ -11,9 +11,8 @@ export default function Page() {
   const [emailHtml, setEmailHtml] = useState<string | null>(null)
 
   useEffect(() => {
-    // renderEmailVerificationTokenEmail().then(html => setHtml(html))
     renderEmailV1(
-      <EmailV1>
+      <EmailV1 subject='Email Verification Token for jigzpalillo@gmail.com'>
         <p>Token: ----</p>
       </EmailV1>,
     ).then(html => setEmailHtml(html))

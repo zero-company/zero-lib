@@ -44,14 +44,17 @@ const tw = {
   borderR: 'border-solid border-border border-y-0 border-r border-l-0',
 }
 
-type Props = {
-  children: React.ReactNode
-  preview?: string
-}
-
-const Header = ({ className }: { className?: string }) => (
+const Header = ({
+  className,
+  subject,
+}: {
+  className?: string
+  subject?: string
+}) => (
   <div className={`flex h-10 ${className}`}>
-    <div className={`flex-1 p-2 ${tw.borderR}`}>Header</div>
+    <div className={`flex-1 p-2 truncate ${tw.borderR}`}>
+      {subject || 'Email from Zero'}
+    </div>
     <div className={`h-10 w-10 p-2.5`}>
       <ZeroLogo />
     </div>
@@ -65,7 +68,13 @@ const Footer = ({ className }: { className?: string }) => (
   </div>
 )
 
-export const EmailV1 = ({ children, preview }: Props) => {
+type Props = {
+  children: React.ReactNode
+  preview?: string
+  subject?: string
+}
+
+export const EmailV1 = ({ children, preview, subject }: Props) => {
   return (
     <Html lang='en'>
       <Head>
@@ -78,7 +87,7 @@ export const EmailV1 = ({ children, preview }: Props) => {
           style={{}}
         >
           <div className='border border-solid border-border rounded max-w-[465px] mx-auto'>
-            <Header className={`${tw.borderB}`} />
+            <Header className={`${tw.borderB}`} subject={subject} />
             <div className={`p-2`}>{children}</div>
             <Footer className={`${tw.borderT}`} />
           </div>
