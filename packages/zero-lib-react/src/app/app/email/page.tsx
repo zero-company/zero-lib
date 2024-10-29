@@ -1,15 +1,22 @@
 'use client'
 import { EmailV1, renderEmailV1, Textarea } from '@/lib'
 import { useState, useEffect } from 'react'
+import { EmailForm } from './email-form'
 
 export default function Page() {
   const [emailHtml, setEmailHtml] = useState<string | null>(null)
+  const [emailContent, setEmailContent] = useState({
+    header: `Accouncements`,
+    markdown: `
+    <br/>
+    # Changes
+    \n
+    `,
+  })
 
   useEffect(() => {
     renderEmailV1(
-      <EmailV1 header='Email Verification'>
-        <p>Token: ----</p>
-      </EmailV1>,
+      <EmailV1 header={emailContent.header}>{emailContent.markdown}</EmailV1>,
     ).then(html => setEmailHtml(html))
   })
 
@@ -18,8 +25,12 @@ export default function Page() {
     <>
       <div className='flex flex-col overflow-y-auto max-w-4xl w-full *:shrink-0'>
         <div className='p-4 space-y-4'>
-          <p>Email Verification Token</p>
-          <Textarea className='h-[10rem] ' readOnly value={emailHtml || ''} />
+          <p>Email Template</p>
+          <EmailForm
+            onSubmit={values => setEmailContent(values)}
+            html={emailHtml}
+            className='max-w-2xl'
+          />
         </div>
         <div className='p-4'> Breakpoint: 896px</div>
         {emailHtml && (
