@@ -17,7 +17,6 @@ import {
   Text,
   Tailwind,
   Markdown,
-  TailwindProps,
   TailwindConfig,
 } from '@react-email/components'
 
