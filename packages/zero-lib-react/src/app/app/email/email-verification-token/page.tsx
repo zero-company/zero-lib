@@ -11,7 +11,7 @@ export default function Page() {
       <div className='flex flex-col overflow-y-auto max-w-screen-sm w-full'>
         <p>Email Verification Token</p>
         {html && <iframe className='h-[40rem]' srcDoc={html} />}
-        <Textarea className='h-[40rem]' value={html || 'null'} />
+        <Textarea className='h-[40rem]' readOnly value={html || 'null'} />
       </div>
       <div />
     </>
