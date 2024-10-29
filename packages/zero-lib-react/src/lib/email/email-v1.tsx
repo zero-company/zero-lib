@@ -132,9 +132,13 @@ const Header = ({
     <div className={`flex-1 p-2 truncate content-center ${tw.borderR}`}>
       {header || 'Email from Zero'}
     </div>
-    <div className={`h-10 w-10 p-2.5`}>
+    <a
+      target='_blank'
+      href={ZERO_LINKS.website}
+      className={`h-10 w-10 p-2.5 text-white`}
+    >
       <ZeroLogo />
-    </div>
+    </a>
   </div>
 )
 
