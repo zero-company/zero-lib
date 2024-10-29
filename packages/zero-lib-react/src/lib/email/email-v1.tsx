@@ -43,8 +43,8 @@ export const EmailV1 = ({ children, preview }: Props) => {
       <Head />
       {preview && <Preview>{preview}</Preview>}
       <Tailwind config={twconfig}>
-        <Body className='bg-background text-foreground my-auto mx-auto font-sans px-2'>
-          <Container className='border border-solid border-border rounded my-[40px] mx-auto p-[20px] max-w-[465px]'>
+        <Body className='bg-background text-foreground my-auto mx-auto font-sans p-2'>
+          <Container className='border border-solid border-border rounded max-w-[465px] p-2'>
             {children}
           </Container>
         </Body>
