@@ -12,13 +12,13 @@ export default function Page() {
 
   useEffect(() => {
     renderEmailV1(
-      <EmailV1 header='Email Verification Token for jigzpalillo@gmail.com'>
+      <EmailV1 header='Email Verification'>
         <p>Token: ----</p>
       </EmailV1>,
     ).then(html => setEmailHtml(html))
   })
 
-  // max-w-screen-sm
+  // max-w-screen-sm max-w-80
   return (
     <>
       <div className='flex flex-col overflow-y-auto max-w-4xl w-full *:shrink-0'>
@@ -26,7 +26,11 @@ export default function Page() {
           <p>Email Verification Token</p>
           <Textarea className='h-[10rem] ' readOnly value={emailHtml || ''} />
         </div>
-        {emailHtml && <iframe className='h-[80rem]' srcDoc={emailHtml} />}
+        {emailHtml && <iframe className='h-[40rem] p-4' srcDoc={emailHtml} />}
+        <div className='p-4'>320px</div>
+        {emailHtml && (
+          <iframe className='h-[40rem] max-w-80 p-4' srcDoc={emailHtml} />
+        )}
       </div>
     </>
   )

@@ -175,11 +175,8 @@ export const EmailV1 = ({ children, preview, header, footer }: Props) => {
       </Head>
       {preview && <Preview>{preview}</Preview>}
       <Tailwind config={twConfig}>
-        <Body
-          className='bg-background text-foreground my-auto mx-auto font-sans p-2'
-          style={{}}
-        >
-          <div className='border border-solid border-border rounded max-w-[465px] mx-auto'>
+        <Body className='bg-background text-foreground my-auto mx-auto font-sans p-1'>
+          <div className='border border-solid border-border rounded max-w-2xl mx-auto'>
             <Header className={`${tw.borderB}`} header={header} />
             <div className={`p-2`}>{children}</div>
             <Footer className={`${tw.borderT}`} footer={footer} />
