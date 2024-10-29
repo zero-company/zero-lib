@@ -116,17 +116,7 @@ export default function Layout({ children }: Props) {
                   {
                     children: 'Email',
                     icon: <LuMail />,
-                    subMenu: (
-                      <MenuV2
-                        options={[
-                          {
-                            children: 'Email Verification Token',
-                            icon: <LuMail />,
-                            href: `/${pathnameDepth1}/email/email-verification-token`,
-                          },
-                        ]}
-                      />
-                    ),
+                    href: `/${pathnameDepth1}/email`,
                   },
                 ]}
               />

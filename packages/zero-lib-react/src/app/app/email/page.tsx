@@ -1,10 +1,5 @@
 'use client'
-import {
-  EmailV1,
-  renderEmailV1,
-  renderEmailVerificationTokenEmail,
-  Textarea,
-} from '@/lib'
+import { EmailV1, renderEmailV1, Textarea } from '@/lib'
 import { useState, useEffect } from 'react'
 
 export default function Page() {
