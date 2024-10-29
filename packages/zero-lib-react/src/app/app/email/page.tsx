@@ -15,11 +15,10 @@ export default function Page() {
 
   useEffect(() => {
     renderEmailV1(
-      <EmailV1 header={emailContent.header}>{emailContent.markdown}</EmailV1>,
+      <EmailV1 header={emailContent.header} markdown={emailContent.markdown} />,
     ).then(html => setEmailHtml(html))
   })
 
-  // max-w-screen-sm max-w-80
   return (
     <>
       <div className='flex flex-col overflow-y-auto max-w-4xl w-full *:shrink-0'>

@@ -164,14 +164,30 @@ const Footer = ({
   </div>
 )
 
+type MarkdownProps = React.ComponentProps<typeof Markdown>
+const markdownProps: Omit<MarkdownProps, 'children'> = {
+  markdownCustomStyles: {
+    h1: { color: 'red' },
+    // pre: { backgroundColor: 'black' },
+  },
+  markdownContainerStyles: {},
+}
+
 type Props = {
-  children: React.ReactNode
+  markdown?: string
+  children?: React.ReactNode
   preview?: string
   header?: string
   footer?: string
 }
 
-export const EmailV1 = ({ children, preview, header, footer }: Props) => {
+export const EmailV1 = ({
+  preview,
+  header,
+  footer,
+  markdown,
+  children,
+}: Props) => {
   return (
     <Html lang='en'>
       <Head>
@@ -182,7 +198,13 @@ export const EmailV1 = ({ children, preview, header, footer }: Props) => {
         <Body className='bg-background text-foreground my-auto mx-auto font-sans p-1'>
           <div className='border border-solid border-border rounded max-w-2xl mx-auto'>
             <Header className={`${tw.borderB}`} header={header} />
-            <div className={`p-2 whitespace-pre`}>{children}</div>
+            <div className={`p-2 whitespace-pre`}>
+              {children ? (
+                children
+              ) : (
+                <Markdown {...markdownProps}>{`${markdown}`}</Markdown>
+              )}
+            </div>
             <Footer className={`${tw.borderT}`} footer={footer} />
           </div>
         </Body>
