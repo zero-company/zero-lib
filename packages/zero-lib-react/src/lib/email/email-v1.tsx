@@ -129,7 +129,7 @@ const Header = ({
   header?: string
 }) => (
   <div className={`flex h-10 ${className}`}>
-    <div className={`flex-1 p-2 truncate ${tw.borderR}`}>
+    <div className={`flex-1 p-2 truncate content-center ${tw.borderR}`}>
       {header || 'Email from Zero'}
     </div>
     <div className={`h-10 w-10 p-2.5`}>
