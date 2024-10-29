@@ -8,7 +8,7 @@ export default function Page() {
   const [emailContent, setEmailContent] = useState({
     header: `Accouncements`,
     markdown: `
-  # Changes
+  #### Changes
     - Add EmailV1 generation form
     `,
   })

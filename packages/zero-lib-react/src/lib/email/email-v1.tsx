@@ -167,8 +167,8 @@ const Footer = ({
 type MarkdownProps = React.ComponentProps<typeof Markdown>
 const markdownProps: Omit<MarkdownProps, 'children'> = {
   markdownCustomStyles: {
-    h1: { color: 'red' },
-    // pre: { backgroundColor: 'black' },
+    h1: {},
+    codeInline: { color: '#ffffff' },
   },
   markdownContainerStyles: {},
 }
@@ -192,6 +192,11 @@ export const EmailV1 = ({
     <Html lang='en'>
       <Head>
         <style type='text/css'>{normalizeCss}</style>
+        <style>{`
+        pre {
+        background: transparent !important;
+        }
+        `}</style>
       </Head>
       {preview && <Preview>{preview}</Preview>}
       <Tailwind config={twConfig}>
