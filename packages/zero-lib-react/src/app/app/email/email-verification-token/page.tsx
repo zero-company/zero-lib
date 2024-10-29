@@ -12,7 +12,7 @@ export default function Page() {
 
   useEffect(() => {
     renderEmailV1(
-      <EmailV1 subject='Email Verification Token for jigzpalillo@gmail.com'>
+      <EmailV1 header='Email Verification Token for jigzpalillo@gmail.com'>
         <p>Token: ----</p>
       </EmailV1>,
     ).then(html => setEmailHtml(html))

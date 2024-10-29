@@ -123,14 +123,14 @@ const socials = [
 
 const Header = ({
   className,
-  subject,
+  header,
 }: {
   className?: string
-  subject?: string
+  header?: string
 }) => (
   <div className={`flex h-10 ${className}`}>
     <div className={`flex-1 p-2 truncate ${tw.borderR}`}>
-      {subject || 'Email from Zero'}
+      {header || 'Email from Zero'}
     </div>
     <div className={`h-10 w-10 p-2.5`}>
       <ZeroLogo />
@@ -138,9 +138,15 @@ const Header = ({
   </div>
 )
 
-const Footer = ({ className }: { className?: string }) => (
+const Footer = ({
+  className,
+  footer,
+}: {
+  className?: string
+  footer?: string
+}) => (
   <div className={`flex h-10 ${className}`}>
-    <div className={`flex-1 p-2`}>Footer</div>
+    <div className={`flex-1 p-2`}>{footer}</div>
     {socials.map((social, i) => (
       <a
         key={i}
@@ -157,10 +163,11 @@ const Footer = ({ className }: { className?: string }) => (
 type Props = {
   children: React.ReactNode
   preview?: string
-  subject?: string
+  header?: string
+  footer?: string
 }
 
-export const EmailV1 = ({ children, preview, subject }: Props) => {
+export const EmailV1 = ({ children, preview, header, footer }: Props) => {
   return (
     <Html lang='en'>
       <Head>
@@ -173,9 +180,9 @@ export const EmailV1 = ({ children, preview, subject }: Props) => {
           style={{}}
         >
           <div className='border border-solid border-border rounded max-w-[465px] mx-auto'>
-            <Header className={`${tw.borderB}`} subject={subject} />
+            <Header className={`${tw.borderB}`} header={header} />
             <div className={`p-2`}>{children}</div>
-            <Footer className={`${tw.borderT}`} />
+            <Footer className={`${tw.borderT}`} footer={footer} />
           </div>
         </Body>
       </Tailwind>
