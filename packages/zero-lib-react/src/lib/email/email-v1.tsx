@@ -20,6 +20,7 @@ import {
   TailwindConfig,
 } from '@react-email/components'
 import { ZeroLogo } from '../zero/zero-logo'
+import { ZERO_LINKS } from '@/lib'
 
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 const normalizeCss = `
@@ -48,7 +49,7 @@ const svg = {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 320 512'
       className='group-hover/brightIcon:brightness-150 size-full'
       height='1em'
@@ -62,7 +63,7 @@ const svg = {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 496 512'
       className='group-hover/brightIcon:brightness-150 size-full'
       height='1em'
@@ -76,7 +77,7 @@ const svg = {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 512 512'
       className='group-hover/brightIcon:brightness-150 size-full'
       height='1em'
@@ -90,7 +91,7 @@ const svg = {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 512 512'
       className='group-hover/brightIcon:brightness-150 size-full'
       height='1em'
@@ -101,6 +102,24 @@ const svg = {
     </svg>
   ),
 }
+const socials = [
+  {
+    link: ZERO_LINKS.website,
+    svg: svg.FaGlobe,
+  },
+  {
+    link: ZERO_LINKS.github,
+    svg: svg.FaGithub,
+  },
+  {
+    link: ZERO_LINKS.twitter,
+    svg: svg.FaTwitter,
+  },
+  {
+    link: ZERO_LINKS.facebook,
+    svg: svg.FaFacebookF,
+  },
+]
 
 const Header = ({
   className,
@@ -121,13 +140,17 @@ const Header = ({
 
 const Footer = ({ className }: { className?: string }) => (
   <div className={`flex h-10 ${className}`}>
-    <div className={`flex-1 p-2 ${tw.borderR}`}>Footer</div>
-    <div className={`p-2`}>
-      {svg.FaGlobe}
-      {svg.FaGithub}
-      {svg.FaTwitter}
-      {svg.FaFacebookF}
-    </div>
+    <div className={`flex-1 p-2`}>Footer</div>
+    {socials.map((social, i) => (
+      <a
+        key={i}
+        target='_blank'
+        href={social.link}
+        className={`h-10 w-10 p-3 text-white ${tw.borderL}`}
+      >
+        {social.svg}
+      </a>
+    ))}
   </div>
 )
 
