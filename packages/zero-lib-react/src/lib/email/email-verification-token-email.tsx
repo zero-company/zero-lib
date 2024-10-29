@@ -34,6 +34,7 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : ''
 
+// TODO: Add RSA digital signature qrcode
 export const EmailVerificationTokenEmail = ({
   username,
   userImage,
