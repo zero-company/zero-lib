@@ -1,10 +1,13 @@
 'use client'
 import { renderEmailVerificationTokenEmail, Textarea } from '@/lib'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Page() {
   const [html, setHtml] = useState<string | null>(null)
-  renderEmailVerificationTokenEmail().then(html => setHtml(html))
+
+  useEffect(() => {
+    renderEmailVerificationTokenEmail().then(html => setHtml(html))
+  })
 
   // max-w-screen-sm
   return (
