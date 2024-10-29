@@ -26,10 +26,13 @@ export default function Page() {
           <p>Email Verification Token</p>
           <Textarea className='h-[10rem] ' readOnly value={emailHtml || ''} />
         </div>
-        {emailHtml && <iframe className='h-[40rem] p-4' srcDoc={emailHtml} />}
-        <div className='p-4'>320px</div>
+        <div className='p-4'> Breakpoint: 896px</div>
         {emailHtml && (
-          <iframe className='h-[40rem] max-w-80 p-4' srcDoc={emailHtml} />
+          <iframe className='h-[32rem] px-4 max-w-4xl' srcDoc={emailHtml} />
+        )}
+        <div className='p-4'> Breakpoint: 320px</div>
+        {emailHtml && (
+          <iframe className='h-[32rem] px-4 max-w-80' srcDoc={emailHtml} />
         )}
       </div>
     </>
