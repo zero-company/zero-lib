@@ -14,7 +14,7 @@ export default function Page() {
     // renderEmailVerificationTokenEmail().then(html => setHtml(html))
     renderEmailV1(
       <EmailV1>
-        <p>test</p>
+        <p>Token: ----</p>
       </EmailV1>,
     ).then(html => setEmailHtml(html))
   })
@@ -23,7 +23,7 @@ export default function Page() {
   return (
     <>
       <div className='flex flex-col overflow-y-auto max-w-4xl w-full *:shrink-0'>
-        <div className='p-4'>
+        <div className='p-4 space-y-4'>
           <p>Email Verification Token</p>
           <Textarea className='h-[10rem] ' readOnly value={emailHtml || ''} />
         </div>

@@ -37,6 +37,20 @@ type Props = {
   preview?: string
 }
 
+const Header = () => (
+  <div className='flex'>
+    <p>Header</p>
+    <p>Logo</p>
+  </div>
+)
+
+const Footer = () => (
+  <div className='flex'>
+    <p>Footer</p>
+    <p>Socials</p>
+  </div>
+)
+
 export const EmailV1 = ({ children, preview }: Props) => {
   return (
     <Html lang='en'>
@@ -45,7 +59,9 @@ export const EmailV1 = ({ children, preview }: Props) => {
       <Tailwind config={twconfig}>
         <Body className='bg-background text-foreground my-auto mx-auto font-sans p-2'>
           <Container className='border border-solid border-border rounded max-w-[465px] p-2'>
+            <Header />
             {children}
+            <Footer />
           </Container>
         </Body>
       </Tailwind>
