@@ -1,12 +1,12 @@
 'use client'
 import { cn, Button } from '@/components/shadcn'
 import {
-  Sidebar,
+  SidebarV1,
   Header,
   BORDER_COLOR,
   HEADER_SIDEBAR_SIZE,
   Icon,
-  SidebarTabsProps,
+  SidebarTabsPropsV1,
 } from '@/lib'
 import { LuMenu } from 'react-icons/lu'
 import { useState } from 'react'
@@ -16,7 +16,7 @@ type Props = {
   header?: React.ReactNode
   page?: React.ReactNode
   body?: React.ReactNode
-  sidebarTabs?: SidebarTabsProps
+  sidebarTabs?: SidebarTabsPropsV1
 }
 
 export const AppLayoutV1 = ({ header, sidebar, body, sidebarTabs }: Props) => {
@@ -33,7 +33,7 @@ export const AppLayoutV1 = ({ header, sidebar, body, sidebarTabs }: Props) => {
           !isSidebarOpen && '-ml-[100vw] sm:ml-0',
         )}
       >
-        <Sidebar
+        <SidebarV1
           className='w-screen sm:w-64'
           tabs={{
             ...sidebarTabs,

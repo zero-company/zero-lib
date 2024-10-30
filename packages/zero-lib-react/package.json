@@ -28,6 +28,10 @@
     "turbo": "turbo"
   },
   "dependencies": {
+    "react-syntax-highlighter": "15.6.1",
+    "rehype-highlight": "7.0.1",
+    "react-markdown": "9.0.1",
+    "@react-email/components": "0.0.25",
     "@hookform/resolvers": "^3.9.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
@@ -90,6 +94,7 @@
     "@zero-company/zero-lib": "workspace:*"
   },
   "devDependencies": {
+    "@types/react-syntax-highlighter": "15.5.13",
     "@storybook/addon-essentials": "^8.2.2",
     "@storybook/addon-interactions": "^8.2.2",
     "@storybook/addon-links": "^8.2.2",

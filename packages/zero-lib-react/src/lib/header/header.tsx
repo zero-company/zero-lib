@@ -24,7 +24,9 @@ export const Header = ({ className, header, title, subtitle }: Props) => {
       <div className='flex-1'>
         {header || (
           <div className='p-1'>
-            <p className='tracking-wider'>{title || pathname.substring(1)}</p>
+            <p className='tracking-wider truncate'>
+              {title || pathname.split('/').slice(2).join('/') || '/'}
+            </p>
             <p className='tracking-wider text-muted-foreground'>
               {subtitle || '----'}
             </p>
