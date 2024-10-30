@@ -34,14 +34,20 @@ type Props = {
   onSubmit: (values: z.infer<typeof formSchema>) => void
   html?: string | null | undefined
   className?: string
+  defaultValues?: z.infer<typeof formSchema>
 }
 
-export const EmailForm = ({ onSubmit, html, className }: Props) => {
+export const EmailForm = ({
+  onSubmit,
+  html,
+  className,
+  defaultValues,
+}: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      header: '',
-      markdown: '',
+      header: defaultValues?.header || '',
+      markdown: defaultValues?.markdown || '',
     },
   })
   const formErrors = form.formState.errors
@@ -65,7 +71,6 @@ export const EmailForm = ({ onSubmit, html, className }: Props) => {
       <CardV2>
         <CardHeader>
           <CardTitle className='text-xl'>Generate Email</CardTitle>
-          <CardDescription>Enter content</CardDescription>
         </CardHeader>
         <CardContent className='!pt-0'>
           <Form {...form}>
@@ -77,7 +82,7 @@ export const EmailForm = ({ onSubmit, html, className }: Props) => {
                   <FormItem>
                     <FormLabel>Header</FormLabel>
                     <FormControl>
-                      <Input placeholder='Announcements' {...field} />
+                      <Input {...field} />
                     </FormControl>
                   </FormItem>
                 )}

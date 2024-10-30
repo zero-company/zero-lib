@@ -35,6 +35,7 @@ export default function Page() {
         <div className='p-4 space-y-4'>
           <p>Email Template</p>
           <EmailForm
+            defaultValues={emailContent}
             onSubmit={values => setEmailContent(values)}
             html={emailHtml}
             className='max-w-2xl'
