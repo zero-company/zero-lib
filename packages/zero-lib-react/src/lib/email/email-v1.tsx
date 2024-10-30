@@ -203,7 +203,7 @@ export const EmailV1 = ({
         <Body className='bg-background text-foreground my-auto mx-auto font-sans p-1'>
           <div className='border border-solid border-border rounded max-w-2xl mx-auto'>
             <Header className={`${tw.borderB}`} header={header} />
-            <div className={`p-2 whitespace-pre`}>
+            <div className={`p-2`}>
               {children ? (
                 children
               ) : (
