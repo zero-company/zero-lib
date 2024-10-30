@@ -56,6 +56,13 @@ export const EmailForm = ({
     (error: FormSchemaKeysType) => formErrors[error]?.message,
   )
 
+  const onSend = () => {
+    fetch('/api', {
+      method: 'POST',
+      body: JSON.stringify({ header: defaultValues?.header, body: html }),
+    })
+  }
+
   return (
     <div className={`space-y-4 ${className}`}>
       {errorMessages.length > 0 && (
@@ -67,7 +74,6 @@ export const EmailForm = ({
           </CardHeader>
         </CardV2>
       )}
-
       <CardV2>
         <CardHeader>
           <CardTitle className='text-xl'>Generate Email</CardTitle>
@@ -104,7 +110,9 @@ export const EmailForm = ({
                 <Button variant='outline' type='submit'>
                   Generate
                 </Button>
-                <Button variant='outline'>Send</Button>
+                <Button variant='outline' onClick={() => onSend()}>
+                  Send
+                </Button>
               </div>
               <div className='mt-4 text-sm'>Output HTML</div>
               <Textarea className='h-[10rem]' readOnly value={html || ''} />

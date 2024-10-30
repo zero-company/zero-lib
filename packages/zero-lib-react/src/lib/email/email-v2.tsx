@@ -31,7 +31,7 @@ export const EmailV2 = (props: Props) => {
   return (
     <Html lang='en'>
       <Head />
-      <Preview>{`${props.preview}`}</Preview>
+      {props.preview && <Preview>{`${props.preview}`}</Preview>}
       <Body style={body}>
         <Text>{props.header}</Text>
         <Hr />

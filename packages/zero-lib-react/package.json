@@ -95,6 +95,7 @@
     "@zero-company/zero-lib": "workspace:*"
   },
   "devDependencies": {
+    "@types/nodemailer": "6.4.16",
     "@types/react-syntax-highlighter": "15.5.13",
     "@storybook/addon-essentials": "^8.2.2",
     "@storybook/addon-interactions": "^8.2.2",
