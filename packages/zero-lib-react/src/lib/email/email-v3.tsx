@@ -37,13 +37,15 @@ export const EmailV3 = (props: Props) => (
         <Section style={{ backgroundColor: '#09090B' }}>
           <Row>
             <Column>
-              <Img
-                style={headerBlue}
-                src={`${baseUrl}/static/google-play-header.png`}
-                width='305'
-                height='28'
-                alt=' '
-              />
+              {/*
+                <Img
+                  style={headerBlue}
+                  src={`${baseUrl}/static/google-play-header.png`}
+                  width='305'
+                  height='28'
+                  alt=' '
+                />
+              */}
               <Img
                 style={{
                   ...sectionLogo,
@@ -113,14 +115,25 @@ export const EmailV3 = (props: Props) => (
 
         <Section style={paragraphContent}>
           <Text style={paragraph}>Thank you,</Text>
-          <Text style={{ ...paragraph, fontSize: '20px' }}>
-            The Google Play team
-          </Text>
+          <Text style={{ ...paragraph, fontSize: '20px' }}>The Zero Team</Text>
         </Section>
 
-        <Section style={containerContact}>
+        <Section
+          style={{
+            ...containerContact,
+            width: '100%',
+            paddingTop: '20px',
+            paddingBottom: '20px',
+            paddingLeft: '40px',
+            paddingRight: '40px',
+            backgroundColor: '#09090B',
+            borderRadius: '0px',
+          }}
+        >
           <Row>
-            <Text style={paragraph}>Connect with us</Text>
+            <Text style={{ ...paragraph, color: '#fff', marginTop: 0 }}>
+              Connect with us
+            </Text>
           </Row>
           <Row
             align='left'
@@ -167,7 +180,8 @@ export const EmailV3 = (props: Props) => (
           </Row>
         </Section>
 
-        <Section style={{ ...paragraphContent, paddingBottom: 30 }}>
+        {/*
+          <Section style={{ ...paragraphContent, paddingBottom: 30 }}>
           <Text
             style={{
               ...paragraph,
@@ -192,6 +206,7 @@ export const EmailV3 = (props: Props) => (
             account.
           </Text>
         </Section>
+        */}
       </Container>
     </Body>
   </Html>
