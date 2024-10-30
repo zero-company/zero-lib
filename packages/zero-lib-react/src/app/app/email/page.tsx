@@ -13,14 +13,14 @@ export default function Page() {
     - Integer condimentum turpis vehicula turpis lacinia, vel ultrices urna aliquam.
     - Maecenas dictum gravida dictum.
 
-      ~~~js
-        import React from 'react'
-        import ReactDOM from 'react-dom'
-        import Markdown from 'react-markdown'
-        import rehypeHighlight from 'rehype-highlight'
+~~~js
+  import React from 'react'
+  import ReactDOM from 'react-dom'
+  import Markdown from 'react-markdown'
+  import rehypeHighlight from 'rehype-highlight'
 
-        const markdown = ""
-      ~~~
+  const markdown = ""
+~~~
     `,
   })
 

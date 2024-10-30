@@ -25,7 +25,10 @@ import Markdown from 'react-markdown'
 //import rehypeHighlight from 'rehype-highlight'
 import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import {
+  dark,
+  vscDarkPlus,
+} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 const normalizeCss = `
@@ -48,6 +51,7 @@ const tw = {
   borderB: 'border-solid border-border border-x-0 border-b border-t-0',
   borderL: 'border-solid border-border border-y-0 border-l border-r-0',
   borderR: 'border-solid border-border border-y-0 border-r border-l-0',
+  border: 'border-solid border-border border',
 }
 const svg = {
   FaFacebookF: (
@@ -183,14 +187,23 @@ const markdownComponents: MarkdownProps['components'] = {
     const { children, className, node, ref, ...rest } = props
     const match = /language-(\w+)/.exec(className || '')
     return match ? (
-      <SyntaxHighlighter
-        {...rest}
-        PreTag='div'
-        language={match[1]}
-        style={dark}
-      >
-        {String(children).replace(/\n$/, '')}
-      </SyntaxHighlighter>
+      <div className={`${tw.border}`}>
+        <SyntaxHighlighter
+          {...rest}
+          PreTag='div'
+          language={match[1]}
+          style={{
+            ...vscDarkPlus,
+            'pre[class*="language-"]': {
+              ...vscDarkPlus['pre[class*="language-"]'],
+              background: 'transparent',
+              padding: '0px',
+            },
+          }}
+        >
+          {String(children).replace(/\n$/, '')}
+        </SyntaxHighlighter>
+      </div>
     ) : (
       <code {...rest} className={className}>
         {children}
