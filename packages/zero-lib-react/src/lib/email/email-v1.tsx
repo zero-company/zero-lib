@@ -260,4 +260,11 @@ export const EmailV1 = ({
   )
 }
 
-export const renderEmailV1 = render
+export const renderEmailV1React = render
+export const renderEmailV1 = ({
+  header,
+  markdown,
+}: {
+  header: string
+  markdown: string
+}) => render(<EmailV1 header={header} markdown={markdown} />)
