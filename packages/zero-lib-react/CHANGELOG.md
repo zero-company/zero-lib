@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.26
+
+### Patch Changes
+
+- [#55](https://github.com/zero-company/zero-lib/pull/55) [`c955fce`](https://github.com/zero-company/zero-lib/commit/c955fce4a249173cc79fc30c551a648c7e31c2a3) Thanks [@jigz](https://github.com/jigz)! - Add EmailV1 non react render
+
 ## 0.1.25
 
 ### Patch Changes
