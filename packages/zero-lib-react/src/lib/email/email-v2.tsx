@@ -19,6 +19,7 @@ import {
   Markdown as ReMarkdown,
   TailwindConfig,
 } from '@react-email/components'
+import { ZeroLogo } from '@/lib'
 
 type Props = {
   preview?: string
@@ -33,9 +34,30 @@ export const EmailV2 = (props: Props) => {
       <Head />
       {props.preview && <Preview>{`${props.preview}`}</Preview>}
       <Body style={body}>
-        <Text>{props.header}</Text>
-        <Hr />
-        {props.body}
+        <Container style={container}>
+          <Section>
+            <Row style={{ height: '40px', overflow: 'clip' }}>
+              <Column style={{ padding: '8px', borderRight: border }}>
+                <Text style={{ margin: '0px' }}>{props.header}</Text>
+              </Column>
+              <Column
+                style={
+                  {
+                    //marginRight: '10px',
+                    //marginTop: '6px'
+                  }
+                }
+                width='40'
+                align='right'
+              >
+                <Container style={{ marginTop: '6px', marginLeft: '10px' }}>
+                  <ZeroLogo />
+                </Container>
+              </Column>
+            </Row>
+          </Section>
+          <Section style={{ borderTop: border }}>{props.body}</Section>
+        </Container>
       </Body>
     </Html>
   )
@@ -53,6 +75,11 @@ const body = {
   backgroundColor: '#09090B',
   color: '#ffffff',
   fontFamily: 'HelveticaNeue,Helvetica,Arial,sans-serif',
+}
+
+const container = {
   borderRadius: '6px', // rounded-md
   border: '1px solid #27272a', // hsl(240, 3.7%, 15.9%)
 }
+
+const border = '1px solid #27272a'
