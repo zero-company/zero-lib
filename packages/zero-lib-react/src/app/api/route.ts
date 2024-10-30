@@ -8,8 +8,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
     await MailTransporter.sendMail({
       from: `Zero <${MailEmail}>`,
       to: TestEmail,
-      subject: `${body.header}`,
-      html: `${body.html}`,
+      subject: `${header}`,
+      html: `${body}`,
     })
   } catch (error) {
     console.log('Failed to send email', error)
