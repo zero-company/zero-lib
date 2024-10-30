@@ -62,6 +62,11 @@ export default function Page() {
         {emailHtml && (
           <iframe className='h-[32rem] px-4 max-w-2xl' srcDoc={emailHtml} />
         )}
+        <div className='p-4'> Breakpoint: 320px</div>
+        {emailHtml && (
+          <iframe className='h-[32rem] px-4 max-w-80' srcDoc={emailHtml} />
+        )}
+
         <div className='p-4'> Breakpoint: 896px</div>
         {emailHtml2 && (
           <iframe className='h-[32rem] px-4 max-w-2xl' srcDoc={emailHtml2} />

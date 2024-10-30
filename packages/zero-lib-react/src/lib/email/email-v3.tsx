@@ -45,7 +45,7 @@ export const EmailV3 = (props: Props) => (
                 src={`${baseUrl}/static/google-play-logo.png`}
                 width='155'
                 height='31'
-                alt='Google Play'
+                alt='Zero'
               />
             </Column>
           </Row>
