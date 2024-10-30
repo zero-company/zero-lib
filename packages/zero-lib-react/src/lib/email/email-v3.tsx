@@ -14,6 +14,7 @@ import {
   render,
 } from '@react-email/components'
 import * as React from 'react'
+import { ZERO_LINKS } from '../constants'
 
 const baseUrl2 = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -139,55 +140,75 @@ export const EmailV3 = (props: Props) => (
             paddingRight: '40px',
             backgroundColor: '#09090B',
             borderRadius: '0px',
+            color: '#d1d1d1',
           }}
         >
           <Row>
-            <Text style={{ ...paragraph, color: '#fff', marginTop: 0 }}>
-              Connect with us
+            <Link
+              style={footerLink}
+              href={ZERO_LINKS.website}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              website
+            </Link>
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <Link
+              style={footerLink}
+              href={ZERO_LINKS.github}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              github
+            </Link>
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <Link
+              style={footerLink}
+              href={ZERO_LINKS.twitter}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              x
+            </Link>
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <Link
+              style={footerLink}
+              href={ZERO_LINKS.facebook}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              facebook
+            </Link>
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <Link
+              style={footerLink}
+              href={ZERO_LINKS.discord}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              discord
+            </Link>
+            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <Link
+              style={footerLink}
+              href={ZERO_LINKS.buymeacoffee}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              support
+            </Link>
+            <Text
+              style={{
+                ...paragraph,
+                fontSize: '12px',
+                margin: 0,
+                color: '#d1d1d1',
+                marginTop: 20,
+                lineHeight: '20px',
+              }}
+            >
+              ©2024 Zero, an Open Source company. All Rights Reserved.
             </Text>
-          </Row>
-          <Row
-            align='left'
-            style={{
-              width: '84px',
-              float: 'left',
-            }}
-          >
-            <Column style={{ paddingRight: '4px' }}>
-              <Link href='https://notifications.google.com'>
-                <Img
-                  width='28'
-                  height='28'
-                  src={`${baseUrl}/static/google-play-chat.png`}
-                />
-              </Link>
-            </Column>
-            <Column style={{ paddingRight: '4px' }}>
-              <Link href='https://notifications.google.com'>
-                <Img
-                  width='28'
-                  height='28'
-                  src={`${baseUrl}/static/google-play-icon.png`}
-                />
-              </Link>
-            </Column>
-            <Column style={{ paddingRight: '4px' }}>
-              <Link href='https://notifications.google.com'>
-                <Img
-                  width='28'
-                  height='28'
-                  src={`${baseUrl}/static/google-play-academy.png`}
-                />
-              </Link>
-            </Column>
-          </Row>
-          <Row>
-            <Img
-              style={footer}
-              width='540'
-              height='48'
-              src={`${baseUrl}/static/google-play-footer.png`}
-            />
           </Row>
         </Section>
 
@@ -231,6 +252,11 @@ export const renderEmailV3 = ({
   header: string
   body: string
 }) => render(<EmailV3 header={header} body={body} />, { pretty: true })
+
+const footerLink = {
+  color: '#d1d1d1',
+  textDecoration: 'underline',
+}
 
 const main = {
   backgroundColor: '#dbddde',
