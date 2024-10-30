@@ -114,8 +114,19 @@ export const EmailV3 = (props: Props) => (
         </Section>
 
         <Section style={paragraphContent}>
-          <Text style={paragraph}>Thank you,</Text>
-          <Text style={{ ...paragraph, fontSize: '20px' }}>The Zero Team</Text>
+          <Text style={{ ...paragraph, marginBottom: 2, marginTop: 0 }}>
+            Thank you,
+          </Text>
+          <Text
+            style={{
+              ...paragraph,
+              fontSize: '20px',
+              marginTop: 2,
+              marginBottom: 24,
+            }}
+          >
+            The Zero Team
+          </Text>
         </Section>
 
         <Section

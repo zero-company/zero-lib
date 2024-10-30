@@ -12,7 +12,6 @@ import { EmailForm } from './email-form'
 
 export default function Page() {
   const [emailHtml, setEmailHtml] = useState<string | null>(null)
-  const [emailHtml2, setEmailHtml2] = useState<string | null>(null)
   const [emailContent, setEmailContent] = useState({
     header: `[zero] Updates`,
     body: `
@@ -22,24 +21,10 @@ export default function Page() {
     - Integer condimentum turpis vehicula turpis lacinia, vel ultrices urna aliquam.
     - Maecenas dictum gravida dictum.
 
-~~~js
-  import React from 'react'
-  import ReactDOM from 'react-dom'
-
-  export const Button = () => {}
-~~~
     `,
   })
 
   useEffect(() => {
-    // renderEmailV1({
-    //   header: emailContent.header,
-    //   markdown: emailContent.body,
-    // }).then(html => setEmailHtml2(html))
-    // renderEmailV2({
-    //   header: emailContent.header,
-    //   body: emailContent.body,
-    // }).then(html => setEmailHtml(html))
     renderEmailV3({
       header: emailContent.header,
       body: emailContent.body,
@@ -65,15 +50,6 @@ export default function Page() {
         <div className='p-4'> Breakpoint: 320px</div>
         {emailHtml && (
           <iframe className='h-[32rem] px-4 max-w-80' srcDoc={emailHtml} />
-        )}
-
-        <div className='p-4'> Breakpoint: 896px</div>
-        {emailHtml2 && (
-          <iframe className='h-[32rem] px-4 max-w-2xl' srcDoc={emailHtml2} />
-        )}
-        <div className='p-4'> Breakpoint: 320px</div>
-        {emailHtml2 && (
-          <iframe className='h-[32rem] px-4 max-w-80' srcDoc={emailHtml2} />
         )}
       </div>
     </>
