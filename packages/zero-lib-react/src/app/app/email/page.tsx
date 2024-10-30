@@ -1,5 +1,5 @@
 'use client'
-import { EmailV1, renderEmailV1, Textarea } from '@/lib'
+import { EmailV1, renderEmailV1React, renderEmailV1, Textarea } from '@/lib'
 import { useState, useEffect } from 'react'
 import { EmailForm } from './email-form'
 
@@ -24,9 +24,10 @@ export default function Page() {
   })
 
   useEffect(() => {
-    renderEmailV1(
-      <EmailV1 header={emailContent.header} markdown={emailContent.markdown} />,
-    ).then(html => setEmailHtml(html))
+    renderEmailV1({
+      header: emailContent.header,
+      markdown: emailContent.markdown,
+    }).then(html => setEmailHtml(html))
   })
 
   return (
