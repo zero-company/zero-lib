@@ -36,20 +36,11 @@ export const EmailV2 = (props: Props) => {
       <Body style={body}>
         <Container style={container}>
           <Section>
-            <Row style={{ height: '40px', overflow: 'clip' }}>
+            <Row style={{ height: '40px' }}>
               <Column style={{ padding: '8px', borderRight: border }}>
                 <Text style={{ margin: '0px' }}>{props.header}</Text>
               </Column>
-              <Column
-                style={
-                  {
-                    //marginRight: '10px',
-                    //marginTop: '6px'
-                  }
-                }
-                width='40'
-                align='right'
-              >
+              <Column width='40' align='right'>
                 <Container style={{ marginTop: '6px', marginLeft: '10px' }}>
                   <ZeroLogo />
                 </Container>
@@ -75,6 +66,7 @@ const body = {
   backgroundColor: '#09090B',
   color: '#ffffff',
   fontFamily: 'HelveticaNeue,Helvetica,Arial,sans-serif',
+  padding: '8px',
 }
 
 const container = {
