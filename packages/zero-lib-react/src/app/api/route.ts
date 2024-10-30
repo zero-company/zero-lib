@@ -3,7 +3,6 @@ import { MailTransporter, MailEmail, TestEmail } from '@/components'
 
 export async function POST(req: NextRequest, res: NextResponse) {
   const { header, body } = await req.json()
-  console.log('header', header)
   try {
     await MailTransporter.sendMail({
       from: `Zero <${MailEmail}>`,
@@ -14,4 +13,5 @@ export async function POST(req: NextRequest, res: NextResponse) {
   } catch (error) {
     console.log('Failed to send email', error)
   }
+  return NextResponse.json({ message: 'Email sent' })
 }
