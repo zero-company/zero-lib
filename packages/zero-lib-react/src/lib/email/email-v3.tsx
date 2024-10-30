@@ -81,7 +81,7 @@ export const EmailV3 = (props: Props) => (
             practices for this policy remain the same.
           </Text>
         </Section>
-        <Section style={paragraphList}>
+        <Section style={paragraphContent}>
           <Text style={paragraph}>
             We&apos;re noting exceptions to the{' '}
             <Link href='https://notifications.google.com' style={link}>
@@ -246,10 +246,6 @@ const heading = {
 
 const paragraphContent = {
   padding: '0 40px',
-}
-
-const paragraphList = {
-  paddingLeft: 40,
 }
 
 const paragraph = {
