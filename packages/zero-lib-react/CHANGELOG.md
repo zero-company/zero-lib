@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.25
+
+### Patch Changes
+
+- [#53](https://github.com/zero-company/zero-lib/pull/53) [`b6d938c`](https://github.com/zero-company/zero-lib/commit/b6d938c5362133f6615cb9768364a5541450970f) Thanks [@jigz](https://github.com/jigz)! - Add EmailV1
+
 ## 0.1.24
 
 ### Patch Changes
