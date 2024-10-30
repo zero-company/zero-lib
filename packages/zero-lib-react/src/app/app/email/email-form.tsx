@@ -24,7 +24,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
   header: z.string().min(1, { message: 'Header required' }),
-  markdown: z.string().min(1, { message: 'Markdown required' }),
+  body: z.string().min(1, { message: 'Body required' }),
 })
 const formSchemaKeys = formSchema.keyof()
 type FormSchemaType = z.infer<typeof formSchema>
@@ -47,7 +47,7 @@ export const EmailForm = ({
     resolver: zodResolver(formSchema),
     defaultValues: {
       header: defaultValues?.header || '',
-      markdown: defaultValues?.markdown || '',
+      body: defaultValues?.body || '',
     },
   })
   const formErrors = form.formState.errors
@@ -89,10 +89,10 @@ export const EmailForm = ({
               />
               <FormField
                 control={form.control}
-                name='markdown'
+                name='body'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Markdown</FormLabel>
+                    <FormLabel>Body</FormLabel>
                     <FormControl>
                       {/* <Input placeholder='# Changes' {...field} /> */}
                       <Textarea className='h-[10rem]' {...field} />
