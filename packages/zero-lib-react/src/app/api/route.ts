@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server'
 import { MailTransporter, MailEmail, TestEmail } from '@/components'
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
   const { header, body } = await req.json()
   try {
     await MailTransporter.sendMail({

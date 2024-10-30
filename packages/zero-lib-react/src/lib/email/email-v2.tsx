@@ -52,6 +52,7 @@ export const renderEmailV2 = ({
 const body = {
   backgroundColor: '#09090B',
   color: '#ffffff',
+  fontFamily: 'HelveticaNeue,Helvetica,Arial,sans-serif',
   borderRadius: '6px', // rounded-md
   border: '1px solid #27272a', // hsl(240, 3.7%, 15.9%)
 }
