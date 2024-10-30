@@ -22,6 +22,10 @@ import {
 import { ZeroLogo } from '../zero/zero-logo'
 import { ZERO_LINKS } from '@/lib'
 import Markdown from 'react-markdown'
+//import rehypeHighlight from 'rehype-highlight'
+import remarkGfm from 'remark-gfm'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 const normalizeCss = `
@@ -165,13 +169,34 @@ const Footer = ({
   </div>
 )
 
-type MarkdownProps = React.ComponentProps<typeof ReMarkdown>
-const markdownProps: Omit<MarkdownProps, 'children'> = {
+type ReMarkdownProps = React.ComponentProps<typeof ReMarkdown>
+const reMarkdownProps: Omit<ReMarkdownProps, 'children'> = {
   markdownCustomStyles: {
     h1: {},
     codeInline: { color: '#ffffff' },
   },
   markdownContainerStyles: {},
+}
+type MarkdownProps = React.ComponentProps<typeof Markdown>
+const markdownComponents: MarkdownProps['components'] = {
+  code: props => {
+    const { children, className, node, ref, ...rest } = props
+    const match = /language-(\w+)/.exec(className || '')
+    return match ? (
+      <SyntaxHighlighter
+        {...rest}
+        PreTag='div'
+        language={match[1]}
+        style={dark}
+      >
+        {String(children).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    ) : (
+      <code {...rest} className={className}>
+        {children}
+      </code>
+    )
+  },
 }
 
 type Props = {
@@ -203,8 +228,14 @@ export const EmailV1 = ({
               {children ? (
                 children
               ) : (
-                // <ReMarkdown {...markdownProps}>{`${markdown}`}</ReMarkdown>
-                <Markdown>{markdown}</Markdown>
+                // <ReMarkdown {...reMarkdownProps}>{`${markdown}`}</ReMarkdown>
+                <Markdown
+                  rehypePlugins={[]}
+                  remarkPlugins={[remarkGfm]}
+                  components={markdownComponents}
+                >
+                  {markdown}
+                </Markdown>
               )}
             </div>
             <Footer className={`${tw.borderT}`} footer={footer} />

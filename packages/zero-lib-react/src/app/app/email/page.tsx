@@ -12,7 +12,15 @@ export default function Page() {
     - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper augue nisi, id ornare orci placerat ac.
     - Integer condimentum turpis vehicula turpis lacinia, vel ultrices urna aliquam.
     - Maecenas dictum gravida dictum.
-    
+
+      ~~~js
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+        import Markdown from 'react-markdown'
+        import rehypeHighlight from 'rehype-highlight'
+
+        const markdown = ""
+      ~~~
     `,
   })
 
