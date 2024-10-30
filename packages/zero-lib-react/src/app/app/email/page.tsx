@@ -14,7 +14,7 @@ export default function Page() {
   const [emailHtml, setEmailHtml] = useState<string | null>(null)
   const [emailHtml2, setEmailHtml2] = useState<string | null>(null)
   const [emailContent, setEmailContent] = useState({
-    header: `Accouncements`,
+    header: `[zero] Updates`,
     body: `
   #### Changes
     - Lorem ipsum dolor sit amet, consectetur adipiscing elit. 

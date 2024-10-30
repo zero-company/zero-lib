@@ -19,10 +19,15 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : ''
 
-export const EmailV3 = () => (
+type Props = {
+  header: string
+  body: string
+}
+
+export const EmailV3 = (props: Props) => (
   <Html>
     <Head />
-    <Preview>Google Play developers</Preview>
+    <Preview>{props.header}</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section>
@@ -33,7 +38,7 @@ export const EmailV3 = () => (
                 src={`${baseUrl}/static/google-play-header.png`}
                 width='305'
                 height='28'
-                alt='Google Play developers header blue transparent'
+                alt=' '
               />
               <Img
                 style={sectionLogo}
@@ -48,7 +53,12 @@ export const EmailV3 = () => (
 
         <Section style={paragraphContent}>
           <Hr style={hr} />
-          <Text style={heading}>DEVELOPER UPDATE</Text>
+          <Text style={heading}>
+            {props.header
+              .split(' ')
+              .filter(x => x !== '[zero]')
+              .join(' ')}
+          </Text>
           <Text style={paragraph}>Hello Google Play Developer,</Text>
           <Text style={paragraph}>
             We strive to make Google Play a safe and trusted experience for
@@ -186,7 +196,7 @@ export const renderEmailV3 = ({
 }: {
   header: string
   body: string
-}) => render(<EmailV3 />, { pretty: true })
+}) => render(<EmailV3 header={header} body={body} />, { pretty: true })
 
 const main = {
   backgroundColor: '#dbddde',
