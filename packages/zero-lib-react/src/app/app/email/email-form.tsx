@@ -100,10 +100,11 @@ export const EmailForm = ({
                   </FormItem>
                 )}
               />
-              <div className='grid gap-4'>
-                <Button type='submit' className='w-full'>
+              <div className='grid grid-cols-2 gap-6'>
+                <Button variant='outline' type='submit'>
                   Generate
                 </Button>
+                <Button variant='outline'>Send</Button>
               </div>
               <div className='mt-4 text-sm'>Output HTML</div>
               <Textarea className='h-[10rem]' readOnly value={html || ''} />
