@@ -34,3 +34,4 @@ export * from './auth-pages/forgotpassword-page'
 // Email
 export * from './email/email-v1'
 export * from './email/email-v2'
+export * from './email/email-v3'

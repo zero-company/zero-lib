@@ -5,6 +5,7 @@ import {
   renderEmailV1,
   Textarea,
   renderEmailV2,
+  renderEmailV3,
 } from '@/lib'
 import { useState, useEffect } from 'react'
 import { EmailForm } from './email-form'
@@ -31,11 +32,15 @@ export default function Page() {
   })
 
   useEffect(() => {
-    renderEmailV1({
-      header: emailContent.header,
-      markdown: emailContent.body,
-    }).then(html => setEmailHtml2(html))
-    renderEmailV2({
+    // renderEmailV1({
+    //   header: emailContent.header,
+    //   markdown: emailContent.body,
+    // }).then(html => setEmailHtml2(html))
+    // renderEmailV2({
+    //   header: emailContent.header,
+    //   body: emailContent.body,
+    // }).then(html => setEmailHtml(html))
+    renderEmailV3({
       header: emailContent.header,
       body: emailContent.body,
     }).then(html => setEmailHtml(html))
