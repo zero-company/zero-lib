@@ -89,7 +89,8 @@ export const EmailForm = ({ onSubmit, html, className }: Props) => {
                   <FormItem>
                     <FormLabel>Markdown</FormLabel>
                     <FormControl>
-                      <Input placeholder='# Changes' {...field} />
+                      {/* <Input placeholder='# Changes' {...field} /> */}
+                      <Textarea className='h-[10rem]' {...field} />
                     </FormControl>
                   </FormItem>
                 )}
