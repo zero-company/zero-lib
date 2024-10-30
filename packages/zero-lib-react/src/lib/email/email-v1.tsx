@@ -231,6 +231,7 @@ export const EmailV1 = ({
     <Html lang='en'>
       <Head>
         <style type='text/css'>{normalizeCss}</style>
+        <style>{`pre{overflow:auto}`}</style>
       </Head>
       {preview && <Preview>{preview}</Preview>}
       <Tailwind config={twConfig}>
