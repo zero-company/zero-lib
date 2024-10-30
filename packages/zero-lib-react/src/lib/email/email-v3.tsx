@@ -15,9 +15,13 @@ import {
 } from '@react-email/components'
 import * as React from 'react'
 
-const baseUrl = process.env.VERCEL_URL
+const baseUrl2 = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : ''
+
+const baseUrl =
+  'https://raw.githubusercontent.com/zero-company/zero-lib/refs/heads/main/packages/zero-lib-react/public'
+// https://raw.githubusercontent.com/zero-company/zero-lib/refs/heads/main/packages/zero-lib-react/public/zero-logo-v1-padding.png
 
 type Props = {
   header: string
@@ -30,7 +34,7 @@ export const EmailV3 = (props: Props) => (
     <Preview>{props.header}</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Section>
+        <Section style={{ backgroundColor: '#09090B' }}>
           <Row>
             <Column>
               <Img
@@ -41,10 +45,14 @@ export const EmailV3 = (props: Props) => (
                 alt=' '
               />
               <Img
-                style={sectionLogo}
-                src={`${baseUrl}/static/google-play-logo.png`}
-                width='155'
-                height='31'
+                style={{
+                  ...sectionLogo,
+                  paddingTop: '10px',
+                  paddingBottom: '10px',
+                }}
+                src={`${baseUrl}/zero-logo-v1-padding.png`}
+                width='40'
+                height='40'
                 alt='Zero'
               />
             </Column>
@@ -52,7 +60,7 @@ export const EmailV3 = (props: Props) => (
         </Section>
 
         <Section style={paragraphContent}>
-          <Hr style={hr} />
+          <Hr style={{ ...hr, display: 'none' }} />
           <Text style={heading}>
             {props.header
               .split(' ')
@@ -206,10 +214,12 @@ const main = {
 
 const sectionLogo = {
   padding: '0 40px',
+  color: '#fff',
 }
 
 const headerBlue = {
   marginTop: '-1px',
+  display: 'none',
 }
 
 const container = {
