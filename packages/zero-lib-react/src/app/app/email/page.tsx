@@ -9,7 +9,10 @@ export default function Page() {
     header: `Accouncements`,
     markdown: `
   #### Changes
-    - Add EmailV1 generation form
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper augue nisi, id ornare orci placerat ac.
+    - Integer condimentum turpis vehicula turpis lacinia, vel ultrices urna aliquam.
+    - Maecenas dictum gravida dictum.
+    
     `,
   })
 

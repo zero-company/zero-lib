@@ -16,11 +16,12 @@ import {
   Section,
   Text,
   Tailwind,
-  Markdown,
+  Markdown as ReMarkdown,
   TailwindConfig,
 } from '@react-email/components'
 import { ZeroLogo } from '../zero/zero-logo'
 import { ZERO_LINKS } from '@/lib'
+import Markdown from 'react-markdown'
 
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 const normalizeCss = `
@@ -164,7 +165,7 @@ const Footer = ({
   </div>
 )
 
-type MarkdownProps = React.ComponentProps<typeof Markdown>
+type MarkdownProps = React.ComponentProps<typeof ReMarkdown>
 const markdownProps: Omit<MarkdownProps, 'children'> = {
   markdownCustomStyles: {
     h1: {},
@@ -192,11 +193,6 @@ export const EmailV1 = ({
     <Html lang='en'>
       <Head>
         <style type='text/css'>{normalizeCss}</style>
-        <style>{`
-        pre {
-        background: transparent !important;
-        }
-        `}</style>
       </Head>
       {preview && <Preview>{preview}</Preview>}
       <Tailwind config={twConfig}>
@@ -207,7 +203,8 @@ export const EmailV1 = ({
               {children ? (
                 children
               ) : (
-                <Markdown {...markdownProps}>{`${markdown}`}</Markdown>
+                // <ReMarkdown {...markdownProps}>{`${markdown}`}</ReMarkdown>
+                <Markdown>{markdown}</Markdown>
               )}
             </div>
             <Footer className={`${tw.borderT}`} footer={footer} />
