@@ -13,7 +13,7 @@ import { EmailForm } from './email-form'
 export default function Page() {
   const [emailHtml, setEmailHtml] = useState<string | null>(null)
   const [emailContent, setEmailContent] = useState({
-    header: `[zero] Email Verification`,
+    header: `[zero] User Registration`,
     body: `
   #### Changes
     - Lorem ipsum dolor sit amet, consectetur adipiscing elit. 

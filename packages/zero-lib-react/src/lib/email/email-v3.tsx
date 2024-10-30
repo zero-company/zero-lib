@@ -38,15 +38,6 @@ export const EmailV3 = (props: Props) => (
         <Section style={{ backgroundColor: '#09090B' }}>
           <Row>
             <Column>
-              {/*
-                <Img
-                  style={headerBlue}
-                  src={`${baseUrl}/static/google-play-header.png`}
-                  width='305'
-                  height='28'
-                  alt=' '
-                />
-              */}
               <Img
                 style={{
                   ...sectionLogo,
@@ -70,7 +61,7 @@ export const EmailV3 = (props: Props) => (
               .filter(x => x !== '[zero]')
               .join(' ')}
           </Text>
-          <Text style={paragraph}>Hello Google Play Developer,</Text>
+          <Text style={paragraph}>Welcome New User,</Text>
           <Text style={paragraph}>
             We strive to make Google Play a safe and trusted experience for
             users.
@@ -129,7 +120,6 @@ export const EmailV3 = (props: Props) => (
             The Zero Team
           </Text>
         </Section>
-
         <Section
           style={{
             ...containerContact,
@@ -211,34 +201,6 @@ export const EmailV3 = (props: Props) => (
             </Text>
           </Row>
         </Section>
-
-        {/*
-          <Section style={{ ...paragraphContent, paddingBottom: 30 }}>
-          <Text
-            style={{
-              ...paragraph,
-              fontSize: '12px',
-              textAlign: 'center',
-              margin: 0,
-            }}
-          >
-            © 2022 Google LLC 1600 Amphitheatre Parkway, Mountain View, CA
-            94043, USA
-          </Text>
-          <Text
-            style={{
-              ...paragraph,
-              fontSize: '12px',
-              textAlign: 'center',
-              margin: 0,
-            }}
-          >
-            You have received this mandatory email service announcement to
-            update you about important changes to your Google Play Developer
-            account.
-          </Text>
-        </Section>
-        */}
       </Container>
     </Body>
   </Html>
