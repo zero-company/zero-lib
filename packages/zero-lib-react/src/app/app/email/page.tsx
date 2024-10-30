@@ -16,10 +16,8 @@ export default function Page() {
 ~~~js
   import React from 'react'
   import ReactDOM from 'react-dom'
-  import Markdown from 'react-markdown'
-  import rehypeHighlight from 'rehype-highlight'
 
-  const markdown = ""
+  export const Button = () => {}
 ~~~
     `,
   })
