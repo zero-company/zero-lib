@@ -8,6 +8,20 @@ const nextConfig = {
   output: 'export',
   distDir: 'dist-next',
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  // webpack5: true,
+  typescript: {
+    //ignoreBuildErrors: true, // !! WARN !!
+  },
+  webpack: config => {
+    config.resolve.fallback = {
+      fs: false,
+      net: false,
+      dns: false,
+      child_process: false,
+      tls: false,
+    }
+    return config
+  },
 }
 
 const withMDX = createMDX({
