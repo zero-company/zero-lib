@@ -19,7 +19,6 @@ import parse from 'html-react-parser'
 
 const baseUrl =
   'https://raw.githubusercontent.com/zero-company/zero-lib/refs/heads/main/packages/zero-lib-react/public'
-// https://raw.githubusercontent.com/zero-company/zero-lib/refs/heads/main/packages/zero-lib-react/public/zero-logo-v1-padding.png
 
 const patchStyles = `a{color:#004dcf;text-decoration:none}`
 

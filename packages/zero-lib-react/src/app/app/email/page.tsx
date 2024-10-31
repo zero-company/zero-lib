@@ -18,8 +18,7 @@ export default function Page() {
     - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     - Proin ullamcorper augue nisi, id ornare orci placerat ac.
     - Integer condimentum turpis vehicula turpis lacinia, vel ultrices urna aliquam.
-    - Maecenas <a href="https://www.google.com/" target="_blank">test</a> dictum gravida dictum.
-
+    - Maecenas <a href="https://www.google.com/" target="_blank">test</a> dictum gravida <b>dictum</b>.
     `,
   })
 
