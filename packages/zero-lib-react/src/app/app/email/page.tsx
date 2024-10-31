@@ -15,8 +15,8 @@ export default function Page() {
   const [emailContent, setEmailContent] = useState({
     header: `[zero] User Registration`,
     body: `
-  #### Changes
-    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Welcome New User,\n 
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     - Proin ullamcorper augue nisi, id ornare orci placerat ac.
     - Integer condimentum turpis vehicula turpis lacinia, vel ultrices urna aliquam.
     - Maecenas dictum gravida dictum.

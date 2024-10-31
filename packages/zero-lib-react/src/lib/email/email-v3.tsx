@@ -54,12 +54,14 @@ export const EmailV3 = (props: Props) => (
         </Section>
 
         <Section style={paragraphContent}>
-          <Hr style={{ ...hr, display: 'none' }} />
           <Text style={heading}>
             {props.header
               .split(' ')
               .filter(x => x !== '[zero]')
               .join(' ')}
+          </Text>
+          <Text style={{ ...paragraph, whiteSpace: 'pre-line' }}>
+            {props.body}
           </Text>
           <Text style={paragraph}>Welcome New User,</Text>
           <Text style={paragraph}>
