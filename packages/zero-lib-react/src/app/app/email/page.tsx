@@ -14,12 +14,11 @@ export default function Page() {
   const [emailHtml, setEmailHtml] = useState<string | null>(null)
   const [emailContent, setEmailContent] = useState({
     header: `[zero] User Registration`,
-    body: `
-    Welcome New User,\n 
+    body: `Welcome New User,\n 
     - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     - Proin ullamcorper augue nisi, id ornare orci placerat ac.
     - Integer condimentum turpis vehicula turpis lacinia, vel ultrices urna aliquam.
-    - Maecenas dictum gravida dictum.
+    - Maecenas <a href="https://www.google.com/" target="_blank">test</a> dictum gravida dictum.
 
     `,
   })
