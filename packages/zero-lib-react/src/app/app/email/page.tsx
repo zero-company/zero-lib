@@ -15,11 +15,13 @@ export default function Page() {
   const [emailContent, setEmailContent] = useState({
     header: `[zero] User Registration`,
     body: `Welcome New User,\n 
-    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <b>Lorem ipsum</b> dolor sit amet, <a href="https://github.com/zero-company" target="_blank">consectetur</a> adipiscing elit.
+     
     - Proin ullamcorper augue nisi, id ornare orci placerat ac.
     - Integer condimentum turpis vehicula turpis lacinia, vel ultrices urna aliquam.
-    - Maecenas <a href="https://www.google.com/" target="_blank">test</a> dictum gravida <b>dictum</b>.
-    `,
+    - Maecenas dictum gravida <b>dictum</b>.
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
   })
 
   useEffect(() => {

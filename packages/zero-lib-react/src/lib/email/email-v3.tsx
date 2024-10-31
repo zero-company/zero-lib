@@ -66,50 +66,10 @@ export const EmailV3 = (props: Props) => {
             <Text style={{ ...paragraph, whiteSpace: 'pre-line' }}>
               {bodyReact}
             </Text>
-            <Text style={paragraph}>Welcome New User,</Text>
-            <Text style={paragraph}>
-              We strive to make Google Play a safe and trusted experience for
-              users.
-            </Text>
-            <Text style={paragraph}>
-              We&apos;ve added clarifications to our{' '}
-              <Link href='https://notifications.google.com' style={link}>
-                Target API Level policy
-              </Link>
-              . Because this is a clarification, our enforcement standards and
-              practices for this policy remain the same.
-            </Text>
           </Section>
           <Section style={paragraphContent}>
-            <Text style={paragraph}>
-              We&apos;re noting exceptions to the{' '}
-              <Link href='https://notifications.google.com' style={link}>
-                Target API Level policy
-              </Link>
-              , which can be found in our updated{' '}
-              <Link href='https://notifications.google.com' style={link}>
-                Help Center article.
-              </Link>
-              These exceptions include permanently private apps and apps that
-              target automotive or wearables form factors and are bundled within
-              the same package.{' '}
-              <Link href='https://notifications.google.com' style={link}>
-                Learn more
-              </Link>
-            </Text>
-          </Section>
-          <Section style={paragraphContent}>
-            <Text style={paragraph}>
-              We&apos;re also extending the deadline to give you more time to
-              adjust to these changes. Now, apps that target API level 29 or
-              below will start experiencing reduced distribution starting{' '}
-              <b>Jan 31, 2023</b> instead of Nov 1, 2022. If you need more time
-              to update your app, you can request an extension to keep your app
-              discoverable to all users until May 1, 2023.
-            </Text>
             <Hr style={hr} />
           </Section>
-
           <Section style={paragraphContent}>
             <Text style={{ ...paragraph, marginBottom: 2, marginTop: 0 }}>
               Thank you,
