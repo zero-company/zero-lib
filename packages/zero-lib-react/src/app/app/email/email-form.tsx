@@ -24,7 +24,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
   header: z.string().min(1, { message: 'Header required' }),
-  markdown: z.string().min(1, { message: 'Markdown required' }),
+  preview: z.string(),
+  body: z.string().min(1, { message: 'Body required' }),
 })
 const formSchemaKeys = formSchema.keyof()
 type FormSchemaType = z.infer<typeof formSchema>
@@ -47,7 +48,8 @@ export const EmailForm = ({
     resolver: zodResolver(formSchema),
     defaultValues: {
       header: defaultValues?.header || '',
-      markdown: defaultValues?.markdown || '',
+      preview: defaultValues?.preview,
+      body: defaultValues?.body || '',
     },
   })
   const formErrors = form.formState.errors
@@ -55,6 +57,13 @@ export const EmailForm = ({
   const errorMessages = formErrorKeys.map(
     (error: FormSchemaKeysType) => formErrors[error]?.message,
   )
+
+  const onSend = () => {
+    fetch('/api', {
+      method: 'POST',
+      body: JSON.stringify({ header: defaultValues?.header, body: html }),
+    })
+  }
 
   return (
     <div className={`space-y-4 ${className}`}>
@@ -67,7 +76,6 @@ export const EmailForm = ({
           </CardHeader>
         </CardV2>
       )}
-
       <CardV2>
         <CardHeader>
           <CardTitle className='text-xl'>Generate Email</CardTitle>
@@ -89,10 +97,22 @@ export const EmailForm = ({
               />
               <FormField
                 control={form.control}
-                name='markdown'
+                name='preview'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Markdown</FormLabel>
+                    <FormLabel>Preview</FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='body'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Body</FormLabel>
                     <FormControl>
                       {/* <Input placeholder='# Changes' {...field} /> */}
                       <Textarea className='h-[10rem]' {...field} />
@@ -100,9 +120,12 @@ export const EmailForm = ({
                   </FormItem>
                 )}
               />
-              <div className='grid gap-4'>
-                <Button type='submit' className='w-full'>
+              <div className='grid grid-cols-2 gap-6'>
+                <Button variant='outline' type='submit'>
                   Generate
+                </Button>
+                <Button variant='outline' onClick={() => onSend()}>
+                  Send
                 </Button>
               </div>
               <div className='mt-4 text-sm'>Output HTML</div>
