@@ -14,6 +14,7 @@ export default function Page() {
   const [emailHtml, setEmailHtml] = useState<string | null>(null)
   const [emailContent, setEmailContent] = useState({
     header: `[zero] User Registration`,
+    preview: `Welcome New User`,
     body: `Welcome New User,\n 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. <b>Lorem ipsum</b> dolor sit amet, <a href="https://github.com/zero-company" target="_blank">consectetur</a> adipiscing elit.
      
@@ -26,8 +27,7 @@ export default function Page() {
 
   useEffect(() => {
     renderEmailV3({
-      header: emailContent.header,
-      body: emailContent.body,
+      ...emailContent,
     }).then(html => setEmailHtml(html))
   })
 

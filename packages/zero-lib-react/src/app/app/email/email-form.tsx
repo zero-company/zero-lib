@@ -24,6 +24,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 const formSchema = z.object({
   header: z.string().min(1, { message: 'Header required' }),
+  preview: z.string(),
   body: z.string().min(1, { message: 'Body required' }),
 })
 const formSchemaKeys = formSchema.keyof()
@@ -47,6 +48,7 @@ export const EmailForm = ({
     resolver: zodResolver(formSchema),
     defaultValues: {
       header: defaultValues?.header || '',
+      preview: defaultValues?.preview,
       body: defaultValues?.body || '',
     },
   })
@@ -87,6 +89,18 @@ export const EmailForm = ({
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Header</FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='preview'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Preview</FormLabel>
                     <FormControl>
                       <Input {...field} />
                     </FormControl>

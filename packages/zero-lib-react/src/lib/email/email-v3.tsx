@@ -24,6 +24,7 @@ const patchStyles = `a{color:#004dcf;text-decoration:none}`
 
 type Props = {
   header: string
+  preview?: string
   body: string
 }
 
@@ -35,7 +36,7 @@ export const EmailV3 = (props: Props) => {
       <Head>
         <style>{patchStyles}</style>
       </Head>
-      <Preview>{props.header}</Preview>
+      {props.preview && <Preview>{props.preview}</Preview>}
       <Body style={main}>
         <Container style={container}>
           <Section style={{ backgroundColor: '#09090B' }}>
@@ -175,11 +176,16 @@ export const EmailV3 = (props: Props) => {
 export const renderEmailV3React = render
 export const renderEmailV3 = ({
   header,
+  preview,
   body,
 }: {
   header: string
+  preview?: string
   body: string
-}) => render(<EmailV3 header={header} body={body} />, { pretty: true })
+}) =>
+  render(<EmailV3 header={header} body={body} preview={preview} />, {
+    pretty: true,
+  })
 
 const footerLink = {
   color: '#d1d1d1',
