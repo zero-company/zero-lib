@@ -10,4 +10,10 @@ export const zodSchemas = {
   zeroId: z.string().refine(zeroId => parseZeroId({ zeroId }).isZeroIdValid, {
     message: 'Invalid zeroId format',
   }),
+  tags: z
+    .string()
+    .array()
+    .nullish()
+    .default([]) // undefined default
+    .transform(tags => tags ?? []), // null default
 }
