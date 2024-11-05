@@ -7,9 +7,12 @@ export const zodSchemas = {
     .string()
     .min(1, { message: 'Empty string not Allowed' })
     .nullish(),
-  zeroId: z.string().refine(zeroId => parseZeroId({ zeroId }).isZeroIdValid, {
-    message: 'Invalid zeroId format',
-  }),
+  zeroId: z
+    .string()
+    .nullish()
+    .refine(zeroId => (zeroId ? parseZeroId({ zeroId }).isZeroIdValid : true), {
+      message: 'Invalid zeroId format',
+    }),
   tagIds: z
     .string()
     .array()
