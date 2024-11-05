@@ -26,7 +26,7 @@ export const zodSchemas = {
     .string()
     .array()
     .nullish()
-    .default([]) // undefined default
-    .transform(tags => tags ?? []), // null default
+    .default([])
+    .transform(tags => tags ?? []),
   expirationDate: z.date().nullish(),
 }
