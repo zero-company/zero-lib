@@ -1,5 +1,11 @@
 # @zero-company/zero-lib
 
+## 1.0.6
+
+### Patch Changes
+
+- [#63](https://github.com/zero-company/zero-lib/pull/63) [`06665d1`](https://github.com/zero-company/zero-lib/commit/06665d165eda47a64dcc1d985a8cf6c250c751ef) Thanks [@jigz](https://github.com/jigz)! - Add zod-schemas
+
 ## 1.0.5
 
 ### Patch Changes
