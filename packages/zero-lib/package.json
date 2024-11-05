@@ -28,6 +28,7 @@
     "preset": "@repo/jest-presets/node"
   },
   "dependencies": {
+    "zod": "3.23.8",
     "nanoid": "^5.0.7"
   },
   "devDependencies": {
