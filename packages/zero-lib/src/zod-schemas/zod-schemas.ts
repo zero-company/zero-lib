@@ -10,7 +10,7 @@ export const zodSchemas = {
   zeroId: z
     .string()
     .nullish()
-    .refine(zeroId => parseZeroId({ zeroId }).isZeroIdValid, {
+    .refine(zeroId => (zeroId ? parseZeroId({ zeroId }).isZeroIdValid : true), {
       message: 'Invalid zeroId format',
     }),
   tagIds: z
