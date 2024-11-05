@@ -10,10 +10,23 @@ export const zodSchemas = {
   zeroId: z.string().refine(zeroId => parseZeroId({ zeroId }).isZeroIdValid, {
     message: 'Invalid zeroId format',
   }),
+  tagIds: z
+    .string()
+    .array()
+    .nullish()
+    .default([]) // undefined default
+    .transform(tags => tags ?? []) // null default
+    .refine(
+      zeroIds => zeroIds.every(zeroId => parseZeroId({ zeroId }).isZeroIdValid),
+      {
+        message: 'Invalid zeroId format',
+      },
+    ),
   tags: z
     .string()
     .array()
     .nullish()
     .default([]) // undefined default
     .transform(tags => tags ?? []), // null default
+  expirationDate: z.date().nullish(),
 }
