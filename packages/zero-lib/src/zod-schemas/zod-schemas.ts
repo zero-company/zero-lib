@@ -31,5 +31,5 @@ export const zodSchemas = {
     .nullish()
     .default([])
     .transform(tags => tags ?? []),
-  expirationDate: z.date().nullish(),
+  expirationDate: z.string().datetime().nullish(),
 }
