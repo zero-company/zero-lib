@@ -1,5 +1,11 @@
 # @zero-company/zero-lib
 
+## 1.0.8
+
+### Patch Changes
+
+- [#67](https://github.com/zero-company/zero-lib/pull/67) [`c1d0129`](https://github.com/zero-company/zero-lib/commit/c1d0129dc4d81ec53c73ee27faea3b578d6a0e20) Thanks [@jigz](https://github.com/jigz)! - Fix zod-schemas expirationDate
+
 ## 1.0.7
 
 ### Patch Changes
