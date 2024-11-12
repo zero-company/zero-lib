@@ -1,3 +1,4 @@
+'use server'
 import nodemailer from 'nodemailer'
 
 export const MailEmail = process.env.SMTP_EMAIL || ''
