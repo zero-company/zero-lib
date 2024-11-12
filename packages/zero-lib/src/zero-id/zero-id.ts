@@ -52,13 +52,7 @@ export const useZeroId = (args: {
   const strategy = args.strategy ?? 'zeroId'
   const generateIdsLength = args.generateIdsLength ?? 8
 
-  if (strategy === 'zeroId')
-    return {
-      generateZeroId,
-      generateZeroIds,
-      parseZeroId,
-    }
-  else if (strategy === 'uuid')
+  if (strategy === 'uuid')
     return {
       generateZeroId: () => [args.prefix, uuidV4()].join('-'),
       generateZeroIds: () =>
@@ -71,5 +65,12 @@ export const useZeroId = (args: {
         prefix: zeroId?.split('-')[0],
         isZeroIdValid: uuidValidate(zeroId?.replace(`${args.prefix}-`, '')),
       }),
+    }
+  // else if (strategy === 'zeroId')
+  else
+    return {
+      generateZeroId: () => generateZeroId({ prefix: args.prefix }),
+      generateZeroIds: () => generateZeroIds({ prefix: args.prefix }),
+      parseZeroId,
     }
 }
