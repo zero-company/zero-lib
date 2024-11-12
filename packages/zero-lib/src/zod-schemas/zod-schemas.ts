@@ -1,7 +1,5 @@
 import { z } from 'zod'
-import { parseZeroId, useZeroId } from '../zero-id/zero-id'
-
-//export const { generateZeroId, parseZeroId } = useZeroId({ prefix: 'zero1' })
+import { parseZeroId } from '../zero-id/zero-id'
 
 export const zodSchemas = {
   name: z.string().min(1, { message: 'Empty string not Allowed' }).nullish(),
