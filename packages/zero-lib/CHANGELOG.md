@@ -1,5 +1,11 @@
 # @zero-company/zero-lib
 
+## 1.0.9
+
+### Patch Changes
+
+- [#69](https://github.com/zero-company/zero-lib/pull/69) [`43ed568`](https://github.com/zero-company/zero-lib/commit/43ed56878377cc9b700b68f4515be1a6b68e0360) Thanks [@jigz](https://github.com/jigz)! - Add useZeroId hook
+
 ## 1.0.8
 
 ### Patch Changes
