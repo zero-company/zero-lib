@@ -2,7 +2,11 @@
 import { GradientButton, CardV2, CardHeader } from '@/lib'
 import { useState } from 'react'
 import Link from 'next/link'
-import { generateZeroId, generateZeroIds } from '@zero-company/zero-lib'
+import {
+  generateZeroId,
+  generateZeroIds,
+  ///useZeroId
+} from '@zero-company/zero-lib'
 
 export const GradientButtonSection = () => (
   <div>
