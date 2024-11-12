@@ -1,4 +1,5 @@
 import { nanoid, customAlphabet } from 'nanoid'
+import { v4 as uuidV4, validate as uuidValidate } from 'uuid'
 
 const PARTCOUNT = 6
 const PARTSIZE = 6
@@ -41,4 +42,34 @@ export const parseZeroId = ({ zeroId }: { zeroId?: string | null }) => {
     prefix,
     isZeroIdValid,
   }
+}
+
+export const useZeroId = (args: {
+  prefix: string
+  strategy?: 'zeroId' | 'uuid' | null | undefined
+  generateIdsLength?: number | null | undefined
+}) => {
+  const strategy = args.strategy ?? 'zeroId'
+  const generateIdsLength = args.generateIdsLength ?? 8
+
+  if (strategy === 'zeroId')
+    return {
+      generateZeroId,
+      generateZeroIds,
+      parseZeroId,
+    }
+  else if (strategy === 'uuid')
+    return {
+      generateZeroId: () => [args.prefix, uuidV4()].join('-'),
+      generateZeroIds: () =>
+        Array.from({ length: generateIdsLength }, () =>
+          [args.prefix, uuidV4()].join('-'),
+        ),
+      parseZeroId: ({ zeroId }: { zeroId?: string | null | undefined }) => ({
+        zeroId,
+        parts: zeroId?.split('-'),
+        prefix: zeroId?.split('-')[0],
+        isZeroIdValid: uuidValidate(zeroId?.replace(`${args.prefix}-`, '')),
+      }),
+    }
 }
