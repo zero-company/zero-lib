@@ -2,7 +2,7 @@
 import { GradientButton, CardV2, CardHeader } from '@/lib'
 import { useState } from 'react'
 import Link from 'next/link'
-import { generateZeroId, generateZeroIds } from '@/components'
+import { generateZeroId, generateZeroIds, parseZeroId } from '@/components'
 
 export const GradientButtonSection = () => (
   <div>
@@ -68,10 +68,18 @@ export const FunctionSection = () => {
     <div>
       <h3>Functions</h3>
       <div className='flex gap-2'>
-        <GradientButton onClick={() => console.log(generateZeroId())}>
+        <GradientButton
+          onClick={() => console.log(parseZeroId({ zeroId: generateZeroId() }))}
+        >
           Generate ZeroId
         </GradientButton>
-        <GradientButton onClick={() => console.log(generateZeroIds())}>
+        <GradientButton
+          onClick={() =>
+            console.log(
+              generateZeroIds().map(zeroId => parseZeroId({ zeroId })),
+            )
+          }
+        >
           Generate ZeroIds
         </GradientButton>
       </div>
