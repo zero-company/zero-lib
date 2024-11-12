@@ -1,5 +1,14 @@
 # @zero-company/zero-lib-react
 
+## 0.1.32
+
+### Patch Changes
+
+- [#69](https://github.com/zero-company/zero-lib/pull/69) [`43ed568`](https://github.com/zero-company/zero-lib/commit/43ed56878377cc9b700b68f4515be1a6b68e0360) Thanks [@jigz](https://github.com/jigz)! - Add useZeroId hook
+
+- Updated dependencies [[`43ed568`](https://github.com/zero-company/zero-lib/commit/43ed56878377cc9b700b68f4515be1a6b68e0360)]:
+  - @zero-company/zero-lib@1.0.9
+
 ## 0.1.31
 
 ### Patch Changes
