@@ -1,5 +1,11 @@
 # @zero-company/zero-lib
 
+## 1.0.10
+
+### Patch Changes
+
+- [#71](https://github.com/zero-company/zero-lib/pull/71) [`3f217a2`](https://github.com/zero-company/zero-lib/commit/3f217a2ca51dd60189d3d94dcf0d194dd36fbb28) Thanks [@jigz](https://github.com/jigz)! - Add zod schemas
+
 ## 1.0.9
 
 ### Patch Changes
