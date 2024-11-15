@@ -9,28 +9,31 @@ const uuidZodSchemas = {
   uuidGeneratedOnly: z
     .null()
     .or(z.undefined())
-    .transform(zeroId => zeroId ?? uuidV4()),
+    .transform(id => id ?? uuidV4()),
   uuidGeneratedOrCustom: z
     .string()
     .uuid()
     .nullish()
-    .transform(zeroId => zeroId ?? uuidV4()),
+    .transform(id => id ?? uuidV4()),
 }
 
-export const zodSchemas = {
-  ...uuidZodSchemas,
-  name: z.string().min(1, { message: 'Empty string not Allowed' }).nullish(),
-  description: z
-    .string()
-    .min(1, { message: 'Empty string not Allowed' })
-    .nullish(),
-
+const zeroIdZodSchemas = {
   zeroId: z
     .string()
     .nullish()
     .refine(zeroId => (zeroId ? parseZeroId({ zeroId }).isZeroIdValid : true), {
       message: 'Invalid zeroId format',
     }),
+}
+
+export const zodSchemas = {
+  ...uuidZodSchemas,
+  ...zeroIdZodSchemas,
+  name: z.string().min(1, { message: 'Empty string not Allowed' }).nullish(),
+  description: z
+    .string()
+    .min(1, { message: 'Empty string not Allowed' })
+    .nullish(),
   tagIds: z
     .string()
     .array()
