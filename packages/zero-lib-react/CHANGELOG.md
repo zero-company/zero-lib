@@ -1,5 +1,12 @@
 # @zero-company/zero-lib-react
 
+## 0.1.33
+
+### Patch Changes
+
+- Updated dependencies [[`3f217a2`](https://github.com/zero-company/zero-lib/commit/3f217a2ca51dd60189d3d94dcf0d194dd36fbb28)]:
+  - @zero-company/zero-lib@1.0.10
+
 ## 0.1.32
 
 ### Patch Changes
