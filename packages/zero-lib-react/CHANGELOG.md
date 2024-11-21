@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.34
+
+### Patch Changes
+
+- [#73](https://github.com/zero-company/zero-lib/pull/73) [`d45d063`](https://github.com/zero-company/zero-lib/commit/d45d063c6cfef1446a15ce2bea70de9eb223ec9a) Thanks [@jigz](https://github.com/jigz)! - Add MeasurableElement
+
 ## 0.1.33
 
 ### Patch Changes
