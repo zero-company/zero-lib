@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.35
+
+### Patch Changes
+
+- [#75](https://github.com/zero-company/zero-lib/pull/75) [`46f486f`](https://github.com/zero-company/zero-lib/commit/46f486f2f93cc7a136030b8bf738d55b4e134306) Thanks [@jigz](https://github.com/jigz)! - Fix react-syntax-highlighter MODULE_NOT_FOUND
+
 ## 0.1.34
 
 ### Patch Changes
