@@ -28,7 +28,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import {
   dark,
   vscDarkPlus,
-} from 'react-syntax-highlighter/dist/esm/styles/prism'
+} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 const normalizeCss = `
