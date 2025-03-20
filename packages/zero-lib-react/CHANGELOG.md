@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.36
+
+### Patch Changes
+
+- [#77](https://github.com/zero-company/zero-lib/pull/77) [`a17393a`](https://github.com/zero-company/zero-lib/commit/a17393ab08bdc41fba40dd238a3ec1a970336ccc) Thanks [@jigz](https://github.com/jigz)! - Export useForm
+
 ## 0.1.35
 
 ### Patch Changes
