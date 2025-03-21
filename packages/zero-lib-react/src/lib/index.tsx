@@ -1,3 +1,4 @@
+'use client'
 export * from './../components/shadcn'
 export * from './constants'
 export * from './colors'
