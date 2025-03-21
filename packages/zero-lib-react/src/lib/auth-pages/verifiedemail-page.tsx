@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
   Page,
+  Button,
 } from '@/lib'
 
 type Props = {
@@ -24,9 +25,9 @@ export const VerifiedEmailPage = ({ homeUrl }: Props) => {
           </CardDescription>
         </CardHeader>
         <CardContent className='!pt-0'>
-          <div className='mt-4 text-center text-sm'>
-            <Link href={homeUrl} className='underline'>
-              Return Home
+          <div className='grid gap-4'>
+            <Link href={homeUrl}>
+              <Button className='w-full'>Return Home</Button>
             </Link>
           </div>
         </CardContent>
