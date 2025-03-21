@@ -105,6 +105,11 @@ export default function Layout({ children }: Props) {
                             href: `/${pathnameDepth1}/forgotpassword`,
                           },
                           {
+                            children: 'Verified Email',
+                            icon: <LuMail />,
+                            href: `/${pathnameDepth1}/verifiedemail`,
+                          },
+                          {
                             children: 'Reset Password',
                             icon: <LuAsterisk />,
                             href: `/${pathnameDepth1}/resetpassword?resetPasswordToken=my-project`,
