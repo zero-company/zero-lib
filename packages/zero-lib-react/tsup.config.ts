@@ -6,6 +6,7 @@ export default defineConfig(options => ({
   dts: true,
   sourcemap: true,
   minify: true,
+  plugins: [],
   external: ['react'],
   tsconfig: './tsup.tsconfig.json',
   ...options,
