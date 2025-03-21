@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.38
+
+### Patch Changes
+
+- [#83](https://github.com/zero-company/zero-lib/pull/83) [`a72ed72`](https://github.com/zero-company/zero-lib/commit/a72ed7201b45d41c7436928dc5f7d349c49d977f) Thanks [@jigz](https://github.com/jigz)! - Add VerifiedEmailPage home button
+
 ## 0.1.37
 
 ### Patch Changes
