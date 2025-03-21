@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.37
+
+### Patch Changes
+
+- [#81](https://github.com/zero-company/zero-lib/pull/81) [`43e4539`](https://github.com/zero-company/zero-lib/commit/43e45399c42306fb8ac2251850646ee638f152e6) Thanks [@jigz](https://github.com/jigz)! - Add index directive 3
+
 ## 0.1.36
 
 ### Patch Changes
