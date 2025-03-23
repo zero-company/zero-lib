@@ -37,7 +37,6 @@ const withMDX = createMDX({
 
 if (process.env.NEXT_BUILD === 'export') {
   nextConfig.pageExtensions = ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
-  console.log(process.env.NEXT_BUILD)
 }
 
 export default withMDX(nextConfig)
