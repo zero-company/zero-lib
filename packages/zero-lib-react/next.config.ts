@@ -1,17 +1,13 @@
+import type { NextConfig } from 'next'
 import createMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   output: 'export',
   distDir: 'dist-next',
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-  // webpack5: true,
-  typescript: {
-    //ignoreBuildErrors: true, // !! WARN !!
-  },
   webpack: config => {
     config.resolve.fallback = {
       fs: false,
@@ -26,7 +22,11 @@ const nextConfig = {
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [
+      //@ts-ignore
+      ['rehype-gfm', { strict: true, throwOnError: true }],
+      //remarkGfm,
+    ],
     rehypePlugins: [],
   },
 })
