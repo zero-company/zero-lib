@@ -1,5 +1,4 @@
 export * from './utils'
-export * from './hooks/use-toast'
 
 export * from './ui/accordion'
 export * from './ui/alert-dialog'
