@@ -18,7 +18,7 @@ import {
   LuList,
   LuUser,
   LuLock,
-  LuUserCircle2,
+  LuCircleUserRound,
   LuAsterisk,
   LuMousePointerClick,
   LuNavigationOff,
@@ -80,7 +80,7 @@ export default function Layout({ children }: Props) {
                         options={[
                           {
                             children: 'Account',
-                            icon: <LuUserCircle2 />,
+                            icon: <LuCircleUserRound />,
                             href: `/${pathnameDepth1}/account`,
                             disabled: true,
                           },
