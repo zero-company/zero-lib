@@ -1,13 +1,13 @@
 import type { NextConfig } from 'next'
 import createMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeSlug from 'rehype-slug'
+// import remarkGfm from 'remark-gfm'
+// import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+// import rehypeSlug from 'rehype-slug'
 
 const nextConfig: NextConfig = {
   output: 'export',
   distDir: 'dist-next',
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx', 'server.ts'],
   webpack: config => {
     config.resolve.fallback = {
       fs: false,
@@ -18,17 +18,26 @@ const nextConfig: NextConfig = {
     }
     return config
   },
+  //transpilePackages: ['remark-gfm'],
 }
 
 const withMDX = createMDX({
   options: {
     remarkPlugins: [
-      //@ts-ignore
-      ['rehype-gfm', { strict: true, throwOnError: true }],
+      // [
+      //   //@ts-ignore
+      //   'remark-gfm',
+      //   { strict: true, throwOnError: true },
+      // ],
       //remarkGfm,
     ],
     rehypePlugins: [],
   },
 })
+
+if (process.env.NEXT_BUILD === 'export') {
+  nextConfig.pageExtensions = ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
+  console.log(process.env.NEXT_BUILD)
+}
 
 export default withMDX(nextConfig)

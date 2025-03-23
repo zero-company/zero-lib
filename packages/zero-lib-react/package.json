@@ -18,7 +18,7 @@
     "lib:dev": "tsup --watch",
     "lib:build": "tsup && pnpm tailwind:build",
     "next:dev": "next dev -p 8001",
-    "next:build": "next build",
+    "next:build": "cross-env NEXT_BUILD=export next build",
     "next:start": "next start",
     "storybook:dev": "storybook dev -p 8002 --no-open",
     "storybook:build": "storybook build --output-dir dist-storybook",
@@ -96,6 +96,7 @@
     "@zero-company/zero-lib": "workspace:*"
   },
   "devDependencies": {
+    "cross-env": "7.0.3",
     "@types/nodemailer": "6.4.16",
     "@types/react-syntax-highlighter": "15.5.13",
     "@storybook/addon-essentials": "^8.2.2",
