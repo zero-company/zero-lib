@@ -18,7 +18,7 @@
     "lib:dev": "tsup --watch",
     "lib:build": "tsup && pnpm tailwind:build",
     "next:dev": "next dev -p 8001",
-    "next:build": "cross-env NEXT_BUILD=export next build",
+    "next:build": "cross-env NEXT_OUTPUT=export next build",
     "next:start": "next start",
     "storybook:dev": "storybook dev -p 8002 --no-open",
     "storybook:build": "storybook build --output-dir dist-storybook",
