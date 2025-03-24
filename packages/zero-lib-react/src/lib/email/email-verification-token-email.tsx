@@ -37,6 +37,10 @@ const baseUrl = process.env.VERCEL_URL
   : ''
 
 const twconfig: TailwindConfig = {
+  safelist: '',
+  experimental: '',
+  corePlugins: '',
+  separator: '',
   theme: {
     extend: {
       colors: {
