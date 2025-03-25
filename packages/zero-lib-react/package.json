@@ -20,6 +20,7 @@
     "next:dev": "next dev -p 8001",
     "next:build": "cross-env NEXT_OUTPUT=export next build",
     "next:start": "next start",
+    "next:lint": "next lint",
     "storybook:dev": "storybook dev -p 8002 --no-open",
     "storybook:build": "storybook build --output-dir dist-storybook",
     "tailwind:dev": "tailwindcss -i src/globals.css -o dist/lib/zero-lib-react.css --watch",
