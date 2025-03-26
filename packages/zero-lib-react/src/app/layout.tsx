@@ -1,15 +1,17 @@
 import type { Metadata } from 'next'
 import React from 'react'
-import { Inter } from 'next/font/google'
+import { Geist, Geist_Mono } from 'next/font/google'
 import './../globals.css'
-import { Inter as FontSans } from 'next/font/google'
 import { cn, TooltipProvider } from '@/components/shadcn'
 import { ThemeProvider } from '@/components/theme-provider'
 
-const inter = Inter({ subsets: ['latin'] })
-const fontSans = FontSans({
+const geistSans = Geist({
+  variable: '--font-geist-sans',
   subsets: ['latin'],
-  variable: '--font-sans',
+})
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 })
 
 export const metadata: Metadata = {
@@ -24,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={cn(fontSans.variable)}>
+      <body
+        className={cn(geistSans.variable, geistMono.variable, 'antialiased')}
+      >
         <main className='flex w-screen h-screen shrink-0'>
           <ThemeProvider
             attribute='class'

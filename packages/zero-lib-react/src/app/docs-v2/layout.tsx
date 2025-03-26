@@ -2,10 +2,10 @@
 import { AppLayoutV2, IconV2, Menu } from '@/lib'
 import {
   LuList,
-  LuHome,
+  LuHouse,
   LuLayoutGrid,
   LuSettings,
-  LuUserCircle2,
+  LuCircleUserRound,
   LuSearch,
 } from 'react-icons/lu'
 import { GlobalSidebarTabs } from '@/components'
@@ -33,7 +33,7 @@ export default function Layout({ children }: Props) {
                 className='text-xs gap-2 justify-start h-8 px-2'
                 variant='ghost'
               >
-                <IconV2 reactIcon={<LuHome />} size='sm' /> Browse
+                <IconV2 reactIcon={<LuHouse />} size='sm' /> Browse
               </Button>
               <Button
                 size='sm'
@@ -59,7 +59,7 @@ export default function Layout({ children }: Props) {
                 },
                 {
                   children: 'User',
-                  icon: <LuUserCircle2 />,
+                  icon: <LuCircleUserRound />,
                   //href: '/user',
                   disabled: true,
                 },

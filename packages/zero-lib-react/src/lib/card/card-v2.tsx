@@ -30,7 +30,9 @@ type Props = {
 
 export const CardV2 = ({ children, className, color = 'default' }: Props) => {
   return (
-    <Card className={cn('rounded-md *:p-4', CARDCOLORS[color], className)}>
+    <Card
+      className={cn('rounded-md py-4 *:px-4', CARDCOLORS[color], className)}
+    >
       {children}
     </Card>
   )

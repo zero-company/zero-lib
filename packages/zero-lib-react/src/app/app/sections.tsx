@@ -1,5 +1,5 @@
 'use client'
-import { GradientButton, CardV2, CardHeader } from '@/lib'
+import { GradientButton, CardV2, CardContent } from '@/lib'
 import { useState } from 'react'
 import Link from 'next/link'
 import { generateZeroId, generateZeroIds, parseZeroId } from '@/components'
@@ -43,19 +43,19 @@ export const CardSection = () => (
     <h3>Cards</h3>
     <div className='space-y-2 text-sm'>
       <CardV2>
-        <CardHeader>Default</CardHeader>
+        <CardContent>Default</CardContent>
       </CardV2>
       <CardV2 color='info'>
-        <CardHeader>Info</CardHeader>
+        <CardContent>Info</CardContent>
       </CardV2>
       <CardV2 color='success'>
-        <CardHeader>Success</CardHeader>
+        <CardContent>Success</CardContent>
       </CardV2>
       <CardV2 color='warning'>
-        <CardHeader>Warning</CardHeader>
+        <CardContent>Warning</CardContent>
       </CardV2>
       <CardV2 color='error'>
-        <CardHeader>Error</CardHeader>
+        <CardContent>Error</CardContent>
       </CardV2>
     </div>
   </div>

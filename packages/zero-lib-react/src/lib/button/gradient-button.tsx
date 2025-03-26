@@ -1,5 +1,5 @@
 'use client'
-import { cn, Button, ButtonProps } from '@/components/shadcn'
+import { cn, Button } from '@/components/shadcn'
 import { GRADIENTS } from '@/lib'
 
 const TEXTSIZES = {
@@ -10,7 +10,7 @@ const TEXTSIZES = {
 }
 
 type Props = {
-  size?: ButtonProps['size']
+  size?: React.ComponentProps<typeof Button>['size']
   className?: string
   children: React.ReactNode
   gradient?: keyof typeof GRADIENTS

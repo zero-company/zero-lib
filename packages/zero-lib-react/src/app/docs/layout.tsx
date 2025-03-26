@@ -1,6 +1,6 @@
 'use client'
 import { AppLayoutV1, Icon } from '@/lib'
-import { LuList, LuHome } from 'react-icons/lu'
+import { LuList, LuHouse } from 'react-icons/lu'
 import { GlobalSidebarTabs } from '@/components'
 
 type Props = {
@@ -22,7 +22,7 @@ export default function Layout({ children }: Props) {
           top: [
             {
               id: 'home',
-              icon: <Icon reactIcon={<LuHome />} />,
+              icon: <Icon reactIcon={<LuHouse />} />,
               content: <div>home</div>,
             },
             {

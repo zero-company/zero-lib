@@ -26,6 +26,6 @@ export const MeasurableElement = ({
           }),
       )
     }
-  }, [])
+  }, [onResize])
   return <span ref={ref}>{children}</span>
 }
