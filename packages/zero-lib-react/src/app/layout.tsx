@@ -1,11 +1,6 @@
 import type { Metadata } from 'next'
 import React from 'react'
-import {
-  // Inter,
-  // Inter as FontSans
-  Geist,
-  Geist_Mono,
-} from 'next/font/google'
+import { Geist, Geist_Mono } from 'next/font/google'
 import './../globals.css'
 import { cn, TooltipProvider } from '@/components/shadcn'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -18,11 +13,6 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 })
-// const inter = Inter({ subsets: ['latin'] })
-// const fontSans = FontSans({
-//   subsets: ['latin'],
-//   variable: '--font-sans',
-// })
 
 export const metadata: Metadata = {
   title: 'zero-lib-react',
