@@ -1,5 +1,11 @@
 # @zero-company/zero-lib
 
+## 1.0.11
+
+### Patch Changes
+
+- [#87](https://github.com/zero-company/zero-lib/pull/87) [`ae0104f`](https://github.com/zero-company/zero-lib/commit/ae0104f587fd065f3706473f830a90c60a7854b1) Thanks [@jigz](https://github.com/jigz)! - Fix nanoid security issue
+
 ## 1.0.10
 
 ### Patch Changes
