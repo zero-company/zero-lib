@@ -6,6 +6,7 @@ import {
   Search,
   Settings,
   ChevronDown,
+  ChevronRight,
   LifeBuoy,
   Send,
 } from 'lucide-react'
@@ -23,33 +24,136 @@ import {
   Collapsible,
   CollapsibleTrigger,
   CollapsibleContent,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton,
 } from '@/lib'
 
 const items = [
   {
-    title: 'Components',
+    title: 'Getting Started',
     url: '#',
-    icon: Home,
+    items: [
+      {
+        title: 'Installation',
+        url: '#',
+      },
+      {
+        title: 'Project Structure',
+        url: '#',
+      },
+    ],
   },
   {
-    title: 'Docs',
+    title: 'Building Your Application',
     url: '#',
-    icon: Inbox,
+    items: [
+      {
+        title: 'Routing',
+        url: '#',
+      },
+      {
+        title: 'Data Fetching',
+        url: '#',
+        isActive: true,
+      },
+      {
+        title: 'Rendering',
+        url: '#',
+      },
+      {
+        title: 'Caching',
+        url: '#',
+      },
+      {
+        title: 'Styling',
+        url: '#',
+      },
+      {
+        title: 'Optimizing',
+        url: '#',
+      },
+      {
+        title: 'Configuring',
+        url: '#',
+      },
+      {
+        title: 'Testing',
+        url: '#',
+      },
+      {
+        title: 'Authentication',
+        url: '#',
+      },
+      {
+        title: 'Deploying',
+        url: '#',
+      },
+      {
+        title: 'Upgrading',
+        url: '#',
+      },
+      {
+        title: 'Examples',
+        url: '#',
+      },
+    ],
   },
   {
-    title: 'About',
+    title: 'API Reference',
     url: '#',
-    icon: Calendar,
+    items: [
+      {
+        title: 'Components',
+        url: '#',
+      },
+      {
+        title: 'File Conventions',
+        url: '#',
+      },
+      {
+        title: 'Functions',
+        url: '#',
+      },
+      {
+        title: 'next.config.js Options',
+        url: '#',
+      },
+      {
+        title: 'CLI',
+        url: '#',
+      },
+      {
+        title: 'Edge Runtime',
+        url: '#',
+      },
+    ],
   },
   {
-    title: 'Search',
+    title: 'Architecture',
     url: '#',
-    icon: Search,
-  },
-  {
-    title: 'Settings',
-    url: '#',
-    icon: Settings,
+    items: [
+      {
+        title: 'Accessibility',
+        url: '#',
+      },
+      {
+        title: 'Fast Refresh',
+        url: '#',
+      },
+      {
+        title: 'Next.js Compiler',
+        url: '#',
+      },
+      {
+        title: 'Supported Browsers',
+        url: '#',
+      },
+      {
+        title: 'Turbopack',
+        url: '#',
+      },
+    ],
   },
 ]
 
@@ -57,39 +161,43 @@ type Props = {}
 
 export const AppSidebarV1 = ({}: Props) => {
   return (
-    <Sidebar>
+    <Sidebar className='*:bg-(--background)'>
       <SidebarContent>
-        <Collapsible className='group/collapsible'>
-          <SidebarGroup>
-            <SidebarGroupLabel
-              asChild
-              className='text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground'
-            >
-              <CollapsibleTrigger>
-                Help
-                <ChevronDown className='ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180' />
-              </CollapsibleTrigger>
-            </SidebarGroupLabel>
-            <CollapsibleContent>
-              <SidebarGroupContent>
-                <SidebarMenu>
+        <SidebarGroup>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {items.map((item, index) => (
+                <Collapsible
+                  key={index}
+                  className='group/collapsible'
+                  defaultOpen={index === 0}
+                >
                   <SidebarMenuItem>
-                    <SidebarMenuButton>
-                      <LifeBuoy />
-                      Support
-                    </SidebarMenuButton>
+                    <CollapsibleTrigger asChild>
+                      <SidebarMenuButton>
+                        <span>{item.title}</span>
+                        <ChevronRight className='transition-transform ml-auto group-data-[state=open]/collapsible:rotate-90' />
+                      </SidebarMenuButton>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <SidebarMenuSub>
+                        {item.items.map((subItem, subIndex) => (
+                          <SidebarMenuSubItem key={subIndex}>
+                            <SidebarMenuSubButton asChild>
+                              <a href={subItem.url}>
+                                <span>{subItem.title}</span>
+                              </a>
+                            </SidebarMenuSubButton>
+                          </SidebarMenuSubItem>
+                        ))}
+                      </SidebarMenuSub>
+                    </CollapsibleContent>
                   </SidebarMenuItem>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton>
-                      <Send />
-                      Feedback
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </CollapsibleContent>
-          </SidebarGroup>
-        </Collapsible>
+                </Collapsible>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
     </Sidebar>
   )
