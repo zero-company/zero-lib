@@ -14,6 +14,18 @@ import {
   SidebarProvider,
   SidebarTrigger,
   SidebarV2,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton,
+  SidebarGroupV1Collapsible,
 } from '@/lib'
 import {
   LuList,
@@ -29,6 +41,7 @@ import {
   LuLogOut,
   LuUserPlus,
   LuMail,
+  LuChevronRight,
 } from 'react-icons/lu'
 import { FaFacebookF, FaGithub, FaTwitter, FaGlobe } from 'react-icons/fa6'
 import { GlobalSidebarTabs } from '@/components'
@@ -43,11 +56,109 @@ export default function Layout({ children }: Props) {
   const pathname = usePathname()
   const pathnameDepth1 = pathname.split('/')[1]
 
+  const SidebarGroupMain = () => (
+    <SidebarGroup>
+      <SidebarGroupContent>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton>
+              <LuList />
+              Components
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton disabled>
+              <LuBookOpen />
+              Docs
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton>
+              <LuInfo />
+              About
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarGroupContent>
+    </SidebarGroup>
+  )
+
+  const SidebarGroupForms = () => (
+    <SidebarGroup>
+      <SidebarGroupContent>
+        <SidebarMenu>
+          <Collapsible className='group/collapsible' defaultOpen={true}>
+            <SidebarMenuItem>
+              <CollapsibleTrigger asChild>
+                <SidebarMenuButton>
+                  <span>Auth Forms</span>
+                  <LuChevronRight className='transition-transform ml-auto group-data-[state=open]/collapsible:rotate-90' />
+                </SidebarMenuButton>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <a href={'/'}>
+                        <span>Sign In</span>
+                      </a>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <a href={'/'}>
+                        <span>Sign Up</span>
+                      </a>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <a href={'/'}>
+                        <span>Forgot Password</span>
+                      </a>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                </SidebarMenuSub>
+              </CollapsibleContent>
+            </SidebarMenuItem>
+          </Collapsible>
+        </SidebarMenu>
+      </SidebarGroupContent>
+    </SidebarGroup>
+  )
+
+  const SidebarGroupForm2 = () => (
+    <SidebarGroupV1Collapsible
+      disabled
+      defaultOpen
+      inTriggerButton={'Auth Forms 2'}
+      menuSubButtons={[
+        {
+          text: 'Sign In',
+          onClick: () => console.log('click'),
+        },
+        {
+          text: 'Sign Up',
+        },
+        {
+          text: 'Forgot Password',
+        },
+      ]}
+    />
+  )
+
   return (
     <>
       <AppLayoutV3
         body={children}
         header={<Header />}
+        sidebarGroups={
+          <>
+            <SidebarGroupMain />
+            <SidebarGroupForms />
+            <SidebarGroupForm2 />
+          </>
+        }
         sidebar={
           <>
             <MenuV2

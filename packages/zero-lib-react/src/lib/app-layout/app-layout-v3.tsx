@@ -17,13 +17,20 @@ import { useState } from 'react'
 
 type Props = {
   sidebar?: React.ReactNode
+  sidebarGroups?: React.ReactNode
   header?: React.ReactNode
   footer?: React.ReactNode
   page?: React.ReactNode
   body?: React.ReactNode
 }
 
-export const AppLayoutV3 = ({ header, footer, sidebar, body }: Props) => {
+export const AppLayoutV3 = ({
+  header,
+  footer,
+  sidebar,
+  body,
+  sidebarGroups,
+}: Props) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
@@ -32,7 +39,7 @@ export const AppLayoutV3 = ({ header, footer, sidebar, body }: Props) => {
         id='AppLayoutV3'
         className='flex divide-x w-screen h-screen leading-none overflow-clip'
       >
-        <AppSidebarV1 />
+        <AppSidebarV1 sidebarGroups={sidebarGroups} />
         <SidebarTrigger />
         <div
           className={cn(

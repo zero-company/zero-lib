@@ -29,6 +29,8 @@ import {
   SidebarMenuSubButton,
 } from '@/lib'
 
+const items2 = [{ children: '', icon: null, href: '' }]
+
 const items = [
   {
     title: 'Getting Started',
@@ -157,12 +159,15 @@ const items = [
   },
 ]
 
-type Props = {}
+type Props = {
+  sidebarGroups?: React.ReactNode
+}
 
-export const AppSidebarV1 = ({}: Props) => {
+export const AppSidebarV1 = ({ sidebarGroups }: Props) => {
   return (
     <Sidebar className='*:bg-(--background)'>
       <SidebarContent>
+        {sidebarGroups}
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
