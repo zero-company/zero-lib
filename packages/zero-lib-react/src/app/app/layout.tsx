@@ -83,7 +83,7 @@ export default function Layout({ children }: Props) {
     </SidebarGroup>
   )
 
-  const SidebarGroupForm = () => (
+  const SidebarGroupForms = () => (
     <SidebarGroupV1Collapsible
       defaultOpen
       inTriggerButton={'Auth Forms'}
@@ -107,6 +107,23 @@ export default function Layout({ children }: Props) {
     />
   )
 
+  const SidebarGroupActions = () => (
+    <SidebarGroupV1Collapsible
+      defaultOpen
+      inTriggerButton={'SidebarButtons'}
+      menuSubButtons={[
+        {
+          text: 'OnClick',
+          onClick: () => console.log('onClick'),
+        },
+        {
+          text: 'Disabled',
+          disabled: true,
+        },
+      ]}
+    />
+  )
+
   return (
     <>
       <AppLayoutV3
@@ -115,7 +132,8 @@ export default function Layout({ children }: Props) {
         sidebarGroups={
           <>
             <SidebarGroupMain />
-            <SidebarGroupForm />
+            <SidebarGroupForms />
+            <SidebarGroupActions />
           </>
         }
         sidebar={

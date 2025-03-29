@@ -17,6 +17,8 @@ import {
   SidebarMenuSub,
   SidebarMenuSubItem,
   SidebarMenuSubButton,
+  SidebarMenuSubButtonV2,
+  Button,
 } from '@/lib'
 import Link from 'next/link'
 
@@ -29,6 +31,7 @@ type Props = {
     text?: string
     child?: React.ReactNode
     onClick?: () => void
+    disabled?: boolean
   }[]
 }
 
@@ -54,8 +57,9 @@ export const SidebarGroupV1Collapsible = ({
                 <SidebarMenuSub>
                   {menuSubButtons?.map((button, key) => (
                     <SidebarMenuSubItem key={key}>
-                      <SidebarMenuSubButton
+                      <SidebarMenuSubButtonV2
                         asChild
+                        disabled={button.disabled}
                         onClick={button.onClick}
                         className='cursor-default'
                       >
@@ -66,7 +70,7 @@ export const SidebarGroupV1Collapsible = ({
                         ) : (
                           button.child
                         )}
-                      </SidebarMenuSubButton>
+                      </SidebarMenuSubButtonV2>
                     </SidebarMenuSubItem>
                   ))}
                 </SidebarMenuSub>
