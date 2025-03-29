@@ -18,6 +18,7 @@ import {
   SidebarMenuSubItem,
   SidebarMenuSubButton,
 } from '@/lib'
+import Link from 'next/link'
 
 type Props = {
   inTriggerButton?: React.ReactNode
@@ -59,9 +60,9 @@ export const SidebarGroupV1Collapsible = ({
                         className='cursor-default'
                       >
                         {button.text ? (
-                          <a href={button.href}>
+                          <Link href={button.href || ''}>
                             <span>{button.text}</span>
-                          </a>
+                          </Link>
                         ) : (
                           button.child
                         )}
