@@ -28,8 +28,7 @@ import {
   SidebarMenuSubItem,
   SidebarMenuSubButton,
 } from '@/lib'
-
-const items2 = [{ children: '', icon: null, href: '' }]
+import Link from 'next/link'
 
 const items = [
   {
@@ -189,9 +188,9 @@ export const AppSidebarV1 = ({ sidebarGroups }: Props) => {
                         {item.items.map((subItem, subIndex) => (
                           <SidebarMenuSubItem key={subIndex}>
                             <SidebarMenuSubButton asChild>
-                              <a href={subItem.url}>
+                              <Link href={subItem.url}>
                                 <span>{subItem.title}</span>
-                              </a>
+                              </Link>
                             </SidebarMenuSubButton>
                           </SidebarMenuSubItem>
                         ))}

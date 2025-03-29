@@ -83,65 +83,25 @@ export default function Layout({ children }: Props) {
     </SidebarGroup>
   )
 
-  const SidebarGroupForms = () => (
-    <SidebarGroup>
-      <SidebarGroupContent>
-        <SidebarMenu>
-          <Collapsible className='group/collapsible' defaultOpen={true}>
-            <SidebarMenuItem>
-              <CollapsibleTrigger asChild>
-                <SidebarMenuButton>
-                  <span>Auth Forms</span>
-                  <LuChevronRight className='transition-transform ml-auto group-data-[state=open]/collapsible:rotate-90' />
-                </SidebarMenuButton>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <SidebarMenuSub>
-                  <SidebarMenuSubItem>
-                    <SidebarMenuSubButton asChild>
-                      <a href={'/'}>
-                        <span>Sign In</span>
-                      </a>
-                    </SidebarMenuSubButton>
-                  </SidebarMenuSubItem>
-                  <SidebarMenuSubItem>
-                    <SidebarMenuSubButton asChild>
-                      <a href={'/'}>
-                        <span>Sign Up</span>
-                      </a>
-                    </SidebarMenuSubButton>
-                  </SidebarMenuSubItem>
-                  <SidebarMenuSubItem>
-                    <SidebarMenuSubButton asChild>
-                      <a href={'/'}>
-                        <span>Forgot Password</span>
-                      </a>
-                    </SidebarMenuSubButton>
-                  </SidebarMenuSubItem>
-                </SidebarMenuSub>
-              </CollapsibleContent>
-            </SidebarMenuItem>
-          </Collapsible>
-        </SidebarMenu>
-      </SidebarGroupContent>
-    </SidebarGroup>
-  )
-
-  const SidebarGroupForm2 = () => (
+  const SidebarGroupForm = () => (
     <SidebarGroupV1Collapsible
-      disabled
       defaultOpen
-      inTriggerButton={'Auth Forms 2'}
+      inTriggerButton={'Auth Forms'}
       menuSubButtons={[
         {
           text: 'Sign In',
-          onClick: () => console.log('click'),
+          href: `/${pathnameDepth1}/signin`,
         },
         {
           text: 'Sign Up',
+          href: `/${pathnameDepth1}/signup`,
         },
         {
           text: 'Forgot Password',
+          href: `/${pathnameDepth1}/forgotpassword`,
+        },
+        {
+          text: 'None',
         },
       ]}
     />
@@ -155,8 +115,7 @@ export default function Layout({ children }: Props) {
         sidebarGroups={
           <>
             <SidebarGroupMain />
-            <SidebarGroupForms />
-            <SidebarGroupForm2 />
+            <SidebarGroupForm />
           </>
         }
         sidebar={
