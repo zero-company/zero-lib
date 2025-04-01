@@ -26,6 +26,7 @@ import {
   SidebarMenuSubItem,
   SidebarMenuSubButton,
   SidebarGroupV1Collapsible,
+  SidebarGroupV1CollapsibleSub,
 } from '@/lib'
 import {
   LuList,
@@ -86,7 +87,7 @@ export default function Layout({ children }: Props) {
   const SidebarGroupForms = () => (
     <SidebarGroupV1Collapsible
       defaultOpen
-      inTriggerButton={'Auth Forms'}
+      sidebarMenuButtonChildren={'Auth Forms'}
       menuSubButtons={[
         {
           text: 'Sign In',
@@ -100,17 +101,13 @@ export default function Layout({ children }: Props) {
           text: 'Forgot Password',
           href: `/${pathnameDepth1}/forgotpassword`,
         },
-        {
-          text: 'None',
-        },
       ]}
     />
   )
 
-  const SidebarGroupActions = () => (
-    <SidebarGroupV1Collapsible
-      defaultOpen
-      inTriggerButton={'SidebarButtons'}
+  const SidebarGroupMiscNestedCollapsible = () => (
+    <SidebarGroupV1CollapsibleSub
+      sidebarMenuButtonChildren={'Nested Collapsible'}
       menuSubButtons={[
         {
           text: 'OnClick',
@@ -118,7 +115,29 @@ export default function Layout({ children }: Props) {
         },
         {
           text: 'Disabled',
+          onClick: () => console.log('disabled'),
           disabled: true,
+        },
+      ]}
+    />
+  )
+
+  const SidebarGroupMisc = () => (
+    <SidebarGroupV1Collapsible
+      defaultOpen
+      sidebarMenuButtonChildren={'Misc'}
+      menuSubButtons={[
+        {
+          text: 'OnClick',
+          onClick: () => console.log('onClick'),
+        },
+        {
+          text: 'Disabled',
+          onClick: () => console.log('disabled'),
+          disabled: true,
+        },
+        {
+          sidebarMenuSubChildren: <SidebarGroupMiscNestedCollapsible />,
         },
       ]}
     />
@@ -133,7 +152,7 @@ export default function Layout({ children }: Props) {
           <>
             <SidebarGroupMain />
             <SidebarGroupForms />
-            <SidebarGroupActions />
+            <SidebarGroupMisc />
           </>
         }
         sidebar={
