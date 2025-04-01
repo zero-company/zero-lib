@@ -236,12 +236,12 @@ export const SidebarGroupV1CollapsibleSub = ({
   defaultOpen,
 }: Props) => {
   return (
-    <Collapsible className='group/collapsible' defaultOpen={defaultOpen}>
+    <Collapsible className='group/collapsibleSub' defaultOpen={defaultOpen}>
       <SidebarMenuItem>
         <CollapsibleTrigger asChild disabled={disabled}>
           <SidebarMenuButton>
             {sidebarMenuButtonChildren}
-            <LuChevronRight className='transition-transform ml-auto group-data-[state=open]/collapsible:rotate-90' />
+            <LuChevronRight className='transition-transform ml-auto group-data-[state=open]/collapsibleSub:rotate-90' />
           </SidebarMenuButton>
         </CollapsibleTrigger>
         <CollapsibleContent>
