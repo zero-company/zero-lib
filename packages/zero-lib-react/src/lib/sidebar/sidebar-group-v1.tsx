@@ -175,57 +175,49 @@ type Props = {
   }[]
 }
 
-export const SidebarGroupV1Collapsible = ({
+export const SidebarMenuItemV1Collapsible = ({
   sidebarMenuButtonChildren,
   disabled,
   menuSubButtons,
   defaultOpen,
 }: Props) => {
   return (
-    <SidebarGroup>
-      <SidebarGroupContent>
-        <SidebarMenu>
-          <Collapsible className='group/collapsible' defaultOpen={defaultOpen}>
-            <SidebarMenuItem>
-              <CollapsibleTrigger asChild disabled={disabled}>
-                <SidebarMenuButton>
-                  {sidebarMenuButtonChildren}
-                  <LuChevronRight className='transition-transform ml-auto group-data-[state=open]/collapsible:rotate-90' />
-                </SidebarMenuButton>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <SidebarMenuSub>
-                  {menuSubButtons?.map((button, key) =>
-                    button.sidebarMenuSubChildren ? (
-                      <Fragment key={key}>
-                        {button.sidebarMenuSubChildren}
-                      </Fragment>
+    <Collapsible className='group/collapsible' defaultOpen={defaultOpen}>
+      <SidebarMenuItem>
+        <CollapsibleTrigger asChild disabled={disabled}>
+          <SidebarMenuButton>
+            {sidebarMenuButtonChildren}
+            <LuChevronRight className='transition-transform ml-auto group-data-[state=open]/collapsible:rotate-90' />
+          </SidebarMenuButton>
+        </CollapsibleTrigger>
+        <CollapsibleContent>
+          <SidebarMenuSub>
+            {menuSubButtons?.map((button, key) =>
+              button.sidebarMenuSubChildren ? (
+                <Fragment key={key}>{button.sidebarMenuSubChildren}</Fragment>
+              ) : (
+                <SidebarMenuSubItem key={key}>
+                  <SidebarMenuSubButtonV2
+                    asChild
+                    disabled={button.disabled}
+                    onClick={button.onClick}
+                    className='cursor-default'
+                  >
+                    {button.text ? (
+                      <Link href={button.href || ''}>
+                        <span>{button.text}</span>
+                      </Link>
                     ) : (
-                      <SidebarMenuSubItem key={key}>
-                        <SidebarMenuSubButtonV2
-                          asChild
-                          disabled={button.disabled}
-                          onClick={button.onClick}
-                          className='cursor-default'
-                        >
-                          {button.text ? (
-                            <Link href={button.href || ''}>
-                              <span>{button.text}</span>
-                            </Link>
-                          ) : (
-                            button.buttonChildren
-                          )}
-                        </SidebarMenuSubButtonV2>
-                      </SidebarMenuSubItem>
-                    ),
-                  )}
-                </SidebarMenuSub>
-              </CollapsibleContent>
-            </SidebarMenuItem>
-          </Collapsible>
-        </SidebarMenu>
-      </SidebarGroupContent>
-    </SidebarGroup>
+                      button.buttonChildren
+                    )}
+                  </SidebarMenuSubButtonV2>
+                </SidebarMenuSubItem>
+              ),
+            )}
+          </SidebarMenuSub>
+        </CollapsibleContent>
+      </SidebarMenuItem>
+    </Collapsible>
   )
 }
 

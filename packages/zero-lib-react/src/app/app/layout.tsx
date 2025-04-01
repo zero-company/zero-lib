@@ -25,7 +25,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubItem,
   SidebarMenuSubButton,
-  SidebarGroupV1Collapsible,
+  SidebarMenuItemV1Collapsible,
   SidebarGroupV1CollapsibleSub,
 } from '@/lib'
 import {
@@ -84,63 +84,78 @@ export default function Layout({ children }: Props) {
     </SidebarGroup>
   )
 
-  const SidebarGroupForms = () => (
-    <SidebarGroupV1Collapsible
-      defaultOpen
-      sidebarMenuButtonChildren={'Auth Forms'}
-      menuSubButtons={[
-        {
-          text: 'Sign In',
-          href: `/${pathnameDepth1}/signin`,
-        },
-        {
-          text: 'Sign Up',
-          href: `/${pathnameDepth1}/signup`,
-        },
-        {
-          text: 'Forgot Password',
-          href: `/${pathnameDepth1}/forgotpassword`,
-        },
-      ]}
-    />
-  )
-
   const SidebarGroupMiscNestedCollapsible = () => (
-    <SidebarGroupV1CollapsibleSub
-      sidebarMenuButtonChildren={'Nested Collapsible'}
-      menuSubButtons={[
-        {
-          text: 'OnClick',
-          onClick: () => console.log('onClick'),
-        },
-        {
-          text: 'Disabled',
-          onClick: () => console.log('disabled'),
-          disabled: true,
-        },
-      ]}
-    />
+    <SidebarGroup>
+      <SidebarGroupContent>
+        <SidebarMenu>
+          <SidebarGroupV1CollapsibleSub
+            sidebarMenuButtonChildren={'Nested Collapsible'}
+            menuSubButtons={[
+              {
+                text: 'OnClick',
+                onClick: () => console.log('onClick'),
+              },
+              {
+                text: 'Disabled',
+                onClick: () => console.log('disabled'),
+                disabled: true,
+              },
+            ]}
+          />
+        </SidebarMenu>
+      </SidebarGroupContent>
+    </SidebarGroup>
   )
 
-  const SidebarGroupMisc = () => (
-    <SidebarGroupV1Collapsible
-      defaultOpen
-      sidebarMenuButtonChildren={'Misc'}
-      menuSubButtons={[
-        {
-          text: 'OnClick',
-          onClick: () => console.log('onClick'),
-        },
-        {
-          text: 'Disabled',
-          onClick: () => console.log('disabled'),
-          disabled: true,
-        },
-        {
-          sidebarMenuSubChildren: <SidebarGroupMiscNestedCollapsible />,
-        },
-      ]}
-    />
+  const SidebarGroupForms = () => (
+    <SidebarGroup>
+      <SidebarGroupContent>
+        <SidebarMenu>
+          <SidebarMenuItemV1Collapsible
+            defaultOpen
+            sidebarMenuButtonChildren={'Auth Forms'}
+            menuSubButtons={[
+              {
+                text: 'Sign In',
+                href: `/${pathnameDepth1}/signin`,
+              },
+              {
+                text: 'Sign Up',
+                href: `/${pathnameDepth1}/signup`,
+              },
+              {
+                text: 'Forgot Password',
+                href: `/${pathnameDepth1}/forgotpassword`,
+              },
+            ]}
+          />
+        </SidebarMenu>
+        <SidebarMenu>
+          <SidebarMenuItemV1Collapsible
+            defaultOpen
+            sidebarMenuButtonChildren={'Misc'}
+            menuSubButtons={[
+              {
+                text: 'OnClick',
+                onClick: () => console.log('onClick'),
+              },
+              {
+                text: 'Disabled',
+                onClick: () => console.log('disabled'),
+                disabled: true,
+              },
+              {
+                text: 'OnClick',
+                onClick: () => console.log('onClick'),
+              },
+              {
+                sidebarMenuSubChildren: <SidebarGroupMiscNestedCollapsible />,
+              },
+            ]}
+          />
+        </SidebarMenu>
+      </SidebarGroupContent>
+    </SidebarGroup>
   )
 
   return (
@@ -152,7 +167,6 @@ export default function Layout({ children }: Props) {
           <>
             <SidebarGroupMain />
             <SidebarGroupForms />
-            <SidebarGroupMisc />
           </>
         }
         sidebar={
