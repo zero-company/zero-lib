@@ -10,6 +10,7 @@ import {
   SupportCard,
   SidebarProvider,
   AppSidebarV1,
+  AppSidebarV2,
   SidebarTrigger,
 } from '@/lib'
 import { LuPanelLeftOpen, LuPanelLeftClose } from 'react-icons/lu'
@@ -39,7 +40,7 @@ export const AppLayoutV3 = ({
         id='AppLayoutV3'
         className='flex divide-x w-screen h-screen leading-none overflow-clip'
       >
-        <AppSidebarV1 sidebarGroups={sidebarGroups} />
+        <AppSidebarV2 />
         <SidebarTrigger />
         <div
           className={cn(
