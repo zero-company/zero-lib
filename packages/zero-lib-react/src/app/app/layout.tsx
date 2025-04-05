@@ -266,24 +266,6 @@ export default function Layout({ children }: Props) {
         footer={
           <>
             <SupportCardV2 />
-            <div className='flex p-2 gap-2'>
-              <Link
-                href={ZERO_LINKS.buymeacoffee}
-                className='flex-1'
-                target='_blank'
-              >
-                <GradientButton className='w-full'>Support Zero</GradientButton>
-              </Link>
-              <Link
-                href={ZERO_LINKS.discord}
-                className='flex-1'
-                target='_blank'
-              >
-                <GradientButton gradient='purple2' className='w-full'>
-                  Join Community
-                </GradientButton>
-              </Link>
-            </div>
             <div className='h-8 divide-x flex *:flex *:flex-1 *:justify-center *:h-full *:p-2'>
               <Link
                 href={ZERO_LINKS.website}

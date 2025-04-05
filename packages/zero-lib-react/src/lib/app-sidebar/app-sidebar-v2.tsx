@@ -62,6 +62,8 @@ import {
   AvatarFallback,
   DropdownMenuGroup,
   SidebarRail,
+  SupportCardV2,
+  DisclaimerCard,
 } from '@/lib'
 import Link from 'next/link'
 
@@ -337,6 +339,8 @@ export const AppSidebarV2Footer = () => {
           </DropdownMenu>
         </SidebarMenuItem>
       </SidebarMenu>
+      <SupportCardV2 />
+      <DisclaimerCard />
     </SidebarFooter>
   )
 }
