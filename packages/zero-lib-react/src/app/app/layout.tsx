@@ -27,6 +27,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuItemV1Collapsible,
   SidebarGroupV1CollapsibleSub,
+  SupportCardV2,
 } from '@/lib'
 import {
   LuList,
@@ -264,6 +265,7 @@ export default function Layout({ children }: Props) {
         }
         footer={
           <>
+            <SupportCardV2 />
             <div className='flex p-2 gap-2'>
               <Link
                 href={ZERO_LINKS.buymeacoffee}

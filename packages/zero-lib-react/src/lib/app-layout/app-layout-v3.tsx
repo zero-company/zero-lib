@@ -7,7 +7,7 @@ import {
   Icon,
   ZeroLogo,
   Footer,
-  SupportCard,
+  SupportCardV2,
   SidebarProvider,
   AppSidebarV1,
   AppSidebarV2,
@@ -64,7 +64,7 @@ export const AppLayoutV3 = ({
           <div className='flex-1' />
           {footer || (
             <>
-              <SupportCard />
+              <SupportCardV2 />
               <Footer />
             </>
           )}
