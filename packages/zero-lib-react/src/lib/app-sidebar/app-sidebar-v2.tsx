@@ -361,7 +361,10 @@ type Props = {
 }
 export const AppSidebarV2 = ({ sidebarGroups }: Props) => {
   return (
-    <Sidebar className='*:bg-(--background)' collapsible='icon'>
+    <Sidebar
+      className='*:bg-(--background) *:divide-y !border-r-0'
+      collapsible='icon'
+    >
       <AppSidebarV2Header />
       <SidebarContent>
         <SidebarGroup>

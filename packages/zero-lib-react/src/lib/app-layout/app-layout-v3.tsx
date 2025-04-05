@@ -42,7 +42,7 @@ export const AppLayoutV3 = ({
         className='flex divide-x w-screen h-screen leading-none overflow-clip'
       >
         <AppSidebarV2 />
-        <SidebarTrigger />
+        <SidebarTrigger className='hidden' />
         <div
           className={cn(
             'transition-all w-screen sm:w-64 divide-y flex flex-col shrink-0 overflow-y-auto',
