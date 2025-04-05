@@ -1,15 +1,7 @@
 'use client'
 import { ReactNode, useState } from 'react'
 import {
-  Calendar,
-  Home,
-  Inbox,
-  Search,
-  Settings,
-  ChevronDown,
   ChevronRight,
-  LifeBuoy,
-  Send,
   AudioWaveform,
   BadgeCheck,
   Bell,
@@ -348,7 +340,7 @@ export const AppSidebarV2Footer = () => {
         </SidebarMenu>
       </SidebarFooter>
       <SidebarFooter className='p-0 gap-0 divide-y'>
-        <SupportCardV2 className='transition-[margin,opacity] duration-200 ease-linear group-data-[collapsible=icon]:opacity-0 group-data-[collapsible=icon]:-ml-(--sidebar-width)' />
+        <SupportCardV2 />
         <SocialCard />
         <DisclaimerCard />
       </SidebarFooter>
