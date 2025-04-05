@@ -12,6 +12,7 @@ import {
   AppSidebarV1,
   AppSidebarV2,
   SidebarTrigger,
+  SocialCard,
 } from '@/lib'
 import { LuPanelLeftOpen, LuPanelLeftClose } from 'react-icons/lu'
 import { useState } from 'react'
@@ -65,6 +66,7 @@ export const AppLayoutV3 = ({
           {footer || (
             <>
               <SupportCardV2 />
+              <SocialCard />
               <Footer />
             </>
           )}

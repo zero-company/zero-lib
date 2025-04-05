@@ -64,6 +64,7 @@ import {
   SidebarRail,
   SupportCardV2,
   DisclaimerCard,
+  SocialCard,
 } from '@/lib'
 import Link from 'next/link'
 
@@ -340,6 +341,7 @@ export const AppSidebarV2Footer = () => {
         </SidebarMenuItem>
       </SidebarMenu>
       <SupportCardV2 />
+      <SocialCard />
       <DisclaimerCard />
     </SidebarFooter>
   )

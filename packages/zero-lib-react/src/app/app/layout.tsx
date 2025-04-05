@@ -2,32 +2,19 @@
 import {
   AppLayoutV3,
   IconV2,
-  Menu,
   MenuV2,
-  SupportCard,
   Footer,
   Header,
-  ZeroLogo,
-  Button,
-  GradientButton,
   ZERO_LINKS,
-  SidebarProvider,
-  SidebarTrigger,
-  SidebarV2,
   SidebarGroup,
   SidebarGroupContent,
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
-  Collapsible,
-  CollapsibleTrigger,
-  CollapsibleContent,
-  SidebarMenuSub,
-  SidebarMenuSubItem,
-  SidebarMenuSubButton,
   SidebarMenuItemV1Collapsible,
   SidebarGroupV1CollapsibleSub,
   SupportCardV2,
+  SocialCard,
 } from '@/lib'
 import {
   LuList,
@@ -43,7 +30,6 @@ import {
   LuLogOut,
   LuUserPlus,
   LuMail,
-  LuChevronRight,
 } from 'react-icons/lu'
 import { FaFacebookF, FaGithub, FaTwitter, FaGlobe } from 'react-icons/fa6'
 import { GlobalSidebarTabs } from '@/components'
@@ -266,32 +252,7 @@ export default function Layout({ children }: Props) {
         footer={
           <>
             <SupportCardV2 />
-            <div className='h-8 divide-x flex *:flex *:flex-1 *:justify-center *:h-full *:p-2'>
-              <Link
-                href={ZERO_LINKS.website}
-                className='flex-1'
-                target='_blank'
-              >
-                <IconV2 size='sm' reactIcon={<FaGlobe />} />
-              </Link>
-              <Link href={ZERO_LINKS.github} className='flex-1' target='_blank'>
-                <IconV2 size='sm' reactIcon={<FaGithub />} />
-              </Link>
-              <Link
-                href={ZERO_LINKS.twitter}
-                className='flex-1'
-                target='_blank'
-              >
-                <IconV2 size='sm' reactIcon={<FaTwitter />} />
-              </Link>
-              <Link
-                href={ZERO_LINKS.facebook}
-                className='flex-1'
-                target='_blank'
-              >
-                <IconV2 size='sm' reactIcon={<FaFacebookF />} />
-              </Link>
-            </div>
+            <SocialCard />
             <Footer />
           </>
         }
