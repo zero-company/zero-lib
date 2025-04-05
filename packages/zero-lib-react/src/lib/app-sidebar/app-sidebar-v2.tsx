@@ -348,7 +348,7 @@ export const AppSidebarV2Footer = () => {
         </SidebarMenu>
       </SidebarFooter>
       <SidebarFooter className='p-0 gap-0 divide-y'>
-        <SupportCardV2 />
+        <SupportCardV2 className='transition-[margin,opacity] duration-200 ease-linear group-data-[collapsible=icon]:opacity-0 group-data-[collapsible=icon]:-ml-(--sidebar-width)' />
         <SocialCard />
         <DisclaimerCard />
       </SidebarFooter>

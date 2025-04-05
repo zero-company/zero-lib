@@ -1,9 +1,12 @@
 'use client'
 import { cn, GradientButton, ZERO_LINKS } from '@/lib'
 
-export const SupportCardV2 = () => {
+export const SupportCardV2 = ({
+  className,
+  ...props
+}: React.ComponentProps<'div'>) => {
   return (
-    <div className='flex p-2 gap-2'>
+    <div className={cn('flex p-2 gap-2', className)} {...props}>
       <a href={ZERO_LINKS.buymeacoffee} className='flex-1' target='_blank'>
         <GradientButton className='w-full cursor-pointer'>
           Support Zero
@@ -16,4 +19,8 @@ export const SupportCardV2 = () => {
       </a>
     </div>
   )
+}
+
+export const SupportCardV2Icon = () => {
+  return <div></div>
 }
