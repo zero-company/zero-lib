@@ -1,4 +1,4 @@
-import { useQuery, useQueryErrorResetBoundary } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { User, usersSchema } from './types'
 
 type FetchUsersParams = {
@@ -43,43 +43,4 @@ export const fetchUsersV3 = (params?: FetchUsersParams) => {
       )
     },
   })
-}
-
-export const fetchUsers = ({}: FetchUsersParams) => {
-  return fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.json())
-    .then(data => data)
-    .catch(error => {
-      console.error('Error fetching users:', error)
-      throw error
-    })
-    .finally(() => {
-      console.log('Fetch users completed')
-    })
-    .then(data => {
-      console.log('Fetched users:', data)
-      return data
-    })
-}
-
-export const fetchUsersV2 = ({}: FetchUsersParams) => {
-  return {
-    queryKey: ['users'],
-    queryFn: () => {
-      return fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
-        .then(data => data)
-        .catch(error => {
-          console.error('Error fetching users:', error)
-          throw error
-        })
-        .finally(() => {
-          console.log('Fetch users completed')
-        })
-        .then(data => {
-          console.log('Fetched users:', data)
-          return data
-        })
-    },
-  }
 }
