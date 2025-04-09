@@ -12,25 +12,35 @@ export const fetchUsersV3 = (params?: FetchUsersParams) => {
   return useQuery<User[]>({
     queryKey: ['users', filter, userId],
     queryFn: () => {
-      return fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
-        .then(data => data)
-        .catch(error => {
-          console.error('Error fetching users:', error)
-          throw error
-        })
-        .finally(() => {
-          console.log('Fetch users completed')
-        })
-        .then(data => {
-          console.log('Fetched users:', data)
-          return data
-        })
-        .then(data => {
-          const parsedData = usersSchema.parse(data)
-          console.log('Parsed users:', parsedData)
-          return parsedData
-        })
+      return (
+        fetch('https://jsonplaceholder.typicode.com/users')
+          .then(res => res.json())
+          .then(data => data)
+          .catch(error => {
+            console.error('Error fetching users:', error) // Add logger
+            throw error
+          })
+          // .finally(() => {
+          //   console.log('Fetch users completed')
+          // })
+          .then(data => {
+            console.log('Fetched users:', data)
+            return data
+          })
+          .then(data => {
+            const {
+              data: parsedData,
+              success,
+              error,
+            } = usersSchema.safeParse(data)
+            if (error) {
+              console.error('Error parsing users:', error)
+              throw error
+            }
+            console.log('Parsed users:', parsedData)
+            return parsedData
+          })
+      )
     },
   })
 }
