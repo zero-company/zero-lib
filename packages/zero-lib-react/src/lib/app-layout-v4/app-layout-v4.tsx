@@ -15,8 +15,10 @@ import {
 } from '@/lib'
 import { LuPanelLeftOpen, LuPanelLeftClose } from 'react-icons/lu'
 import { useState } from 'react'
+import { AppSidebarV4 } from './app-sidebar-v4'
 
 type Props = {
+  sidebarProps?: React.ComponentProps<typeof AppSidebarV4>
   sidebar?: React.ReactNode
   sidebarGroups?: React.ReactNode
   header?: React.ReactNode
@@ -31,17 +33,17 @@ export const AppLayoutV4 = ({
   sidebar,
   body,
   sidebarGroups,
+  sidebarProps,
 }: Props) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
     <SidebarProvider>
       <div
-        id='AppLayoutV4'
         className='flex divide-x w-screen h-screen leading-none overflow-clip'
+        data-name='AppSidebarV4'
       >
-        <AppSidebarV2 />
-        <SidebarTrigger className='hidden' />
+        <AppSidebarV4 {...sidebarProps} />
         <div
           className={cn(
             'transition-all w-screen sm:w-64 divide-y flex flex-col shrink-0 overflow-y-auto',
@@ -49,6 +51,7 @@ export const AppLayoutV4 = ({
           )}
         >
           <div className='flex divide-x sm:-ml-px'>
+            <SidebarTrigger />
             <Button
               size='sm'
               variant='ghost'

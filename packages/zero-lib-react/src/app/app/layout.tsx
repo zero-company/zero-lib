@@ -1,6 +1,7 @@
 'use client'
 import {
   AppLayoutV3,
+  AppLayoutV4,
   IconV2,
   MenuV2,
   Footer,
@@ -147,9 +148,10 @@ export default function Layout({ children }: Props) {
 
   return (
     <>
-      <AppLayoutV3
+      <AppLayoutV4
         body={children}
         header={<Header />}
+        sidebarProps={{}}
         sidebarGroups={
           <>
             <SidebarGroupMain />
