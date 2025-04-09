@@ -157,7 +157,11 @@ export function AppSidebarV3({
   ...props
 }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible='icon' {...props}>
+    <Sidebar
+      className='*:bg-(--background) *:divide-y !border-r-0'
+      collapsible='icon'
+      {...props}
+    >
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>

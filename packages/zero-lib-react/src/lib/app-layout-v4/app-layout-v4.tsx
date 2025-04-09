@@ -9,9 +9,7 @@ import {
   Footer,
   SupportCardV2,
   SidebarProvider,
-  AppSidebarV1,
   AppSidebarV2,
-  AppSidebarV3,
   SidebarTrigger,
   SocialCard,
 } from '@/lib'
@@ -27,7 +25,7 @@ type Props = {
   body?: React.ReactNode
 }
 
-export const AppLayoutV3 = ({
+export const AppLayoutV4 = ({
   header,
   footer,
   sidebar,
@@ -39,7 +37,7 @@ export const AppLayoutV3 = ({
   return (
     <SidebarProvider>
       <div
-        id='AppLayoutV3'
+        id='AppLayoutV4'
         className='flex divide-x w-screen h-screen leading-none overflow-clip'
       >
         <AppSidebarV2 />
