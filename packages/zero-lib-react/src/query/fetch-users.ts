@@ -33,8 +33,8 @@ export const fetchUsersV3 = (params?: FetchUsersParams) => {
               success,
               error,
             } = usersSchema.safeParse(data)
-            if (error) {
-              console.error('Error parsing users:', error)
+            if (!success) {
+              console.error('Error parsing users:', error) // Add logger
               throw error
             }
             console.log('Parsed users:', parsedData)
