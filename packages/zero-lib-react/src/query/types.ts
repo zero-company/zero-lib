@@ -5,6 +5,7 @@ import { z } from 'zod'
  * @see https://jsonplaceholder.typicode.com/
  */
 
+/*
 export interface User {
   id: number
   name: string
@@ -70,6 +71,7 @@ export interface Todo {
   title: string
   completed: boolean
 }
+*/
 
 export const geoSchema = z.object({
   lat: z.string(),
@@ -100,5 +102,6 @@ export const userSchema = z.object({
   website: z.string(),
   company: companySchema,
 })
-
+export type User = z.infer<typeof userSchema>
 export const usersSchema = z.array(userSchema)
+export type Users = z.infer<typeof usersSchema>
