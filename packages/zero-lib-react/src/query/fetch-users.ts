@@ -1,7 +1,35 @@
+import { useQuery, useQueryErrorResetBoundary } from '@tanstack/react-query'
+import { User } from './types'
+
 type FetchUsersParams = {
-  // userId?: number
-  // filter?: string
+  userId?: number
+  filter?: string
 }
+
+export const fetchUsersV3 = (params?: FetchUsersParams) => {
+  const { userId, filter } = params || {}
+
+  return useQuery<User[]>({
+    queryKey: ['users', filter, userId],
+    queryFn: () => {
+      return fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then(data => data)
+        .catch(error => {
+          console.error('Error fetching users:', error)
+          throw error
+        })
+        .finally(() => {
+          console.log('Fetch users completed')
+        })
+        .then(data => {
+          console.log('Fetched users:', data)
+          return data
+        })
+    },
+  })
+}
+
 export const fetchUsers = ({}: FetchUsersParams) => {
   return fetch('https://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
@@ -17,4 +45,26 @@ export const fetchUsers = ({}: FetchUsersParams) => {
       console.log('Fetched users:', data)
       return data
     })
+}
+
+export const fetchUsersV2 = ({}: FetchUsersParams) => {
+  return {
+    queryKey: ['users'],
+    queryFn: () => {
+      return fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then(data => data)
+        .catch(error => {
+          console.error('Error fetching users:', error)
+          throw error
+        })
+        .finally(() => {
+          console.log('Fetch users completed')
+        })
+        .then(data => {
+          console.log('Fetched users:', data)
+          return data
+        })
+    },
+  }
 }
