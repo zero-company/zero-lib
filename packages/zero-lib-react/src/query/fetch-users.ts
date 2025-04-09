@@ -1,5 +1,5 @@
 import { useQuery, useQueryErrorResetBoundary } from '@tanstack/react-query'
-import { User } from './types'
+import { User, usersSchema } from './types'
 
 type FetchUsersParams = {
   userId?: number
@@ -25,6 +25,11 @@ export const fetchUsersV3 = (params?: FetchUsersParams) => {
         .then(data => {
           console.log('Fetched users:', data)
           return data
+        })
+        .then(data => {
+          const parsedData = usersSchema.parse(data)
+          console.log('Parsed users:', parsedData)
+          return parsedData
         })
     },
   })

@@ -1,8 +1,10 @@
+import { z } from 'zod'
+
 /**
- * TypeScript type definitions for the JSON-Placeholder
- * sample data API.
+ * TypeScript type definitions for JSON-Placeholder sample data API.
  * @see https://jsonplaceholder.typicode.com/
  */
+
 export interface User {
   id: number
   name: string
@@ -68,3 +70,35 @@ export interface Todo {
   title: string
   completed: boolean
 }
+
+export const geoSchema = z.object({
+  lat: z.string(),
+  lng: z.string(),
+})
+
+export const addressSchema = z.object({
+  street: z.string(),
+  suite: z.string(),
+  city: z.string(),
+  zipcode: z.string(),
+  geo: geoSchema,
+})
+
+export const companySchema = z.object({
+  name: z.string(),
+  catchPhrase: z.string(),
+  bs: z.string(),
+})
+
+export const userSchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  username: z.string(),
+  email: z.string(),
+  address: addressSchema,
+  phone: z.string(),
+  website: z.string(),
+  company: companySchema,
+})
+
+export const usersSchema = z.array(userSchema)
