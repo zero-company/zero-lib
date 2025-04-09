@@ -151,7 +151,22 @@ export default function Layout({ children }: Props) {
       <AppLayoutV4
         body={children}
         header={<Header />}
-        sidebarProps={{}}
+        sidebarProps={{
+          header: <span>signin</span>,
+          content: (
+            <>
+              <SidebarGroupMain />
+              <SidebarGroupForms />
+            </>
+          ),
+          contentFooter: (
+            <>
+              <SupportCardV2 />
+              <SocialCard />
+              <Footer />
+            </>
+          ),
+        }}
         sidebarGroups={
           <>
             <SidebarGroupMain />

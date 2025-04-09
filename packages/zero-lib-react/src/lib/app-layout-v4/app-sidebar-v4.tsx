@@ -10,10 +10,16 @@ import {
 type Props = {
   header?: React.ReactNode
   content?: React.ReactNode
+  contentFooter?: React.ReactNode
   footer?: React.ReactNode
 }
 
-export const AppSidebarV4 = ({ header, content, footer }: Props) => {
+export const AppSidebarV4 = ({
+  header,
+  content,
+  contentFooter,
+  footer,
+}: Props) => {
   return (
     <Sidebar
       className='*:bg-(--background) *:divide-y !border-r-0'
@@ -21,7 +27,13 @@ export const AppSidebarV4 = ({ header, content, footer }: Props) => {
       data-name='AppSidebarV4'
     >
       {header && <SidebarHeader>{header}</SidebarHeader>}
-      {content && <SidebarContent>{content}</SidebarContent>}
+      {content && (
+        <SidebarContent className='divide-y gap-0'>
+          {content}
+          <div className='flex-1' />
+          <div className='divide-y'>{contentFooter}</div>
+        </SidebarContent>
+      )}
       {footer && <SidebarFooter>{footer}</SidebarFooter>}
     </Sidebar>
   )
