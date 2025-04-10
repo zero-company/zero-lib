@@ -5,6 +5,7 @@ import {
   SidebarHeader,
   SidebarContent,
   SidebarFooter,
+  SidebarRail,
 } from '@/lib'
 
 type Props = {
@@ -35,6 +36,7 @@ export const AppSidebarV4 = ({
         </SidebarContent>
       )}
       {footer && <SidebarFooter>{footer}</SidebarFooter>}
+      <SidebarRail />
     </Sidebar>
   )
 }

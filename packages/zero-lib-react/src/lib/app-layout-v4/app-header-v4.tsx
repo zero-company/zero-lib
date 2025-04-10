@@ -1,6 +1,6 @@
 'use client'
 import { cn } from '@/components/shadcn'
-import { HEADER_SIDEBAR_SIZE } from '@/lib'
+import { HEADER_SIDEBAR_SIZE, Icon, ZeroLogo } from '@/lib'
 import { usePathname } from 'next/navigation'
 
 type Props = {
@@ -33,6 +33,7 @@ export const AppHeaderV4 = ({ className, header, title, subtitle }: Props) => {
           </div>
         )}
       </div>
+      <Icon reactIcon={<ZeroLogo />} />
     </div>
   )
 }
