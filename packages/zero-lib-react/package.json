@@ -103,6 +103,7 @@
     "zod": "3.23.8"
   },
   "devDependencies": {
+    "graphql-codegen-typescript-validation-schema": "^0.17.1",
     "@eslint/eslintrc": "^3",
     "@graphql-typed-document-node/core": "3.2.0",
     "@graphql-codegen/cli": "5.0.5",
