@@ -17,6 +17,7 @@ import {
   SupportCardV2,
   SocialCard,
   AppHeaderV4,
+  NavCollapsibleV4,
 } from '@/lib'
 import {
   LuList,
@@ -37,6 +38,18 @@ import { FaFacebookF, FaGithub, FaTwitter, FaGlobe } from 'react-icons/fa6'
 import { GlobalSidebarTabs } from '@/components'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import {
+  AudioWaveform,
+  BookOpen,
+  Bot,
+  Command,
+  Frame,
+  GalleryVerticalEnd,
+  Map,
+  PieChart,
+  Settings2,
+  SquareTerminal,
+} from 'lucide-react'
 
 type Props = {
   children: React.ReactNode
@@ -147,6 +160,104 @@ export default function Layout({ children }: Props) {
     </SidebarGroup>
   )
 
+  const data = {
+    user: {
+      name: 'shadcn',
+      email: 'm@example.com',
+      avatar: '/avatars/shadcn.jpg',
+    },
+    teams: [
+      {
+        name: 'Acme Inc',
+        logo: GalleryVerticalEnd,
+        plan: 'Enterprise',
+      },
+      {
+        name: 'Acme Corp.',
+        logo: AudioWaveform,
+        plan: 'Startup',
+      },
+      {
+        name: 'Evil Corp.',
+        logo: Command,
+        plan: 'Free',
+      },
+    ],
+    navMain: [
+      {
+        title: 'Main',
+        url: '#',
+        icon: SquareTerminal,
+        isActive: true,
+        items: [
+          {
+            title: 'Components',
+            url: '/app',
+          },
+          {
+            title: 'Docs',
+            url: '/app/docs',
+          },
+          {
+            title: 'About',
+            url: '/app/about-app',
+          },
+        ],
+      },
+      {
+        title: 'Auth Forms',
+        url: '#',
+        icon: Bot,
+        items: [
+          {
+            title: 'Sign In',
+            url: '#',
+          },
+          {
+            title: 'Sign Up',
+            url: '#',
+          },
+          {
+            title: 'Forgot Password',
+            url: '#',
+          },
+        ],
+      },
+      {
+        title: 'Misc',
+        url: '#',
+        icon: Settings2,
+        items: [
+          {
+            title: 'OnClick',
+            url: '#',
+          },
+          {
+            title: 'Disabled',
+            url: '#',
+          },
+        ],
+      },
+    ],
+    projects: [
+      {
+        name: 'Design Engineering',
+        url: '#',
+        icon: Frame,
+      },
+      {
+        name: 'Sales & Marketing',
+        url: '#',
+        icon: PieChart,
+      },
+      {
+        name: 'Travel',
+        url: '#',
+        icon: Map,
+      },
+    ],
+  }
+
   return (
     <>
       <AppLayoutV4
@@ -156,8 +267,8 @@ export default function Layout({ children }: Props) {
           header: <AppHeaderV4 />,
           content: (
             <>
+              <NavCollapsibleV4 items={data.navMain} />
               <SidebarGroupMain />
-              <SidebarGroupForms />
             </>
           ),
           contentFooter: (
