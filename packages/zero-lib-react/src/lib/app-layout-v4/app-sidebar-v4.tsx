@@ -26,7 +26,7 @@ export const AppSidebarV4 = ({
       collapsible='icon'
       data-name='AppSidebarV4'
     >
-      {header && <SidebarHeader>{header}</SidebarHeader>}
+      {header && <SidebarHeader className='p-0'>{header}</SidebarHeader>}
       {content && (
         <SidebarContent className='divide-y gap-0'>
           {content}

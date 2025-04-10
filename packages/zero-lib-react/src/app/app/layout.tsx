@@ -16,6 +16,7 @@ import {
   SidebarGroupV1CollapsibleSub,
   SupportCardV2,
   SocialCard,
+  AppHeaderV4,
 } from '@/lib'
 import {
   LuList,
@@ -152,7 +153,7 @@ export default function Layout({ children }: Props) {
         body={children}
         header={<Header />}
         sidebarProps={{
-          header: <span>signin</span>,
+          header: <AppHeaderV4 />,
           content: (
             <>
               <SidebarGroupMain />
