@@ -183,7 +183,28 @@ export default function Layout({ children }: Props) {
         plan: 'Free',
       },
     ],
-    navMain: [
+    projects: [
+      {
+        name: 'Design Engineering',
+        url: '#',
+        icon: Frame,
+      },
+      {
+        name: 'Sales & Marketing',
+        url: '#',
+        icon: PieChart,
+      },
+      {
+        name: 'Travel',
+        url: '#',
+        icon: Map,
+      },
+    ],
+  }
+
+  const navMainProps: React.ComponentProps<typeof NavCollapsibleV4> = {
+    label: 'Pages',
+    items: [
       {
         title: 'Main',
         url: '#',
@@ -239,23 +260,6 @@ export default function Layout({ children }: Props) {
         ],
       },
     ],
-    projects: [
-      {
-        name: 'Design Engineering',
-        url: '#',
-        icon: Frame,
-      },
-      {
-        name: 'Sales & Marketing',
-        url: '#',
-        icon: PieChart,
-      },
-      {
-        name: 'Travel',
-        url: '#',
-        icon: Map,
-      },
-    ],
   }
 
   return (
@@ -267,7 +271,7 @@ export default function Layout({ children }: Props) {
           header: <AppHeaderV4 />,
           content: (
             <>
-              <NavCollapsibleV4 items={data.navMain} />
+              <NavCollapsibleV4 {...navMainProps} />
               <SidebarGroupMain />
             </>
           ),

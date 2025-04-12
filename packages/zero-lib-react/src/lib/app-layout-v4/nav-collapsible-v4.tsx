@@ -16,8 +16,10 @@ import {
 import Link from 'next/link'
 
 export function NavCollapsibleV4({
+  label,
   items,
 }: {
+  label?: string
   items: {
     title: string
     url: string
@@ -30,8 +32,8 @@ export function NavCollapsibleV4({
   }[]
 }) {
   return (
-    <SidebarGroup>
-      <SidebarGroupLabel>Pages</SidebarGroupLabel>
+    <SidebarGroup data-name='NavCollapsibleV4'>
+      {label && <SidebarGroupLabel>{label}</SidebarGroupLabel>}
       <SidebarMenu>
         {items.map(item => (
           <Collapsible
