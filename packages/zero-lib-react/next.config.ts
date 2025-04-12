@@ -5,6 +5,7 @@ import createMDX from '@next/mdx'
 // import rehypeSlug from 'rehype-slug'
 
 const nextConfig: NextConfig = {
+  // reactStrictMode: false,
   output: 'export',
   distDir: 'dist-next',
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx', 'server.ts'],

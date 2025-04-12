@@ -35,7 +35,7 @@ export const AppLayoutV4 = ({
   sidebarGroups,
   sidebarProps,
 }: Props) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [isSidebarOpen, setSidebarOpen] = useState(false)
 
   return (
     <SidebarProvider>
@@ -57,7 +57,7 @@ export const AppLayoutV4 = ({
               size='sm'
               variant='ghost'
               className={cn(HEADER_SIDEBAR_SIZE.SIZE, 'flex sm:hidden')}
-              onClick={e => setIsSidebarOpen(!e)}
+              onClick={e => setSidebarOpen(prev => !prev)}
             >
               <Icon
                 data-name='Icon'
@@ -91,7 +91,7 @@ export const AppLayoutV4 = ({
               size='sm'
               variant='ghost'
               className={cn(HEADER_SIDEBAR_SIZE.SIZE)}
-              onClick={e => setIsSidebarOpen(!e)}
+              onClick={e => setSidebarOpen(prev => !prev)}
             >
               <Icon
                 reactIcon={<LuPanelLeftOpen />}
