@@ -48,6 +48,7 @@ export const AppLayoutV4 = ({
           className={cn(
             'transition-all w-screen sm:w-64 divide-y flex flex-col shrink-0 overflow-y-auto',
             !isSidebarOpen && '-ml-[100vw] sm:ml-0',
+            'hidden',
           )}
         >
           <div className='flex divide-x sm:-ml-px'>
@@ -56,9 +57,14 @@ export const AppLayoutV4 = ({
               size='sm'
               variant='ghost'
               className={cn(HEADER_SIDEBAR_SIZE.SIZE, 'flex sm:hidden')}
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={e => setIsSidebarOpen(!e)}
             >
-              <Icon reactIcon={<LuPanelLeftClose />} />
+              <Icon
+                data-name='Icon'
+                reactIcon={<LuPanelLeftClose />}
+                data-open={isSidebarOpen}
+                className='data-[open=true]:rotate-180 transition-transform duration-200'
+              />
             </Button>
             <Header header={header} />
             <Icon reactIcon={<ZeroLogo />} />
@@ -85,9 +91,13 @@ export const AppLayoutV4 = ({
               size='sm'
               variant='ghost'
               className={cn(HEADER_SIDEBAR_SIZE.SIZE)}
-              onClick={() => setIsSidebarOpen(true)}
+              onClick={e => setIsSidebarOpen(!e)}
             >
-              <Icon reactIcon={<LuPanelLeftOpen />} />
+              <Icon
+                reactIcon={<LuPanelLeftOpen />}
+                data-open={isSidebarOpen}
+                className='data-[open=true]:rotate-180 transition-transform duration-200'
+              />
             </Button>
             <Header header={header} />
             <Icon reactIcon={<ZeroLogo />} />

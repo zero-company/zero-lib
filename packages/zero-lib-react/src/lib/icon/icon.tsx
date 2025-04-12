@@ -40,6 +40,7 @@ export const Icon = ({
   tooltipContent,
   className,
   hoverBrightness = true,
+  ...restProps
 }: Props) => {
   return (
     <IconContext.Provider
@@ -61,6 +62,7 @@ export const Icon = ({
                 sizeVariants[size],
                 className,
               )}
+              {...restProps}
             >
               {reactIcon || <FaQuestion />}
             </div>
