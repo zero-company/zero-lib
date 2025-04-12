@@ -3,15 +3,19 @@ import 'dotenv/config'
 import { z } from 'zod'
 
 const config: CodegenConfig = {
-  schema: 'https://graphql.org/graphql/',
-  documents: ['src/**/*.tsx', 'src/**/*.ts'],
-  ignoreNoDocuments: true, // for better experience with the watcher
+  ignoreNoDocuments: true,
+  schema: process.env.NEXT_PUBLIC_API_GRAPHQL,
+  documents: ['src/query/**/*.tsx', 'src/query/**/*.ts'],
   generates: {
     './src/query/gql/': {
       preset: 'client',
+      plugins: [],
     },
     './src/query/schema.graphql': {
-      plugins: ['schema-ast'],
+      plugins: [
+        //'introspection',
+        'schema-ast',
+      ],
       config: {
         includeDirectives: true,
       },

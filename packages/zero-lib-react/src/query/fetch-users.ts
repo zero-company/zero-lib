@@ -13,7 +13,7 @@ export const fetchUsersV3 = (params?: FetchUsersParams) => {
     queryKey: ['users', filter, userId],
     queryFn: () => {
       return (
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch(`${process.env.NEXT_PUBLIC_API}/users`)
           .then(res => res.json())
           .then(data => data)
           .catch(error => {
