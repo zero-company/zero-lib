@@ -15,8 +15,15 @@ const requestMiddleware: RequestMiddleware = async request => {
     headers: {
       ...request.headers,
       Authorization: `Bearer ${session?.accessToken}`,
+      'Content-type': 'application/json',
     },
   }
 }
 
-export const GraphqlClient = new GraphQLClient(endpoint, { requestMiddleware })
+export const GraphqlClient = new GraphQLClient(endpoint, {
+  requestMiddleware,
+  // TODO: Fix graphql-request header bug
+  // headers: {
+  //   'Content-type': 'application/json',
+  // },
+})
