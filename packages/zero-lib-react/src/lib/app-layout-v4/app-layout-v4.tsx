@@ -41,10 +41,11 @@ export const AppLayoutV4 = ({
     <SidebarProvider>
       <div
         className='flex divide-x w-screen h-screen leading-none overflow-clip'
-        data-name='AppSidebarV4'
+        data-name='AppLayoutV4'
       >
         <AppSidebarV4 {...sidebarProps} />
-        <div
+        {/*
+         <div
           className={cn(
             'transition-all w-screen sm:w-64 divide-y flex flex-col shrink-0 overflow-y-auto',
             !isSidebarOpen && '-ml-[100vw] sm:ml-0',
@@ -79,6 +80,7 @@ export const AppLayoutV4 = ({
             </>
           )}
         </div>
+        */}
 
         <div
           className={cn(
@@ -103,6 +105,7 @@ export const AppLayoutV4 = ({
             <Icon reactIcon={<ZeroLogo />} />
           </div>
           <div className='flex overflow-y-auto h-full divide-x'>
+            <SidebarTrigger className='-ml-1' />
             {body}
             <div />
           </div>
