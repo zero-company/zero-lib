@@ -138,6 +138,10 @@ export default function Layout({ children }: Props) {
         icon: Settings2,
         items: [
           {
+            title: 'Email',
+            url: `/${pathnameDepth1}/email`,
+          },
+          {
             title: 'OnClick',
             url: '#',
           },
