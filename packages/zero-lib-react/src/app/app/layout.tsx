@@ -110,6 +110,18 @@ export default function Layout({ children }: Props) {
         ],
       },
       {
+        title: 'Components',
+        url: '#',
+        icon: SquareTerminal,
+        isActive: true,
+        items: [
+          {
+            title: 'Table',
+            url: `/${pathnameDepth1}/table`,
+          },
+        ],
+      },
+      {
         title: 'Auth Forms',
         url: '#',
         icon: Bot,

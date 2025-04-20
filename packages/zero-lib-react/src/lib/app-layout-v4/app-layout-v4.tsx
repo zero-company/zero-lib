@@ -56,9 +56,8 @@ export const AppLayoutV4 = ({ header, body, sidebarProps }: Props) => {
             <Icon reactIcon={<ZeroLogo />} />
           </div>
           <div className='flex overflow-y-auto h-full divide-x'>
-            <SidebarTrigger className='-ml-1' />
+            {/* <SidebarTrigger className='-ml-1' /> */}
             {body}
-            <div />
           </div>
         </div>
       </div>
