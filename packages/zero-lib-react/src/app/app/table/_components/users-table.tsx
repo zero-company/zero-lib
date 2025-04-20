@@ -16,13 +16,12 @@ const columns = [
   columnHelper.accessor('task', {
     cell: info => info.getValue(),
   }),
-  // columnHelper.accessor('status', {
-  //   cell: info => info.getValue(),
-  // }),
-  // columnHelper.accessor('due', {
-  //   //cell: info => info.getValue(),
-  //   cell: (info => info.getValue().toLocaleDateString()
-  // }),
+  columnHelper.accessor('status', {
+    cell: info => info.getValue()?.name,
+  }),
+  columnHelper.accessor('due', {
+    cell: info => info.getValue()?.toLocaleDateString('en-US'),
+  }),
   columnHelper.accessor('notes', {
     cell: info => info.getValue(),
   }),
