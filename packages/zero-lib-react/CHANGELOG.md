@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.41
+
+### Patch Changes
+
+- [#89](https://github.com/zero-company/zero-lib/pull/89) [`617ebd6`](https://github.com/zero-company/zero-lib/commit/617ebd65e1e2bce7772d07d125fb281ab7914981) Thanks [@jigz](https://github.com/jigz)! - Feature/shadcn sidebar
+
 ## 0.1.40
 
 ### Patch Changes
