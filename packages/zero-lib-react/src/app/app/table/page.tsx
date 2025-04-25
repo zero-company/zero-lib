@@ -6,8 +6,6 @@ export default function Page() {
   const promises = Promise.all([])
   const { data: users, isLoading: isUsersLoading } = fetchUsersV3()
 
-  console.log('users', users)
-
   return (
     <div>
       <p>table</p>

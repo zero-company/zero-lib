@@ -14,7 +14,7 @@ const requestMiddleware: RequestMiddleware = async request => {
     ...request,
     headers: {
       ...request.headers,
-      Authorization: `Bearer ${session?.accessToken}`,
+      // Authorization: `Bearer ${session?.accessToken}`,
       'Content-type': 'application/json',
     },
   }
