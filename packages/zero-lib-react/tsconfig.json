@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@/shadcn": ["./src/components/shadcn/*"],
       "react": ["./node_modules/@types/react"]
     }
   },

@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './../globals.css'
 import { cn, TooltipProvider } from '@/components/shadcn'
 import { ThemeProvider } from '@/components/theme-provider'
+import { QueryProvider } from '@/query/query-provider'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,16 +30,18 @@ export default function RootLayout({
       <body
         className={cn(geistSans.variable, geistMono.variable, 'antialiased')}
       >
-        <main className='flex w-screen h-screen shrink-0'>
-          <ThemeProvider
-            attribute='class'
-            defaultTheme='dark'
-            enableSystem
-            disableTransitionOnChange
-          >
-            <TooltipProvider>{children}</TooltipProvider>
-          </ThemeProvider>
-        </main>
+        <QueryProvider>
+          <main className='flex w-screen h-screen shrink-0'>
+            <ThemeProvider
+              attribute='class'
+              defaultTheme='dark'
+              enableSystem
+              disableTransitionOnChange
+            >
+              <TooltipProvider>{children}</TooltipProvider>
+            </ThemeProvider>
+          </main>
+        </QueryProvider>
       </body>
     </html>
   )
