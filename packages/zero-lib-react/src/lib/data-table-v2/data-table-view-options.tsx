@@ -15,10 +15,12 @@ import { cn } from '@/lib/utils'
 import * as React from 'react'
 
 interface DataTableViewOptionsProps<TData> {
+  className?: string
   table: Table<TData>
 }
 
 export function DataTableViewOptions<TData>({
+  className,
   table,
 }: DataTableViewOptionsProps<TData>) {
   const columns = React.useMemo(
@@ -40,7 +42,7 @@ export function DataTableViewOptions<TData>({
           role='combobox'
           variant='outline'
           size='sm'
-          className='ml-auto hidden h-8 lg:flex'
+          className={cn('ml-auto hidden h-8 lg:flex', className)}
         >
           <Settings2 />
           View
