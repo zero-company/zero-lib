@@ -42,7 +42,7 @@ export function DataTableViewOptions<TData>({
           role='combobox'
           variant='outline'
           size='sm'
-          className={cn('ml-auto hidden h-8 lg:flex', className)}
+          className={cn('ml-auto h-8 flex', className)}
         >
           <Settings2 />
           View
