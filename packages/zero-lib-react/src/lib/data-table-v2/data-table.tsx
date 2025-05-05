@@ -30,7 +30,7 @@ export function DataTable<TData>({
       className={cn('flex w-full flex-col gap-2.5 overflow-auto', className)}
       {...props}
     >
-      <div className='px-1'>{children}</div>
+      {children && <div className='px-1'>{children}</div>}
       <div className='overflow-hidden rounded-md border'>
         <Table>
           <TableHeader>
