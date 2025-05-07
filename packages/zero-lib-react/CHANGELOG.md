@@ -1,5 +1,11 @@
 # @zero-company/zero-lib-react
 
+## 0.1.42
+
+### Patch Changes
+
+- [#93](https://github.com/zero-company/zero-lib/pull/93) [`5086453`](https://github.com/zero-company/zero-lib/commit/508645365d6fe294a5654eccc4a8afd4a98a0ba4) Thanks [@jigz](https://github.com/jigz)! - chore: add MIT license and update package metadata
+
 ## 0.1.41
 
 ### Patch Changes
