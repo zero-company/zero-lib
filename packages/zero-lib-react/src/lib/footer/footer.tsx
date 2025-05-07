@@ -5,6 +5,7 @@ export const Footer = () => {
     <>
       <div className='p-2 text-xs'>
         <p>© Zero. All Rights Reserved.</p>
+        <p>ZeroOpenSource™</p>
       </div>
     </>
   )
