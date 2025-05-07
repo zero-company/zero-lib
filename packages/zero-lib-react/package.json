@@ -1,5 +1,6 @@
 {
   "name": "@zero-company/zero-lib-react",
+  "license": "MIT",
   "version": "0.1.41",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -7,7 +8,8 @@
   "files": [
     "dist/**",
     "dist-next/**",
-    "dist-storybook/**"
+    "dist-storybook/**",
+    "LICENSE"
   ],
   "publishConfig": {
     "access": "public"
